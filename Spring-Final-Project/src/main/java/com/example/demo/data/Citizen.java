@@ -14,7 +14,7 @@ public class Citizen {
 	
 	
 	@Id
-	private int id;
+	private Long id;
 	
 	@Column
 	private String forename;
@@ -24,7 +24,7 @@ public class Citizen {
 	private String placeOfBirth;
 	private Gender gender;
 	
-	public Citizen(int id, String forename, String surname, String address, LocalDate dateOfBirth, String placeOfBirth, Gender gender) {
+	public Citizen(Long id, String forename, String surname, String address, LocalDate dateOfBirth, String placeOfBirth, Gender gender) {
 		super();
 		this.id=id;
 		this.forename=forename;
@@ -46,6 +46,7 @@ public class Citizen {
 	public Citizen() {
 		// TODO Auto-generated constructor stub
 	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(address, dateOfBirth, forename, gender, id, placeOfBirth, surname);
@@ -60,14 +61,14 @@ public class Citizen {
 			return false;
 		Citizen other = (Citizen) obj;
 		return Objects.equals(address, other.address) && Objects.equals(dateOfBirth, other.dateOfBirth)
-				&& Objects.equals(forename, other.forename) && gender == other.gender && id == other.id
+				&& Objects.equals(forename, other.forename) && gender == other.gender && Objects.equals(id, other.id)
 				&& Objects.equals(placeOfBirth, other.placeOfBirth) && Objects.equals(surname, other.surname);
 	}
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getForename() {
@@ -106,8 +107,6 @@ public class Citizen {
 	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
-	
-	
 	@Override
 	public String toString() {
 		
