@@ -42,15 +42,15 @@ public class CitizenServiceDB implements CitizenService{
 	}
 	@Override
 	public List<Citizen> getByCitizenPOB(String placeOfBirth){
-		return this.repo.findByPOBIgnoreCase(placeOfBirth);
+		return this.repo.findByPlaceOfBirthIgnoreCase(placeOfBirth);
 	}
 	@Override
 	public List<Citizen> getByCitizenGender(Gender gender){
-		return this.repo.findByGenderIgnoreCase(gender);
+		return this.repo.findByGender(gender);
 	}
 	@Override
 	public List<Citizen> getByCitizenDOB(LocalDate dateOfBirth){
-		return this.repo.findByDOB(dateOfBirth);
+		return this.repo.findByDateOfBirth(dateOfBirth);
 	}
 	
 	@Transactional

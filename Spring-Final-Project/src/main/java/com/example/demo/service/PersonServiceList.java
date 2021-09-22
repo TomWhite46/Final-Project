@@ -12,6 +12,12 @@ import com.example.demo.data.Person;
 @Service
 public class PersonServiceList implements PersonService {
 	
+	//@Override
+//	public List<Person> getCitizens(boolean isCitizen) {
+		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 	private List<Person> people = new ArrayList<>();
 
 	@Override

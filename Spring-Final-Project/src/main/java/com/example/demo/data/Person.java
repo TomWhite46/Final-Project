@@ -4,11 +4,13 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import com.example.demo.Gender;
 
+import com.example.demo.Gender;
+@Embeddable
 @Entity
 public class Person {
 	
@@ -16,7 +18,7 @@ public class Person {
 	private Long personID;
 	
 	@Column
-	private boolean is_Citizen;
+	private boolean isCitizen;
 	private String personForename;
 	private String personSurname;
 	private LocalDate personDOB;
@@ -24,10 +26,10 @@ public class Person {
 	private String personNationality;
 	private Gender personGender;
 	
-	public Person(Long personID, boolean is_Citizen, String personForename, String personSurname, LocalDate personDOB, String personPOB, String personNationality, Gender personGender) {
+	public Person(Long personID, boolean isCitizen, String personForename, String personSurname, LocalDate personDOB, String personPOB, String personNationality, Gender personGender) {
 		super();
 		this.personID = personID;
-		this.is_Citizen = is_Citizen;
+		this.isCitizen = isCitizen;
 		this.personForename = personForename;
 		this.personSurname = personSurname;
 		this.personDOB = personDOB;
@@ -36,9 +38,9 @@ public class Person {
 		this.personGender = personGender;
 		
 	}
-	public Person(boolean is_Citizen, String personForename, String personSurname, LocalDate personDOB, String personPOB, String personNationality, Gender personGender) {
+	public Person(boolean isCitizen, String personForename, String personSurname, LocalDate personDOB, String personPOB, String personNationality, Gender personGender) {
 		super();
-		this.is_Citizen = is_Citizen;
+		this.isCitizen = isCitizen;
 		this.personForename = personForename;
 		this.personSurname = personSurname;
 		this.personDOB = personDOB;
@@ -51,7 +53,7 @@ public class Person {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(is_Citizen, personDOB, personForename, personGender, personID, personNationality, personPOB,
+		return Objects.hash(isCitizen, personDOB, personForename, personGender, personID, personNationality, personPOB,
 				personSurname);
 	}
 	@Override
@@ -63,7 +65,7 @@ public class Person {
 		if (getClass() != obj.getClass())
 			return false;
 		Person other = (Person) obj;
-		return is_Citizen == other.is_Citizen && Objects.equals(personDOB, other.personDOB)
+		return isCitizen == other.isCitizen && Objects.equals(personDOB, other.personDOB)
 				&& Objects.equals(personForename, other.personForename) && personGender == other.personGender
 				&& Objects.equals(personID, other.personID)
 				&& Objects.equals(personNationality, other.personNationality)
@@ -76,10 +78,10 @@ public class Person {
 		this.personID = personID;
 	}
 	public boolean isIs_Citizen() {
-		return is_Citizen;
+		return isCitizen;
 	}
 	public void setIs_Citizen(boolean is_Citizen) {
-		this.is_Citizen = is_Citizen;
+		this.isCitizen = is_Citizen;
 	}
 	public String getPersonForename() {
 		return personForename;
@@ -119,7 +121,7 @@ public class Person {
 	}
 	@Override
 	public String toString() {
-		return "Person [personID=" + personID + ", is_Citizen=" + is_Citizen + ", personForename=" + personForename
+		return "Person [personID=" + personID + ", is_Citizen=" + isCitizen + ", personForename=" + personForename
 				+ ", personSurname=" + personSurname + ", personDOB=" + personDOB + ", personPOB=" + personPOB
 				+ ", personNationality=" + personNationality + ", personGender=" + personGender + "]";
 	}

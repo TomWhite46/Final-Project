@@ -12,13 +12,13 @@ import com.example.demo.data.Person;
 @Repository
 public interface PersonRepo extends JpaRepository<Person, Long> {
 	
-	List<Person> findByForenameIgnoreCase(String forename);
-	List<Person> findBySurnameIgnoreCase(String Surname);
-	List<Person> findByNationalityIgnoreCase(String nationality);
-	List<Person> findByPOBIgnoreCase(String placeOfBirth);
-	List<Person> findByGenderIgnoreCase(Gender gender);
-	List<Person> findByDOB(LocalDate dateOfBirth);
-	List<Person> findAllCitizensIgnoreCase(boolean is_Citizen);
+	List<Person> findByPersonForenameIgnoreCase(String forename);
+	List<Person> findByPersonSurnameIgnoreCase(String Surname);
+	List<Person> findByPersonNationalityIgnoreCase(String nationality);
+	List<Person> findByPersonPOBIgnoreCase(String placeOfBirth);
+	List<Person> findByPersonGender(Gender gender);
+	List<Person> findByPersonDOB(LocalDate dateOfBirth);
+	//List<Person> findIsCitizen(boolean isCitizen);
 	
 
 }

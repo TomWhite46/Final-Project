@@ -1,6 +1,7 @@
 package com.example.demo.data;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -8,7 +9,7 @@ import com.example.demo.Gender;
 
 import java.time.*;
 import java.util.Objects;
-
+@Embeddable
 @Entity
 public class Citizen {
 	

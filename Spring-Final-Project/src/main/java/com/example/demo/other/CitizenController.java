@@ -31,31 +31,31 @@ public class CitizenController {
 			return new ResponseEntity<>(created,HttpStatus.OK);
 		}
 		
-		@GetMapping("/getByFirstName/{forename}")
+		@GetMapping("/getByCitizenFirstName/{forename}")
 		public ResponseEntity<List<Citizen>> getByCitizenFirstName(@PathVariable String forename){
 			return new ResponseEntity<>(this.service.getByCitizenFirstName(forename),HttpStatus.OK);
 		}
-		@GetMapping("/getByLastName/{surname}")
+		@GetMapping("/getByCitizenLastName/{surname}")
 		public ResponseEntity<List<Citizen>> getByCitizenLastName(@PathVariable String surname){
-			return new ResponseEntity<>(this.service.getByCitizenFirstName(surname),HttpStatus.OK);
+			return new ResponseEntity<>(this.service.getByCitizenLastName(surname),HttpStatus.OK);
 		}
-		@GetMapping("/getByAddress/{address}")
+		@GetMapping("/getByCitizenAddress/{address}")
 		public ResponseEntity<List<Citizen>> getByCitizenAddress(@PathVariable String address){
-			return new ResponseEntity<>(this.service.getByCitizenFirstName(address),HttpStatus.OK);
+			return new ResponseEntity<>(this.service.getByCitizenAddress(address),HttpStatus.OK);
 		}
-		@GetMapping("/getByDOB/{dateOfBirth}")
+		@GetMapping("/getByCitizenDOB/{dateOfBirth}")
 		public ResponseEntity<List<Citizen>> getByCitizenDOB(@PathVariable LocalDate dateOfBirth){
 			return new ResponseEntity<>(this.service.getByCitizenDOB(dateOfBirth),HttpStatus.OK);
 		}
-		@GetMapping("/getByPOB/{placeOfBirth}")
+		@GetMapping("/getByCitizenPOB/{placeOfBirth}")
 		public ResponseEntity<List<Citizen>> getByCitizenPOB(@PathVariable String placeOfBirth){
-			return new ResponseEntity<>(this.service.getByCitizenFirstName(placeOfBirth),HttpStatus.OK);
+			return new ResponseEntity<>(this.service.getByCitizenPOB(placeOfBirth),HttpStatus.OK);
 		}
-		@GetMapping("/getByGender/{gender}")
+		@GetMapping("/getByCitizenGender/{gender}")
 		public ResponseEntity<List<Citizen>> getByCitizenGender(@PathVariable Gender gender){
 			return new ResponseEntity<>(this.service.getByCitizenGender(gender),HttpStatus.OK);
 		}
-		@GetMapping("/getByID/{id}")
+		@GetMapping("/getByCitizenID/{id}")
 		public ResponseEntity<Citizen> getByCitizenID(@PathVariable Long id){
 			return new ResponseEntity<>(this.service.getByCitizenID(id),HttpStatus.OK);
 		}

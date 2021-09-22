@@ -34,33 +34,38 @@ public class PersonServiceDB implements PersonService{
 
 	@Override
 	public List<Person> getByPersonFirstName(String forename) {
-		return this.repo.findByForenameIgnoreCase(forename);
+		return this.repo.findByPersonForenameIgnoreCase(forename);
 	}
 
 	@Override
 	public List<Person> getByPersonLastName(String surname) {
-		return this.repo.findBySurnameIgnoreCase(surname);
+		return this.repo.findByPersonSurnameIgnoreCase(surname);
 	}
 
 	@Override
 	public List<Person> getByPersonNationality(String nationality) {
-		return this.repo.findByNationalityIgnoreCase(nationality);
+		return this.repo.findByPersonNationalityIgnoreCase(nationality);
 	}
 
 	@Override
 	public List<Person> getByPersonDOB(LocalDate dateOfBirth) {
-		return this.repo.findByDOB(dateOfBirth);
+		return this.repo.findByPersonDOB(dateOfBirth);
 	}
 
 	@Override
 	public List<Person> getByPersonPOB(String placeOfBirth) {
-		return this.repo.findByPOBIgnoreCase(placeOfBirth);
+		return this.repo.findByPersonPOBIgnoreCase(placeOfBirth);
 	}
 
 	@Override
 	public List<Person> getByPersonGender(Gender gender) {
-		return this.repo.findByGenderIgnoreCase(gender);
+		return this.repo.findByPersonGender(gender);
 	}
+	
+	//@Override
+	//public List<Person> getCitizens(boolean isCitizen){
+	//	return this.repo.findIsCitizen(isCitizen);
+	//}
 	
 
 }

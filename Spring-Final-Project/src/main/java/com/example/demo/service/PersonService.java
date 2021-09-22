@@ -24,5 +24,7 @@ public interface PersonService {
 	public List<Person> getByPersonPOB(String placeOfBirth);
 	
 	public List<Person> getByPersonGender(Gender gender);
+	
+	//public List<Person> getCitizens(boolean isCitizen);
 
 }
