@@ -3,31 +3,33 @@ package com.example.demo.data;
 import java.util.Objects;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
-public class bankcard {
+@Entity
+public class Bankcard {
 
 	@Id
-	private int bankcardId;
+	private Integer bankcardId;
 
 	@Column
 	private String bankcardSortcode;
 	private Long bankcardCardNumber;
 
-	public bankcard(int bankcardId, String bankcardSortcode, Long bankcardCardNumber) {
+	public Bankcard(Integer bankcardId, String bankcardSortcode, Long bankcardCardNumber) {
 		super();
 		this.bankcardId = bankcardId;
 		this.bankcardSortcode = bankcardSortcode;
 		this.bankcardCardNumber = bankcardCardNumber;
 	}
 
-	public bankcard(String bankcardSortcode, Long bankcardCardNumber) {
+	public Bankcard(String bankcardSortcode, Long bankcardCardNumber) {
 		super();
 		this.bankcardSortcode = bankcardSortcode;
 		this.bankcardCardNumber = bankcardCardNumber;
 	}
 
-	public bankcard() {
+	public Bankcard() {
 
 	}
 
@@ -47,16 +49,16 @@ public class bankcard {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		bankcard other = (bankcard) obj;
+		Bankcard other = (Bankcard) obj;
 		return Objects.equals(bankcardCardNumber, other.bankcardCardNumber) && bankcardId == other.bankcardId
 				&& Objects.equals(bankcardSortcode, other.bankcardSortcode);
 	}
 
-	public int getBankcardId() {
+	public Integer getBankcardId() {
 		return bankcardId;
 	}
 
-	public void setBankcardId(int bankcardId) {
+	public void setBankcardId(Integer bankcardId) {
 		this.bankcardId = bankcardId;
 	}
 
@@ -74,6 +76,12 @@ public class bankcard {
 
 	public void setBankcardCardNumber(Long bankcardCardNumber) {
 		this.bankcardCardNumber = bankcardCardNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "Bankcard [bankcardId=" + bankcardId + ", bankcardSortcode=" + bankcardSortcode + ", bankcardCardNumber="
+				+ bankcardCardNumber + "]";
 	}
 
 }
