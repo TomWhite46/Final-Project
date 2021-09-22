@@ -4,14 +4,12 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.data.Passport;
 import com.example.demo.data.repo.PassportRepo;
 
 @Service
-@Primary
 public class PassportService {
 
 	private PassportRepo repo;
