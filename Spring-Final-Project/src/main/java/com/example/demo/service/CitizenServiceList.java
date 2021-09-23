@@ -10,20 +10,20 @@ import com.example.demo.Gender;
 import com.example.demo.data.Citizen;
 
 @Service
-public class CitizenServiceList implements CitizenService{
-	
+public class CitizenServiceList implements CitizenService {
+
 	private List<Citizen> citizens = new ArrayList<>();
 
 	@Override
-	public Citizen getByCitizenID(Long id) {
-		
+	public Citizen getByCitizenID(String id) {
+
 		return null;
 	}
 
 	@Override
 	public List<Citizen> getAllCitizens() {
-		
-		for(Citizen citizen: citizens) {
+
+		for (Citizen citizen : citizens) {
 			System.out.println(citizen);
 		}
 		return citizens;
@@ -31,40 +31,38 @@ public class CitizenServiceList implements CitizenService{
 
 	@Override
 	public List<Citizen> getByCitizenFirstName(String forename) {
-		
+
 		return null;
 	}
 
 	@Override
 	public List<Citizen> getByCitizenLastName(String surname) {
-		
+
 		return null;
 	}
 
 	@Override
 	public List<Citizen> getByCitizenAddress(String address) {
-		
+
 		return null;
 	}
 
 	@Override
 	public List<Citizen> getByCitizenDOB(LocalDate dateOfBirth) {
-		
+
 		return null;
 	}
 
 	@Override
 	public List<Citizen> getByCitizenPOB(String placeOfBirth) {
-		
+
 		return null;
 	}
 
 	@Override
 	public List<Citizen> getByCitizenGender(Gender gender) {
-		
+
 		return null;
 	}
-	
-	
 
 }

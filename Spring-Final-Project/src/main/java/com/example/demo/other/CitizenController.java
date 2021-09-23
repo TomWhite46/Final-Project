@@ -17,48 +17,53 @@ import com.example.demo.service.CitizenService;
 @RestController
 @CrossOrigin
 public class CitizenController {
-	
-		private CitizenService service;
-		
-		public CitizenController(CitizenService service) {
-			super();
-			this.service = service;
-		}
-		
-		@GetMapping("/getAllCitizens")
-		public ResponseEntity<List<Citizen>> getAllCitizens(){
-			List<Citizen> created = this.service.getAllCitizens();
-			return new ResponseEntity<>(created,HttpStatus.OK);
-		}
-		
-		@GetMapping("/getByCitizenFirstName/{forename}")
-		public ResponseEntity<List<Citizen>> getByCitizenFirstName(@PathVariable String forename){
-			return new ResponseEntity<>(this.service.getByCitizenFirstName(forename),HttpStatus.OK);
-		}
-		@GetMapping("/getByCitizenLastName/{surname}")
-		public ResponseEntity<List<Citizen>> getByCitizenLastName(@PathVariable String surname){
-			return new ResponseEntity<>(this.service.getByCitizenLastName(surname),HttpStatus.OK);
-		}
-		@GetMapping("/getByCitizenAddress/{address}")
-		public ResponseEntity<List<Citizen>> getByCitizenAddress(@PathVariable String address){
-			return new ResponseEntity<>(this.service.getByCitizenAddress(address),HttpStatus.OK);
-		}
-		@GetMapping("/getByCitizenDOB/{dateOfBirth}")
-		public ResponseEntity<List<Citizen>> getByCitizenDOB(@PathVariable LocalDate dateOfBirth){
-			return new ResponseEntity<>(this.service.getByCitizenDOB(dateOfBirth),HttpStatus.OK);
-		}
-		@GetMapping("/getByCitizenPOB/{placeOfBirth}")
-		public ResponseEntity<List<Citizen>> getByCitizenPOB(@PathVariable String placeOfBirth){
-			return new ResponseEntity<>(this.service.getByCitizenPOB(placeOfBirth),HttpStatus.OK);
-		}
-		@GetMapping("/getByCitizenGender/{gender}")
-		public ResponseEntity<List<Citizen>> getByCitizenGender(@PathVariable Gender gender){
-			return new ResponseEntity<>(this.service.getByCitizenGender(gender),HttpStatus.OK);
-		}
-		@GetMapping("/getByCitizenID/{id}")
-		public ResponseEntity<Citizen> getByCitizenID(@PathVariable Long id){
-			return new ResponseEntity<>(this.service.getByCitizenID(id),HttpStatus.OK);
-		}
-		
+
+	private CitizenService service;
+
+	public CitizenController(CitizenService service) {
+		super();
+		this.service = service;
+	}
+
+	@GetMapping("/getAllCitizens")
+	public ResponseEntity<List<Citizen>> getAllCitizens() {
+		List<Citizen> created = this.service.getAllCitizens();
+		return new ResponseEntity<>(created, HttpStatus.OK);
+	}
+
+	@GetMapping("/getByCitizenFirstName/{forename}")
+	public ResponseEntity<List<Citizen>> getByCitizenFirstName(@PathVariable String forename) {
+		return new ResponseEntity<>(this.service.getByCitizenFirstName(forename), HttpStatus.OK);
+	}
+
+	@GetMapping("/getByCitizenLastName/{surname}")
+	public ResponseEntity<List<Citizen>> getByCitizenLastName(@PathVariable String surname) {
+		return new ResponseEntity<>(this.service.getByCitizenLastName(surname), HttpStatus.OK);
+	}
+
+	@GetMapping("/getByCitizenAddress/{address}")
+	public ResponseEntity<List<Citizen>> getByCitizenAddress(@PathVariable String address) {
+		return new ResponseEntity<>(this.service.getByCitizenAddress(address), HttpStatus.OK);
+	}
+
+	@GetMapping("/getByCitizenDOB/{dateOfBirth}")
+	public ResponseEntity<List<Citizen>> getByCitizenDOB(@PathVariable LocalDate dateOfBirth) {
+		return new ResponseEntity<>(this.service.getByCitizenDOB(dateOfBirth), HttpStatus.OK);
+	}
+
+	@GetMapping("/getByCitizenPOB/{placeOfBirth}")
+	public ResponseEntity<List<Citizen>> getByCitizenPOB(@PathVariable String placeOfBirth) {
+		return new ResponseEntity<>(this.service.getByCitizenPOB(placeOfBirth), HttpStatus.OK);
+	}
+
+	@GetMapping("/getByCitizenGender/{gender}")
+	public ResponseEntity<List<Citizen>> getByCitizenGender(@PathVariable Gender gender) {
+		return new ResponseEntity<>(this.service.getByCitizenGender(gender), HttpStatus.OK);
+	}
+
+	@GetMapping("/getByCitizenID/{id}")
+	public ResponseEntity<Citizen> getByCitizenID(@PathVariable String id) {
+		return new ResponseEntity<>(this.service.getByCitizenID(id), HttpStatus.OK);
+	}
 
 }

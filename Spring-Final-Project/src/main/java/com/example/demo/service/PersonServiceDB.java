@@ -12,17 +12,17 @@ import com.example.demo.data.repo.PersonRepo;
 
 @Service
 @Primary
-public class PersonServiceDB implements PersonService{
-	
+public class PersonServiceDB implements PersonService {
+
 	private PersonRepo repo;
-	
+
 	public PersonServiceDB(PersonRepo repo) {
 		super();
 		this.repo = repo;
 	}
 
 	@Override
-	public Person getByPersonID(Long personID) {
+	public Person getByPersonID(String personID) {
 		Person found = this.repo.findById(personID).get();
 		return found;
 	}
@@ -61,11 +61,10 @@ public class PersonServiceDB implements PersonService{
 	public List<Person> getByPersonGender(Gender gender) {
 		return this.repo.findByPersonGender(gender);
 	}
-	
-	//@Override
-	//public List<Person> getCitizens(boolean isCitizen){
-	//	return this.repo.findIsCitizen(isCitizen);
-	//}
-	
+
+	// @Override
+	// public List<Person> getCitizens(boolean isCitizen){
+	// return this.repo.findIsCitizen(isCitizen);
+	// }
 
 }

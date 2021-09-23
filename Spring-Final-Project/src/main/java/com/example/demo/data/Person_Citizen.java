@@ -2,7 +2,6 @@ package com.example.demo.data;
 
 import java.util.Objects;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,27 +12,27 @@ import javax.persistence.MapsId;
 
 @Entity
 public class Person_Citizen {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	
 
 	@ManyToOne
 	@MapsId("personID")
-	@JoinColumn(name="person_id")
+	@JoinColumn(name = "person_id")
 	private Person person;
-	
+
 	@ManyToOne
 	@MapsId("citizenID")
 	@JoinColumn(name = "citizen_id")
 	private Citizen citizen;
-	
+
 	public Person_Citizen(Person person, Citizen citizen) {
 		super();
 		this.person = person;
 		this.citizen = citizen;
 	}
+
 	public int getId() {
 		return id;
 	}
@@ -41,6 +40,7 @@ public class Person_Citizen {
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public Person getPerson() {
 		return person;
 	}
@@ -73,11 +73,5 @@ public class Person_Citizen {
 		Person_Citizen other = (Person_Citizen) obj;
 		return Objects.equals(citizen, other.citizen) && id == other.id && Objects.equals(person, other.person);
 	}
-	
-	
-
-	
-
-	
 
 }

@@ -11,25 +11,25 @@ import com.example.demo.data.Person;
 
 @Service
 public class PersonServiceList implements PersonService {
-	
-	//@Override
+
+	// @Override
 //	public List<Person> getCitizens(boolean isCitizen) {
-		// TODO Auto-generated method stub
+	// TODO Auto-generated method stub
 //		return null;
 //	}
 
 	private List<Person> people = new ArrayList<>();
 
 	@Override
-	public Person getByPersonID(Long personID) {
+	public Person getByPersonID(String personID) {
 
 		return null;
 	}
 
 	@Override
 	public List<Person> getAllPerson() {
-		
-		for(Person person: people) {
+
+		for (Person person : people) {
 			System.out.println(person);
 		}
 		return people;

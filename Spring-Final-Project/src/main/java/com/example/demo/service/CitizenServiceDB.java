@@ -14,50 +14,55 @@ import com.example.demo.data.repo.CitizenRepo;
 
 @Service
 @Primary
-public class CitizenServiceDB implements CitizenService{
-	
+public class CitizenServiceDB implements CitizenService {
+
 	private CitizenRepo repo;
-	
+
 	public CitizenServiceDB(CitizenRepo repo) {
 		super();
 		this.repo = repo;
 	}
-	
+
 	@Override
-	public List<Citizen> getAllCitizens(){
+	public List<Citizen> getAllCitizens() {
 		return this.repo.findAll();
 	}
-	
+
 	@Override
-	public List<Citizen> getByCitizenFirstName(String forename){
+	public List<Citizen> getByCitizenFirstName(String forename) {
 		return this.repo.findByForenameIgnoreCase(forename);
 	}
+
 	@Override
-	public List<Citizen> getByCitizenLastName(String surname){
+	public List<Citizen> getByCitizenLastName(String surname) {
 		return this.repo.findBySurnameIgnoreCase(surname);
 	}
+
 	@Override
-	public List<Citizen> getByCitizenAddress(String address){
+	public List<Citizen> getByCitizenAddress(String address) {
 		return this.repo.findByAddressIgnoreCase(address);
 	}
+
 	@Override
-	public List<Citizen> getByCitizenPOB(String placeOfBirth){
+	public List<Citizen> getByCitizenPOB(String placeOfBirth) {
 		return this.repo.findByPlaceOfBirthIgnoreCase(placeOfBirth);
 	}
+
 	@Override
-	public List<Citizen> getByCitizenGender(Gender gender){
+	public List<Citizen> getByCitizenGender(Gender gender) {
 		return this.repo.findByGender(gender);
 	}
+
 	@Override
-	public List<Citizen> getByCitizenDOB(LocalDate dateOfBirth){
+	public List<Citizen> getByCitizenDOB(LocalDate dateOfBirth) {
 		return this.repo.findByDateOfBirth(dateOfBirth);
 	}
-	
+
+	@Override
 	@Transactional
-	public Citizen getByCitizenID(Long id) {
+	public Citizen getByCitizenID(String id) {
 		Citizen found = this.repo.findById(id).get();
 		return found;
 	}
-	
 
 }

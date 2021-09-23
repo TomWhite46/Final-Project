@@ -10,15 +10,19 @@ import com.example.demo.Gender;
 import com.example.demo.data.Person;
 
 @Repository
-public interface PersonRepo extends JpaRepository<Person, Long> {
-	
+public interface PersonRepo extends JpaRepository<Person, String> {
+
 	List<Person> findByPersonForenameIgnoreCase(String forename);
+
 	List<Person> findByPersonSurnameIgnoreCase(String Surname);
+
 	List<Person> findByPersonNationalityIgnoreCase(String nationality);
+
 	List<Person> findByPersonPOBIgnoreCase(String placeOfBirth);
+
 	List<Person> findByPersonGender(Gender gender);
+
 	List<Person> findByPersonDOB(LocalDate dateOfBirth);
-	//List<Person> findIsCitizen(boolean isCitizen);
-	
+	// List<Person> findIsCitizen(boolean isCitizen);
 
 }
