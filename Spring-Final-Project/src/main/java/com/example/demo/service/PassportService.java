@@ -2,8 +2,6 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.stereotype.Service;
 
 import com.example.demo.data.Passport;
@@ -23,7 +21,6 @@ public class PassportService {
 		return this.repo.findAll();
 	}
 
-	@Transactional
 	public Passport getbyPassportNumber(Long id) {
 		Passport found = this.repo.findById(id).get();
 		return found;
