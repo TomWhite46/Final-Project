@@ -1,10 +1,12 @@
 package com.example.demo.data;
 
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Vehicle {
@@ -17,6 +19,9 @@ public class Vehicle {
 	private String vehicleModel;
 	private String vehicleRegistrationNumber;
 	private String vehicleMake;
+
+	@OneToMany(mappedBy = "vehicle")
+	Set<Person_Vehicle> carInfo;
 
 	public Vehicle(Integer vehicleId, String vehicleColour, String vehicleModel, String vehicleRegistrationNumber,
 			String vehicleMake) {

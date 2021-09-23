@@ -10,8 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-
-
 @Embeddable
 @Entity
 public class Person {
@@ -30,6 +28,9 @@ public class Person {
 
 	@OneToMany(mappedBy = "person")
 	Set<Person_Citizen> identity;
+
+	@OneToMany(mappedBy = "person")
+	Set<Person_Vehicle> carInfo;
 
 	public Person(String personID, boolean isCitizen, String personForename, String personSurname, LocalDate personDOB,
 			String personPOB, String personNationality, String personGender) {
