@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Biographical from './tabs/Biographical';
-import BankDetails from './tabs/BankDetails';
+import FinancialTransactions from './tabs/FinancialTransactions';
 import Nav from './Nav';
 import CarInfo from './tabs/CarInfo';
 import Telephone from './tabs/Telephone';
@@ -18,8 +18,8 @@ const Tabs = ({showTabs}) => {
                         <Route exact path="/">
                             <Biographical/>
                         </Route>
-                        <Route path="/bankDetails">
-                            <BankDetails/>
+                        <Route path="/financialTransactions">
+                            <FinancialTransactions/>
                         </Route>
                         <Route path="/carInfo">
                             <CarInfo/>

@@ -34,10 +34,6 @@ a:visited {
   color: black;
 }
 
-.tabs > p {
-  background-color: gray;
-}
-
 .active {
   font-weight:bolder;
 }
@@ -60,6 +56,9 @@ th, td {
 
 tr:nth-child(even) {
   background-color: lightgray;
+}
+tr:nth-child(odd) {
+  background-color: white;
 }
 
 .formInput {
@@ -94,4 +93,16 @@ h2 {
   background-color: lightskyblue;
   text-align: center;
   padding: 10px;
+}
+
+#dataTable > tbody > tr > td:first-child {
+  font-weight: bold;
+}
+
+#dataTable {
+  border: 1px solid black;
+}
+
+.dataDisplay {
+  background-color: gray;
 }

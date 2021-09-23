@@ -1,6 +1,13 @@
+import Phone from "./elements/Phone";
+
 const Telephone = () => {
     return (
-        <p>Telephone</p>
+        <>
+            <div className="dataDisplay">Telephone
+                <Phone/>
+                <Phone/>
+            </div>
+        </>
     )
 }
 

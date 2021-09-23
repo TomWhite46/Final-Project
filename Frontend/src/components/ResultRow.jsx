@@ -1,4 +1,4 @@
-const ResultRow = () => {
+const ResultRow = ({forenames, surname, dob}) => {
     
     const highlightRow = ({target}) => {
         document.querySelectorAll("table > tbody > tr").forEach(row => {
@@ -10,9 +10,9 @@ const ResultRow = () => {
     
     return(
         <tr onClick={(e)=>highlightRow(e)}>
-            <td>a</td>
-            <td>b</td>
-            <td>j</td>
+            <td>{forenames}</td>
+            <td>{surname}</td>
+            <td>{dob}</td>
         </tr>
     );
 }

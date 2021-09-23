@@ -1,6 +1,6 @@
 import ResultRow from "./ResultRow";
 
-const ResultsTable = ({showTable}) => {
+const ResultsTable = ({showTable, searchResults}) => {
     
     console.log(showTable);
 
@@ -16,9 +16,7 @@ const ResultsTable = ({showTable}) => {
                 <th>Date of Birth</th>
             </thead>
             <tbody>
-                <ResultRow/>
-                <ResultRow/>
-                <ResultRow/>
+                {searchResults.map(({forenames, surname, dob}) => <ResultRow forenames={forenames} surname={surname} dob={dob}/>)}
             </tbody>
         </table>
     )

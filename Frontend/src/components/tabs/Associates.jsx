@@ -1,6 +1,7 @@
 const Associates = () => {
     return (
-        <p>Associates</p>
+        <div className="dataDisplay">Associates
+        </div>
     )
 }
 export default Associates;

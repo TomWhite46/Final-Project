@@ -1,6 +1,13 @@
+import Car from "./elements/Car";
+
 const CarInfo = () => {
     return (
-        <p>Car Info</p>
+        <>
+            <div className="dataDisplay">Cars
+                <Car/>
+                <Car/>
+            </div>
+        </>
     )
 }
 
