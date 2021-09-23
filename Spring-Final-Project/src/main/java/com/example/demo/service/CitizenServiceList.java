@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Gender;
+
 import com.example.demo.data.Citizen;
 
 @Service
@@ -60,7 +60,7 @@ public class CitizenServiceList implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenGender(Gender gender) {
+	public List<Citizen> getByCitizenGender(String gender) {
 
 		return null;
 	}

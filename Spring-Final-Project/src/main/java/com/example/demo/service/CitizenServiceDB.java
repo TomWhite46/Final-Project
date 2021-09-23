@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Gender;
+
 import com.example.demo.data.Citizen;
 import com.example.demo.data.repo.CitizenRepo;
 
@@ -49,7 +49,7 @@ public class CitizenServiceDB implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenGender(Gender gender) {
+	public List<Citizen> getByCitizenGender(String gender) {
 		return this.repo.findByGender(gender);
 	}
 

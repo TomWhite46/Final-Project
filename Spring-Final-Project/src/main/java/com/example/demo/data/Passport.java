@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import com.example.demo.Gender;
+
 
 @Entity
 public class Passport {
@@ -19,14 +19,14 @@ public class Passport {
 	private String passportForename;
 	private String passportNationality;
 	private LocalDate passportDateOfBirth;
-	private Gender passportGender;
+	private String passportGender;
 	private String passportPlaceOfBirth;
 	private String passportIssuingCountry;
 	private LocalDate passportDateOfIssue;
 	private LocalDate passportDateOfExpiry;
 
 	public Passport(Long passportNumber, String passportSurname, String passportForename, String passportNationality,
-			LocalDate passportDateOfBirth, Gender passportGender, String passportPlaceOfBirth,
+			LocalDate passportDateOfBirth, String passportGender, String passportPlaceOfBirth,
 			String passportIssuingCountry, LocalDate passportDateOfIssue, LocalDate passportDateOfExpiry) {
 		super();
 		this.passportNumber = passportNumber;
@@ -42,7 +42,7 @@ public class Passport {
 	}
 
 	public Passport(String passportSurname, String passportForename, String passportNationality,
-			LocalDate passportDateOfBirth, Gender passportGender, String passportPlaceOfBirth,
+			LocalDate passportDateOfBirth, String passportGender, String passportPlaceOfBirth,
 			String passportIssuingCountry, LocalDate passportDateOfIssue, LocalDate passportDateOfExpiry) {
 		super();
 		this.passportSurname = passportSurname;
@@ -100,11 +100,11 @@ public class Passport {
 		this.passportDateOfBirth = passportDateOfBirth;
 	}
 
-	public Gender getPassportGender() {
+	public String getPassportGender() {
 		return passportGender;
 	}
 
-	public void setPassportGender(Gender passportGender) {
+	public void setPassportGender(String passportGender) {
 		this.passportGender = passportGender;
 	}
 

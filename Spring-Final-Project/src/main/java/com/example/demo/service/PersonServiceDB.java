@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Gender;
 import com.example.demo.data.Person;
 import com.example.demo.data.repo.PersonRepo;
 
@@ -58,7 +57,7 @@ public class PersonServiceDB implements PersonService {
 	}
 
 	@Override
-	public List<Person> getByPersonGender(Gender gender) {
+	public List<Person> getByPersonGender(String gender) {
 		return this.repo.findByPersonGender(gender);
 	}
 

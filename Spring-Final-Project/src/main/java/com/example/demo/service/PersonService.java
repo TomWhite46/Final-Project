@@ -3,7 +3,7 @@ package com.example.demo.service;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.example.demo.Gender;
+
 import com.example.demo.data.Person;
 
 public interface PersonService {
@@ -22,7 +22,7 @@ public interface PersonService {
 
 	public List<Person> getByPersonPOB(String placeOfBirth);
 
-	public List<Person> getByPersonGender(Gender gender);
+	public List<Person> getByPersonGender(String gender);
 
 	// public List<Person> getCitizens(boolean isCitizen);
 

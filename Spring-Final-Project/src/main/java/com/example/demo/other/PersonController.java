@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.example.demo.Gender;
+
 import com.example.demo.data.Person;
 import com.example.demo.service.PersonService;
 
@@ -53,7 +53,7 @@ public class PersonController {
 	}
 
 	@GetMapping("/getByGender/{gender}")
-	public ResponseEntity<List<Person>> getByPersonGender(@PathVariable Gender gender) {
+	public ResponseEntity<List<Person>> getByPersonGender(@PathVariable String gender) {
 		return new ResponseEntity<>(this.service.getByPersonGender(gender), HttpStatus.OK);
 	}
 

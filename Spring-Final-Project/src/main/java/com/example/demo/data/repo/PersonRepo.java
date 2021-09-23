@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.Gender;
+
 import com.example.demo.data.Person;
 
 @Repository
@@ -20,7 +20,7 @@ public interface PersonRepo extends JpaRepository<Person, String> {
 
 	List<Person> findByPersonPOBIgnoreCase(String placeOfBirth);
 
-	List<Person> findByPersonGender(Gender gender);
+	List<Person> findByPersonGender(String gender);
 
 	List<Person> findByPersonDOB(LocalDate dateOfBirth);
 	// List<Person> findIsCitizen(boolean isCitizen);

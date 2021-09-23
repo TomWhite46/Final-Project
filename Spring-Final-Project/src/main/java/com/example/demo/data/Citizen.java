@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.example.demo.Gender;
+
 
 @Embeddable
 @Entity
@@ -25,13 +25,13 @@ public class Citizen {
 	private String address;
 	private LocalDate dateOfBirth;
 	private String placeOfBirth;
-	private Gender gender;
+	private String gender;
 
 	@OneToMany(mappedBy = "citizen")
 	Set<Person_Citizen> identity;
 
 	public Citizen(String id, String forename, String surname, String address, LocalDate dateOfBirth,
-			String placeOfBirth, Gender gender) {
+			String placeOfBirth, String gender) {
 		super();
 		this.id = id;
 		this.forename = forename;
@@ -43,7 +43,7 @@ public class Citizen {
 	}
 
 	public Citizen(String forename, String surname, String address, LocalDate dateOfBirth, String placeOfBirth,
-			Gender gender) {
+			String gender) {
 		super();
 		this.forename = forename;
 		this.surname = surname;
@@ -124,11 +124,11 @@ public class Citizen {
 		this.placeOfBirth = placeOfBirth;
 	}
 
-	public Gender getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(Gender gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 

@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.example.demo.Gender;
+
 
 @Embeddable
 @Entity
@@ -26,13 +26,13 @@ public class Person {
 	private LocalDate personDOB;
 	private String personPOB;
 	private String personNationality;
-	private Gender personGender;
+	private String personGender;
 
 	@OneToMany(mappedBy = "person")
 	Set<Person_Citizen> identity;
 
 	public Person(String personID, boolean isCitizen, String personForename, String personSurname, LocalDate personDOB,
-			String personPOB, String personNationality, Gender personGender) {
+			String personPOB, String personNationality, String personGender) {
 		super();
 		this.personID = personID;
 		this.isCitizen = isCitizen;
@@ -46,7 +46,7 @@ public class Person {
 	}
 
 	public Person(boolean isCitizen, String personForename, String personSurname, LocalDate personDOB, String personPOB,
-			String personNationality, Gender personGender) {
+			String personNationality, String personGender) {
 		super();
 		this.isCitizen = isCitizen;
 		this.personForename = personForename;
@@ -139,11 +139,11 @@ public class Person {
 		this.personNationality = personNationality;
 	}
 
-	public Gender getPersonGender() {
+	public String getPersonGender() {
 		return personGender;
 	}
 
-	public void setPersonGender(Gender personGender) {
+	public void setPersonGender(String personGender) {
 		this.personGender = personGender;
 	}
 
