@@ -23,7 +23,7 @@ public class Person_Vehicle {
 	private Person person;
 
 	@ManyToOne
-	@MapsId("vehicle_id")
+	@MapsId("vehicleId")
 	@JoinColumn(name = "vehicle_id")
 	private Vehicle vehicle;
 
