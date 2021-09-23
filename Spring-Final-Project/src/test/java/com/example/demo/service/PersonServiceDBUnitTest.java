@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -121,6 +122,20 @@ public class PersonServiceDBUnitTest {
 		assertThat(this.service.getByPersonGender(search)).isEqualTo(testPeople);
 		
 		Mockito.verify(this.repo, Mockito.times(1)).findByPersonGender(search);
+		
+		Mockito.verifyNoMoreInteractions(this.repo);
+	}
+	@Test
+	void testGetByID() {
+		String search = "1";
+		
+		Person testPerson = new Person("1",true,"Rob","Fletcher",LocalDate.of(2000, 05, 30),"Shrewsbury","British","Male");
+		
+		Mockito.when(this.repo.findById(search)).thenReturn(Optional.of(testPerson));
+		
+		assertThat(this.service.getByPersonID(search)).isEqualTo(testPerson);
+		
+		Mockito.verify(this.repo, Mockito.times(1)).findById(search);
 		
 		Mockito.verifyNoMoreInteractions(this.repo);
 	}
