@@ -11,16 +11,16 @@ public interface CitizenService {
 
 	public List<Citizen> getAllCitizens();
 
-	public List<Citizen> getByCitizenFirstName(String forename);
+	public List<Citizen> getByCitizenForenames(String forenames);
 
-	public List<Citizen> getByCitizenLastName(String surname);
+	public List<Citizen> getByCitizenSurname(String surname);
 
 	public List<Citizen> getByCitizenAddress(String address);
 
-	public List<Citizen> getByCitizenDOB(LocalDate dateOfBirth);
+	public List<Citizen> getByCitizenDOB(LocalDate dob);
 
 	public List<Citizen> getByCitizenPOB(String placeOfBirth);
 
-	public List<Citizen> getByCitizenGender(String gender);
+	public List<Citizen> getByCitizenSex(String sex);
 
 }

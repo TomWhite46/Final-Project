@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.data.Person;
 import com.example.demo.service.PersonService;
 
-
 @RestController
 @CrossOrigin
 public class PersonController {
@@ -31,14 +30,14 @@ public class PersonController {
 		return new ResponseEntity<>(created, HttpStatus.OK);
 	}
 
-	@GetMapping("/getByFirstName/{forename}")
-	public ResponseEntity<List<Person>> getByPersonFirstName(@PathVariable String forename) {
-		return new ResponseEntity<>(this.service.getByPersonFirstName(forename), HttpStatus.OK);
+	@GetMapping("/GetByPersonForenames/{forenames}")
+	public ResponseEntity<List<Person>> getByPersonForename(@PathVariable String forenames) {
+		return new ResponseEntity<>(this.service.getByPersonForenames(forenames), HttpStatus.OK);
 	}
 
 	@GetMapping("/getByLastName/{surname}")
-	public ResponseEntity<List<Person>> getByPersonLastName(@PathVariable String surname) {
-		return new ResponseEntity<>(this.service.getByPersonLastName(surname), HttpStatus.OK);
+	public ResponseEntity<List<Person>> getByPersonSurname(@PathVariable String surname) {
+		return new ResponseEntity<>(this.service.getByPersonSurname(surname), HttpStatus.OK);
 	}
 
 	@GetMapping("/getByNationality/{nationality}")
@@ -47,8 +46,8 @@ public class PersonController {
 	}
 
 	@GetMapping("/getByDOB/{dateOfBirth}")
-	public ResponseEntity<List<Person>> getByPersonDOB(@PathVariable LocalDate dateOfBirth) {
-		return new ResponseEntity<>(this.service.getByPersonDOB(dateOfBirth), HttpStatus.OK);
+	public ResponseEntity<List<Person>> getByPersonDOB(@PathVariable LocalDate dob) {
+		return new ResponseEntity<>(this.service.getByPersonDOB(dob), HttpStatus.OK);
 	}
 
 	@GetMapping("/getByPOB/{placeOfBirth}")
@@ -56,9 +55,9 @@ public class PersonController {
 		return new ResponseEntity<>(this.service.getByPersonPOB(placeOfBirth), HttpStatus.OK);
 	}
 
-	@GetMapping("/getByGender/{gender}")
-	public ResponseEntity<List<Person>> getByPersonGender(@PathVariable String gender) {
-		return new ResponseEntity<>(this.service.getByPersonGender(gender), HttpStatus.OK);
+	@GetMapping("/getByPersonSex/{sex}")
+	public ResponseEntity<List<Person>> getByPersonSex(@PathVariable String sex) {
+		return new ResponseEntity<>(this.service.getByPersonSex(sex), HttpStatus.OK);
 	}
 
 	@GetMapping("/getByID/{id}")

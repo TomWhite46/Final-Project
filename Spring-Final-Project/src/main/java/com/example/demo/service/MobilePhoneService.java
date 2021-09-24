@@ -19,7 +19,7 @@ public class MobilePhoneService {
 		this.repo = repo;
 	}
 
-	public List<MobilePhone> getAllPassports() {
+	public List<MobilePhone> getAllMobilePhones() {
 		return this.repo.findAll();
 	}
 

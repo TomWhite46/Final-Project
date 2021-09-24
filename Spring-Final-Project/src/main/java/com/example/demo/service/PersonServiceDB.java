@@ -32,12 +32,12 @@ public class PersonServiceDB implements PersonService {
 	}
 
 	@Override
-	public List<Person> getByPersonFirstName(String forename) {
-		return this.repo.findByPersonForenameIgnoreCase(forename);
+	public List<Person> getByPersonForenames(String forenames) {
+		return this.repo.findByPersonForenameIgnoreCase(forenames);
 	}
 
 	@Override
-	public List<Person> getByPersonLastName(String surname) {
+	public List<Person> getByPersonSurname(String surname) {
 		return this.repo.findByPersonSurnameIgnoreCase(surname);
 	}
 
@@ -57,8 +57,8 @@ public class PersonServiceDB implements PersonService {
 	}
 
 	@Override
-	public List<Person> getByPersonGender(String gender) {
-		return this.repo.findByPersonGender(gender);
+	public List<Person> getByPersonSex(String sex) {
+		return this.repo.findByPersonSex(sex);
 	}
 
 	// @Override

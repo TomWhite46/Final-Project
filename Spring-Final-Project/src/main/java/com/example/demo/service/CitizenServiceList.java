@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-
 import com.example.demo.data.Citizen;
 
 @Service
@@ -30,13 +29,13 @@ public class CitizenServiceList implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenFirstName(String forename) {
+	public List<Citizen> getByCitizenForenames(String forenames) {
 
 		return null;
 	}
 
 	@Override
-	public List<Citizen> getByCitizenLastName(String surname) {
+	public List<Citizen> getByCitizenSurname(String surname) {
 
 		return null;
 	}
@@ -48,7 +47,7 @@ public class CitizenServiceList implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenDOB(LocalDate dateOfBirth) {
+	public List<Citizen> getByCitizenDOB(LocalDate dob) {
 
 		return null;
 	}
@@ -60,7 +59,7 @@ public class CitizenServiceList implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenGender(String gender) {
+	public List<Citizen> getByCitizenSex(String sex) {
 
 		return null;
 	}

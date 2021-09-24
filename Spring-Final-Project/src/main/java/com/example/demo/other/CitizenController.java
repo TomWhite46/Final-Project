@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.example.demo.data.Citizen;
 import com.example.demo.service.CitizenService;
 
@@ -31,14 +30,14 @@ public class CitizenController {
 		return new ResponseEntity<>(created, HttpStatus.OK);
 	}
 
-	@GetMapping("/getByCitizenFirstName/{forename}")
-	public ResponseEntity<List<Citizen>> getByCitizenFirstName(@PathVariable String forename) {
-		return new ResponseEntity<>(this.service.getByCitizenFirstName(forename), HttpStatus.OK);
+	@GetMapping("/getByCitizenForename/{forename}")
+	public ResponseEntity<List<Citizen>> getByCitizenForename(@PathVariable String forenames) {
+		return new ResponseEntity<>(this.service.getByCitizenForenames(forenames), HttpStatus.OK);
 	}
 
 	@GetMapping("/getByCitizenLastName/{surname}")
-	public ResponseEntity<List<Citizen>> getByCitizenLastName(@PathVariable String surname) {
-		return new ResponseEntity<>(this.service.getByCitizenLastName(surname), HttpStatus.OK);
+	public ResponseEntity<List<Citizen>> getByCitizenSurname(@PathVariable String surname) {
+		return new ResponseEntity<>(this.service.getByCitizenSurname(surname), HttpStatus.OK);
 	}
 
 	@GetMapping("/getByCitizenAddress/{address}")
@@ -57,8 +56,8 @@ public class CitizenController {
 	}
 
 	@GetMapping("/getByCitizenGender/{gender}")
-	public ResponseEntity<List<Citizen>> getByCitizenGender(@PathVariable String gender) {
-		return new ResponseEntity<>(this.service.getByCitizenGender(gender), HttpStatus.OK);
+	public ResponseEntity<List<Citizen>> getByCitizenSex(@PathVariable String sex) {
+		return new ResponseEntity<>(this.service.getByCitizenSex(sex), HttpStatus.OK);
 	}
 
 	@GetMapping("/getByCitizenID/{id}")
