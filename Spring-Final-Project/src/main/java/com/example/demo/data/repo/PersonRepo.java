@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.data.Person;
 
 @Repository
-public interface PersonRepo extends JpaRepository<Person, String> {
+public interface PersonRepo extends JpaRepository<Person, Long> {
 
-	List<Person> findByPersonForenameIgnoreCase(String forename);
+	List<Person> findByPersonForenamesIgnoreCase(String forenames);
 
 	List<Person> findByPersonSurnameIgnoreCase(String Surname);
 

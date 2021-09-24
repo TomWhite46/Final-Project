@@ -12,12 +12,16 @@ import javax.persistence.OneToMany;
 public class Vehicle {
 
 	@Id
+	@Column(name = "vehicle_id")
 	private Integer vehicleId;
 
-	@Column
+	@Column(name = "colour")
 	private String vehicleColour;
+	@Column(name = "model")
 	private String vehicleModel;
+	@Column(name = "vehicle_registration_number")
 	private String vehicleRegistrationNumber;
+	@Column(name = "make")
 	private String vehicleMake;
 
 	@OneToMany(mappedBy = "vehicle")

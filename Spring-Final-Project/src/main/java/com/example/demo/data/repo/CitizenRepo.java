@@ -11,7 +11,7 @@ import com.example.demo.data.Citizen;
 @Repository
 public interface CitizenRepo extends JpaRepository<Citizen, String> {
 
-	List<Citizen> findByForenameIgnoreCase(String forename);
+	List<Citizen> findByForenamesIgnoreCase(String forenames);
 
 	List<Citizen> findBySurnameIgnoreCase(String surname);
 
@@ -21,6 +21,6 @@ public interface CitizenRepo extends JpaRepository<Citizen, String> {
 
 	List<Citizen> findBySex(String sex);
 
-	List<Citizen> findByDateOfBirth(LocalDate dateOfBirth);
+	List<Citizen> findByDob(LocalDate dob);
 
 }

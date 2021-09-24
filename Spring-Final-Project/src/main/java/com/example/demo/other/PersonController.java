@@ -31,7 +31,7 @@ public class PersonController {
 	}
 
 	@GetMapping("/GetByPersonForenames/{forenames}")
-	public ResponseEntity<List<Person>> getByPersonForename(@PathVariable String forenames) {
+	public ResponseEntity<List<Person>> getByPersonForenames(@PathVariable String forenames) {
 		return new ResponseEntity<>(this.service.getByPersonForenames(forenames), HttpStatus.OK);
 	}
 
@@ -61,7 +61,7 @@ public class PersonController {
 	}
 
 	@GetMapping("/getByID/{id}")
-	public ResponseEntity<Person> getByPersonID(@PathVariable String id) {
+	public ResponseEntity<Person> getByPersonID(@PathVariable Long id) {
 		return new ResponseEntity<>(this.service.getByPersonID(id), HttpStatus.OK);
 	}
 

@@ -7,7 +7,7 @@ import com.example.demo.data.Person;
 
 public interface PersonService {
 
-	public Person getByPersonID(String personID);
+	public Person getByPersonID(Long id);
 
 	public List<Person> getAllPerson();
 

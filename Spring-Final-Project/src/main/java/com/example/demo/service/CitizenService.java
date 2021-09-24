@@ -17,7 +17,7 @@ public interface CitizenService {
 
 	public List<Citizen> getByCitizenAddress(String address);
 
-	public List<Citizen> getByCitizenDOB(LocalDate dob);
+	public List<Citizen> getByCitizenDob(LocalDate dob);
 
 	public List<Citizen> getByCitizenPOB(String placeOfBirth);
 

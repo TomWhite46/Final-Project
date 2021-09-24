@@ -47,7 +47,7 @@ public class CitizenServiceList implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenDOB(LocalDate dob) {
+	public List<Citizen> getByCitizenDob(LocalDate dob) {
 
 		return null;
 	}

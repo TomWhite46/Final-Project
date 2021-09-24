@@ -21,7 +21,7 @@ public class PersonServiceDB implements PersonService {
 	}
 
 	@Override
-	public Person getByPersonID(String personID) {
+	public Person getByPersonID(Long personID) {
 		Person found = this.repo.findById(personID).get();
 		return found;
 	}
@@ -33,7 +33,7 @@ public class PersonServiceDB implements PersonService {
 
 	@Override
 	public List<Person> getByPersonForenames(String forenames) {
-		return this.repo.findByPersonForenameIgnoreCase(forenames);
+		return this.repo.findByPersonForenamesIgnoreCase(forenames);
 	}
 
 	@Override

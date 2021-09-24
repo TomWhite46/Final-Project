@@ -29,7 +29,7 @@ public class CitizenServiceDB implements CitizenService {
 
 	@Override
 	public List<Citizen> getByCitizenForenames(String forenames) {
-		return this.repo.findByForenameIgnoreCase(forenames);
+		return this.repo.findByForenamesIgnoreCase(forenames);
 	}
 
 	@Override
@@ -53,8 +53,8 @@ public class CitizenServiceDB implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenDOB(LocalDate dob) {
-		return this.repo.findByDateOfBirth(dob);
+	public List<Citizen> getByCitizenDob(LocalDate dob) {
+		return this.repo.findByDob(dob);
 	}
 
 	@Override

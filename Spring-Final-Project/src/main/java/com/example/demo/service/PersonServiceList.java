@@ -20,7 +20,7 @@ public class PersonServiceList implements PersonService {
 	private List<Person> people = new ArrayList<>();
 
 	@Override
-	public Person getByPersonID(String personID) {
+	public Person getByPersonID(Long personID) {
 
 		return null;
 	}

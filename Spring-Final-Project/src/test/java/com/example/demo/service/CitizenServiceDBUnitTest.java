@@ -50,11 +50,11 @@ public class CitizenServiceDBUnitTest {
 
 		String search = "rob";
 
-		Mockito.when(this.repo.findByForenameIgnoreCase(search)).thenReturn(testCitizens);
+		Mockito.when(this.repo.findByForenamesIgnoreCase(search)).thenReturn(testCitizens);
 
 		assertThat(this.service.getByCitizenForenames(search)).isEqualTo(testCitizens);
 
-		Mockito.verify(this.repo, Mockito.times(1)).findByForenameIgnoreCase(search);
+		Mockito.verify(this.repo, Mockito.times(1)).findByForenamesIgnoreCase(search);
 
 		Mockito.verifyNoMoreInteractions(this.repo);
 
@@ -101,11 +101,11 @@ public class CitizenServiceDBUnitTest {
 
 		LocalDate testDOB = LocalDate.of(2000, 05, 30);
 
-		Mockito.when(this.repo.findByDateOfBirth(testDOB)).thenReturn(testCitizens);
+		Mockito.when(this.repo.findByDob(testDOB)).thenReturn(testCitizens);
 
-		assertThat(this.service.getByCitizenDOB(testDOB)).isEqualTo(testCitizens);
+		assertThat(this.service.getByCitizenDob(testDOB)).isEqualTo(testCitizens);
 
-		Mockito.verify(this.repo, Mockito.times(1)).findByDateOfBirth(testDOB);
+		Mockito.verify(this.repo, Mockito.times(1)).findByDob(testDOB);
 
 		Mockito.verifyNoMoreInteractions(this.repo);
 

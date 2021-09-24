@@ -30,8 +30,8 @@ public class CitizenController {
 		return new ResponseEntity<>(created, HttpStatus.OK);
 	}
 
-	@GetMapping("/getByCitizenForename/{forename}")
-	public ResponseEntity<List<Citizen>> getByCitizenForename(@PathVariable String forenames) {
+	@GetMapping("/getByCitizenForenames/{forenames}")
+	public ResponseEntity<List<Citizen>> getByCitizenForenames(@PathVariable String forenames) {
 		return new ResponseEntity<>(this.service.getByCitizenForenames(forenames), HttpStatus.OK);
 	}
 
@@ -45,9 +45,9 @@ public class CitizenController {
 		return new ResponseEntity<>(this.service.getByCitizenAddress(address), HttpStatus.OK);
 	}
 
-	@GetMapping("/getByCitizenDOB/{dateOfBirth}")
-	public ResponseEntity<List<Citizen>> getByCitizenDOB(@PathVariable LocalDate dateOfBirth) {
-		return new ResponseEntity<>(this.service.getByCitizenDOB(dateOfBirth), HttpStatus.OK);
+	@GetMapping("/getByCitizenDob/{dob}")
+	public ResponseEntity<List<Citizen>> getByCitizenDob(@PathVariable LocalDate dob) {
+		return new ResponseEntity<>(this.service.getByCitizenDob(dob), HttpStatus.OK);
 	}
 
 	@GetMapping("/getByCitizenPOB/{placeOfBirth}")
