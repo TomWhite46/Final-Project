@@ -1,13 +1,12 @@
 package com.example.demo.service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import com.example.demo.data.Citizen;
 
 public interface CitizenService {
 
-	public Citizen getByCitizenID(String id);
+	public Citizen getByCitizenID(Float id);
 
 	public List<Citizen> getAllCitizens();
 
@@ -17,7 +16,7 @@ public interface CitizenService {
 
 	public List<Citizen> getByCitizenAddress(String address);
 
-	public List<Citizen> getByCitizenDob(LocalDate dob);
+	public List<Citizen> getByCitizenDob(String dob);
 
 	public List<Citizen> getByCitizenPOB(String placeOfBirth);
 

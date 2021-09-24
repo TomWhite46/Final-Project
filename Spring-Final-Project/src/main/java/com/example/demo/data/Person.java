@@ -1,6 +1,5 @@
 package com.example.demo.data;
 
-import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Set;
 
@@ -25,7 +24,7 @@ public class Person {
 	@Column(name = "surname")
 	private String personSurname;
 	@Column(name = "dob")
-	private LocalDate personDOB;
+	private String personDOB;
 	@Column(name = "place_of_birth")
 	private String personPOB;
 	@Column(name = "nationality")
@@ -39,7 +38,7 @@ public class Person {
 	@OneToMany(mappedBy = "person")
 	Set<Person_Vehicle> carInfo;
 
-	public Person(Long personID, String isCitizen, String personForenames, String personSurname, LocalDate personDOB,
+	public Person(Long personID, String isCitizen, String personForenames, String personSurname, String personDOB,
 			String personPOB, String personNationality, String personSex) {
 		super();
 		this.personID = personID;
@@ -53,7 +52,7 @@ public class Person {
 
 	}
 
-	public Person(String isCitizen, String personForenames, String personSurname, LocalDate personDOB, String personPOB,
+	public Person(String isCitizen, String personForenames, String personSurname, String personDOB, String personPOB,
 			String personNationality, String personSex) {
 		super();
 		this.isCitizen = isCitizen;
@@ -123,11 +122,11 @@ public class Person {
 		this.personSurname = personSurname;
 	}
 
-	public LocalDate getPersonDOB() {
+	public String getPersonDOB() {
 		return personDOB;
 	}
 
-	public void setPersonDOB(LocalDate personDOB) {
+	public void setPersonDOB(String personDOB) {
 		this.personDOB = personDOB;
 	}
 

@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import com.example.demo.data.Person;
@@ -17,7 +16,7 @@ public interface PersonService {
 
 	public List<Person> getByPersonNationality(String nationality);
 
-	public List<Person> getByPersonDOB(LocalDate dob);
+	public List<Person> getByPersonDOB(String dob);
 
 	public List<Person> getByPersonPOB(String placeOfBirth);
 

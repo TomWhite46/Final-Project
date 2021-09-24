@@ -1,6 +1,5 @@
 package com.example.demo.data.repo;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -21,7 +20,7 @@ public interface PersonRepo extends JpaRepository<Person, Long> {
 
 	List<Person> findByPersonSex(String sex);
 
-	List<Person> findByPersonDOB(LocalDate dateOfBirth);
+	List<Person> findByPersonDOB(String dateOfBirth);
 	// List<Person> findIsCitizen(boolean isCitizen);
 
 }

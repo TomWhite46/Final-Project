@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -22,8 +22,11 @@ public class PersonServiceDB implements PersonService {
 
 	@Override
 	public Person getByPersonID(Long personID) {
-		Person found = this.repo.findById(personID).get();
-		return found;
+		Optional<Person> found = this.repo.findById(personID);
+		if (found.isEmpty())
+			return null;
+
+		return found.get();
 	}
 
 	@Override
@@ -47,7 +50,7 @@ public class PersonServiceDB implements PersonService {
 	}
 
 	@Override
-	public List<Person> getByPersonDOB(LocalDate dateOfBirth) {
+	public List<Person> getByPersonDOB(String dateOfBirth) {
 		return this.repo.findByPersonDOB(dateOfBirth);
 	}
 

@@ -1,8 +1,8 @@
 package com.example.demo.other;
 
-import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,6 +19,7 @@ public class CitizenController {
 
 	private CitizenService service;
 
+	@Autowired
 	public CitizenController(CitizenService service) {
 		super();
 		this.service = service;
@@ -46,7 +47,8 @@ public class CitizenController {
 	}
 
 	@GetMapping("/getByCitizenDob/{dob}")
-	public ResponseEntity<List<Citizen>> getByCitizenDob(@PathVariable LocalDate dob) {
+	public ResponseEntity<List<Citizen>> getByCitizenDob(@PathVariable String dob) {
+
 		return new ResponseEntity<>(this.service.getByCitizenDob(dob), HttpStatus.OK);
 	}
 
@@ -55,14 +57,19 @@ public class CitizenController {
 		return new ResponseEntity<>(this.service.getByCitizenPOB(placeOfBirth), HttpStatus.OK);
 	}
 
-	@GetMapping("/getByCitizenGender/{gender}")
+	@GetMapping("/getByCitizenSex/{sex}")
 	public ResponseEntity<List<Citizen>> getByCitizenSex(@PathVariable String sex) {
 		return new ResponseEntity<>(this.service.getByCitizenSex(sex), HttpStatus.OK);
 	}
 
 	@GetMapping("/getByCitizenID/{id}")
-	public ResponseEntity<Citizen> getByCitizenID(@PathVariable String id) {
+	public ResponseEntity<Citizen> getByCitizenID(@PathVariable Float id) {
 		return new ResponseEntity<>(this.service.getByCitizenID(id), HttpStatus.OK);
 	}
 
+//	@GetMapping("/getAll/{forenames}/{surname}")
+//	public ResponseEntity<List<Citizen>> sortAndFilterCitizens(@PathVariable String forenames,
+//			@PathVariable String surname, @RequestBody Citizen citizen) {
+//			return ResponseEntity.ok(this.service.sortAndFilterCitizens(forenames, surname, citizen));
+//	}
 }

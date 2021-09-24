@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class CitizenServiceList implements CitizenService {
 	private List<Citizen> citizens = new ArrayList<>();
 
 	@Override
-	public Citizen getByCitizenID(String id) {
+	public Citizen getByCitizenID(Float id) {
 
 		return null;
 	}
@@ -47,7 +46,7 @@ public class CitizenServiceList implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenDob(LocalDate dob) {
+	public List<Citizen> getByCitizenDob(String dob) {
 
 		return null;
 	}

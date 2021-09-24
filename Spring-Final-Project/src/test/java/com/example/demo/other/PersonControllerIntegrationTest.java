@@ -5,10 +5,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hamcrest.text.IsEmptyString;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -47,8 +47,7 @@ public class PersonControllerIntegrationTest {
 
 		RequestBuilder request = get("/getAllPeople");
 
-		Person testPerson = new Person((long) 1, "true", "Clive", "Clivedon", LocalDate.of(1995, 03, 12), "CliveTown",
-				"British", "Male");
+		Person testPerson = new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male");
 		testPerson.setPersonID((long) 1);
 
 		List<Person> testPeople = new ArrayList<Person>();
@@ -64,19 +63,138 @@ public class PersonControllerIntegrationTest {
 	}
 
 	@Test
-	void testFindByName() throws Exception {
-		RequestBuilder request = get("/getByFirstName/Clive");
+	void testFindByForename() throws Exception {
+		RequestBuilder request = get("/GetByPersonForenames/Bob");
 
 		ResultMatcher checkStatus = status().isOk();
 
-		List<Person> testPerson = List.of(new Person((long) 1, "true", "Clive", "Clivedon", LocalDate.of(1995, 03, 12),
-				"CliveTown", "British", "Male"));
+		List<Person> testPerson = List
+				.of(new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male"));
 
 		String testPersonAsJSON = this.mapper.writeValueAsString(testPerson);
 
 		ResultMatcher checkBody = content().json(testPersonAsJSON);
 
 		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
+	}
+
+	@Test
+	void testFindBySurname() throws Exception {
+		RequestBuilder request = get("/getByLastName/Norman");
+
+		ResultMatcher checkStatus = status().isOk();
+
+		List<Person> testPerson = List
+				.of(new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male"));
+
+		System.out.println(testPerson);
+		String testPersonAsJSON = this.mapper.writeValueAsString(testPerson);
+
+		ResultMatcher checkBody = content().json(testPersonAsJSON);
+		System.out.println(testPersonAsJSON);
+		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
+	}
+
+	@Test
+	void testFindByNationality() throws Exception {
+		RequestBuilder request = get("/getByNationality/British");
+
+		ResultMatcher checkStatus = status().isOk();
+
+		List<Person> testPerson = List
+				.of(new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male"));
+
+		String testPersonAsJson = this.mapper.writeValueAsString(testPerson);
+
+		ResultMatcher checkBody = content().json(testPersonAsJson);
+		this.mockMVC.perform(request).andExpect(checkBody).andExpect(checkStatus);
+
+	}
+
+	@Test
+	void testFindByDob() throws Exception {
+		RequestBuilder request = get("/getByDOB/1995-13-12");
+
+		ResultMatcher checkStatus = status().isOk();
+
+		List<Person> testPerson = List
+				.of(new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male"));
+
+		String testPersonAsJson = this.mapper.writeValueAsString(testPerson);
+
+		ResultMatcher checkBody = content().json(testPersonAsJson);
+		this.mockMVC.perform(request).andExpect(checkBody).andExpect(checkStatus);
+
+	}
+
+	@Test
+	void testFindPersonBySex() throws Exception {
+		RequestBuilder request = get("/getByPersonSex/Male");
+
+		ResultMatcher checkStatus = status().isOk();
+
+		List<Person> testPerson = List
+				.of(new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male"));
+
+		String testPersonAsJson = this.mapper.writeValueAsString(testPerson);
+
+		ResultMatcher checkBody = content().json(testPersonAsJson);
+		this.mockMVC.perform(request).andExpect(checkBody).andExpect(checkStatus);
+
+	}
+
+	@Test
+	void testFindPersonById() throws Exception {
+		RequestBuilder request = get("/getByID/1");
+
+		ResultMatcher checkStatus = status().isOk();
+
+		Person testPerson = new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male");
+
+		String testPersonAsJson = this.mapper.writeValueAsString(testPerson);
+
+		ResultMatcher checkBody = content().json(testPersonAsJson);
+		this.mockMVC.perform(request).andExpect(checkBody).andExpect(checkStatus);
+
+	}
+
+	@Test
+	void testNotFindingPersonById() throws Exception {
+		RequestBuilder request = get("/getByID/2");
+
+		this.mockMVC.perform(request).andExpect(status().isOk())
+				.andExpect(content().string(IsEmptyString.emptyOrNullString()));
+
+	}
+
+	@Test
+	void testNotFindingPersonByForename() throws Exception {
+		RequestBuilder request = get("/GetByPersonForenames/Clive");
+
+		ResultMatcher checkBody = content().json("[]");
+
+		this.mockMVC.perform(request).andExpect(status().isOk()).andExpect(checkBody);
+
+	}
+
+	@Test
+	void testNotFindingPersonBySurname() throws Exception {
+		RequestBuilder request = get("/getByLastName/Clive");
+
+		ResultMatcher checkBody = content().json("[]");
+
+		this.mockMVC.perform(request).andExpect(status().isOk()).andExpect(checkBody);
+
+	}
+
+	@Test
+	void testNotFindingPersonByDob() throws Exception {
+		RequestBuilder request = get("/getByDOB/1966-12-09");
+
+		ResultMatcher checkBody = content().json("[]");
+
+		this.mockMVC.perform(request).andExpect(status().isOk()).andExpect(checkBody);
+
 	}
 
 }

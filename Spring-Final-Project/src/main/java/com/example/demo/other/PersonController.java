@@ -1,6 +1,5 @@
 package com.example.demo.other;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -45,8 +44,8 @@ public class PersonController {
 		return new ResponseEntity<>(this.service.getByPersonNationality(nationality), HttpStatus.OK);
 	}
 
-	@GetMapping("/getByDOB/{dateOfBirth}")
-	public ResponseEntity<List<Person>> getByPersonDOB(@PathVariable LocalDate dob) {
+	@GetMapping("/getByDOB/{dob}")
+	public ResponseEntity<List<Person>> getByPersonDOB(@PathVariable String dob) {
 		return new ResponseEntity<>(this.service.getByPersonDOB(dob), HttpStatus.OK);
 	}
 

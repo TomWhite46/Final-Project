@@ -1,13 +1,13 @@
 
 drop table if exists person CASCADE;
  
-create table person (
-	person_id bigint PRIMARY KEY,
-	is_citizen varchar(5), 
-	surname varchar(64), 
-	place_of_birth varchar(64), 
-	sex varchar(16),
-	nationality varchar(64),
-	dob date,
-	forenames varchar(64)
-);
+CREATE TABLE person (
+	is_citizen VARCHAR(5),
+    person_id BIGINT PRIMARY KEY,
+    surname VARCHAR(64),
+    place_of_birth VARCHAR(64),
+    sex VARCHAR(16),
+    nationality VARCHAR(64),
+    dob VARCHAR(64),
+    forenames VARCHAR(64)
+    );

@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +35,7 @@ public class PersonServiceList implements PersonService {
 
 	@Override
 	public List<Person> getByPersonForenames(String forenames) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
@@ -53,7 +52,7 @@ public class PersonServiceList implements PersonService {
 	}
 
 	@Override
-	public List<Person> getByPersonDOB(LocalDate dateOfBirth) {
+	public List<Person> getByPersonDOB(String dateOfBirth) {
 		// TODO Auto-generated method stub
 		return null;
 	}

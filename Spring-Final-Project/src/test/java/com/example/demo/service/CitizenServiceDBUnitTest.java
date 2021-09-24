@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,9 +26,14 @@ public class CitizenServiceDBUnitTest {
 	private CitizenRepo repo;
 
 	@Test
+	void contextLoads() throws Exception {
+		assertThat(service).isNotNull();
+	}
+
+	@Test
 	void testGetAll() {
-		List<Citizen> testCitizens = List.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close",
-				LocalDate.of(2000, 05, 30), "Shrewsbury", "Male"));
+		List<Citizen> testCitizens = List
+				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		Mockito.when(this.repo.findAll()).thenReturn(testCitizens);
 
@@ -38,15 +42,14 @@ public class CitizenServiceDBUnitTest {
 		assertThat(testCitizens.size()).isEqualTo(1);
 
 		Mockito.verify(this.repo, Mockito.times(1)).findAll();
-
 		Mockito.verifyNoMoreInteractions(this.repo);
 
 	}
 
 	@Test
 	void testGetByFirstName() {
-		List<Citizen> testCitizens = List.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close",
-				LocalDate.of(2000, 05, 30), "Shrewsbury", "Male"));
+		List<Citizen> testCitizens = List
+				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String search = "rob";
 
@@ -55,15 +58,14 @@ public class CitizenServiceDBUnitTest {
 		assertThat(this.service.getByCitizenForenames(search)).isEqualTo(testCitizens);
 
 		Mockito.verify(this.repo, Mockito.times(1)).findByForenamesIgnoreCase(search);
-
 		Mockito.verifyNoMoreInteractions(this.repo);
 
 	}
 
 	@Test
 	void testGetByLastName() {
-		List<Citizen> testCitizens = List.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close",
-				LocalDate.of(2000, 05, 30), "Shrewsbury", "Male"));
+		List<Citizen> testCitizens = List
+				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String search = "fletcher";
 
@@ -72,15 +74,14 @@ public class CitizenServiceDBUnitTest {
 		assertThat(this.service.getByCitizenSurname(search)).isEqualTo(testCitizens);
 
 		Mockito.verify(this.repo, Mockito.times(1)).findBySurnameIgnoreCase(search);
-
 		Mockito.verifyNoMoreInteractions(this.repo);
 
 	}
 
 	@Test
 	void testGetByAddress() {
-		List<Citizen> testCitizens = List.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close",
-				LocalDate.of(2000, 05, 30), "Shrewsbury", "Male"));
+		List<Citizen> testCitizens = List
+				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String search = "2 Grange Close";
 
@@ -89,32 +90,30 @@ public class CitizenServiceDBUnitTest {
 		assertThat(this.service.getByCitizenAddress(search)).isEqualTo(testCitizens);
 
 		Mockito.verify(this.repo, Mockito.times(1)).findByAddressIgnoreCase(search);
-
 		Mockito.verifyNoMoreInteractions(this.repo);
 
 	}
 
 	@Test
 	void testGetByDOB() {
-		List<Citizen> testCitizens = List.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close",
-				LocalDate.of(2000, 05, 30), "Shrewsbury", "Male"));
+		List<Citizen> testCitizens = List
+				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
-		LocalDate testDOB = LocalDate.of(2000, 05, 30);
+		String testDOB = "2000, 05, 30";
 
 		Mockito.when(this.repo.findByDob(testDOB)).thenReturn(testCitizens);
 
 		assertThat(this.service.getByCitizenDob(testDOB)).isEqualTo(testCitizens);
 
 		Mockito.verify(this.repo, Mockito.times(1)).findByDob(testDOB);
-
 		Mockito.verifyNoMoreInteractions(this.repo);
 
 	}
 
 	@Test
 	void testGetByPOB() {
-		List<Citizen> testCitizens = List.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close",
-				LocalDate.of(2000, 05, 30), "Shrewsbury", "Male"));
+		List<Citizen> testCitizens = List
+				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String search = "shrewsbury";
 
@@ -123,15 +122,14 @@ public class CitizenServiceDBUnitTest {
 		assertThat(this.service.getByCitizenPOB(search)).isEqualTo(testCitizens);
 
 		Mockito.verify(this.repo, Mockito.times(1)).findByPlaceOfBirthIgnoreCase(search);
-
 		Mockito.verifyNoMoreInteractions(this.repo);
 
 	}
 
 	@Test
 	void testGetByGender() {
-		List<Citizen> testCitizens = List.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close",
-				LocalDate.of(2000, 05, 30), "Shrewsbury", "Male"));
+		List<Citizen> testCitizens = List
+				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String search = "Male";
 
@@ -140,24 +138,22 @@ public class CitizenServiceDBUnitTest {
 		assertThat(this.service.getByCitizenSex(search)).isEqualTo(testCitizens);
 
 		Mockito.verify(this.repo, Mockito.times(1)).findBySex(search);
-
 		Mockito.verifyNoMoreInteractions(this.repo);
 
 	}
 
 	@Test
 	void testGetByID() {
-		String search = "1";
+		Float search = (float) 1;
 
-		Citizen testCitizen = new Citizen(search, "Rob", "Fletcher", "2 Grange Close", LocalDate.of(2000, 05, 30),
-				"Shrewsbury", "Male");
+		Citizen testCitizen = new Citizen(search, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury",
+				"Male");
 
 		Mockito.when(this.repo.findById(search)).thenReturn(Optional.of(testCitizen));
 
 		assertThat(this.service.getByCitizenID(search)).isEqualTo(testCitizen);
 
 		Mockito.verify(this.repo, Mockito.times(1)).findById(search);
-
 		Mockito.verifyNoMoreInteractions(this.repo);
 
 	}

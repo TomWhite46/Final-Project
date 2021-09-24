@@ -1,6 +1,5 @@
 package com.example.demo.data.repo;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.data.Citizen;
 
 @Repository
-public interface CitizenRepo extends JpaRepository<Citizen, String> {
+public interface CitizenRepo extends JpaRepository<Citizen, Float> {
 
 	List<Citizen> findByForenamesIgnoreCase(String forenames);
 
@@ -21,6 +20,6 @@ public interface CitizenRepo extends JpaRepository<Citizen, String> {
 
 	List<Citizen> findBySex(String sex);
 
-	List<Citizen> findByDob(LocalDate dob);
+	List<Citizen> findByDob(String dob);
 
 }

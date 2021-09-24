@@ -1,9 +1,7 @@
 package com.example.demo.service;
 
-import java.time.LocalDate;
 import java.util.List;
-
-import javax.transaction.Transactional;
+import java.util.Optional;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -53,15 +51,17 @@ public class CitizenServiceDB implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenDob(LocalDate dob) {
+	public List<Citizen> getByCitizenDob(String dob) {
 		return this.repo.findByDob(dob);
 	}
 
 	@Override
-	@Transactional
-	public Citizen getByCitizenID(String id) {
-		Citizen found = this.repo.findById(id).get();
-		return found;
+	public Citizen getByCitizenID(Float id) {
+		Optional<Citizen> found = this.repo.findById(id);
+		if (found.isEmpty())
+			return null;
+
+		return found.get();
 	}
 
 }
