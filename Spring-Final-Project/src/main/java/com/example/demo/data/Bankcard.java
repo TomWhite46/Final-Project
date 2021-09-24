@@ -10,10 +10,12 @@ import javax.persistence.Id;
 public class Bankcard {
 
 	@Id
+	@Column(name="bankcard_id")
 	private Integer bankcardId;
 
-	@Column
+	@Column(name="sort_code")
 	private String bankcardSortcode;
+	@Column(name="card_number")
 	private Long bankcardCardNumber;
 
 	public Bankcard(Integer bankcardId, String bankcardSortcode, Long bankcardCardNumber) {

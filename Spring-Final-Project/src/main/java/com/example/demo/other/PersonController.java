@@ -12,9 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.data.Person;
 import com.example.demo.service.PersonService;
+<<<<<<< HEAD
+@RestController
+=======
 
 @RestController
 @CrossOrigin
+>>>>>>> 2ee32969c1ef775770e9cb8d800977da0558eb93
 public class PersonController {
 
 	private PersonService service;

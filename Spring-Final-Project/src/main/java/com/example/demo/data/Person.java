@@ -15,15 +15,22 @@ import javax.persistence.OneToMany;
 public class Person {
 
 	@Id
+	@Column(name = "person_id")
 	private String personID;
 
-	@Column
+	@Column(name = "is_citizen")
 	private boolean isCitizen;
+	@Column(name = "forenames")
 	private String personForename;
+	@Column(name = "surname")
 	private String personSurname;
+	@Column(name = "dob")
 	private LocalDate personDOB;
+	@Column(name = "place_of_birth")
 	private String personPOB;
+	@Column(name = "nationality")
 	private String personNationality;
+	@Column(name = "sex")
 	private String personGender;
 
 	@OneToMany(mappedBy = "person")
