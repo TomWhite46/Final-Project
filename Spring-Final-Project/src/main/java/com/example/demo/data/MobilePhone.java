@@ -10,20 +10,22 @@ import javax.persistence.Id;
 public class MobilePhone {
 
 	@Id
+	@Column(name = "phone_id")
 	private Integer mobilePhoneId;
 
-	@Column
-	private int mobilePhoneNumber;
+	@Column(name = "phone_number")
+	private String mobilePhoneNumber;
+	@Column(name = "operator")
 	private String mobilePhoneOperator;
 
-	public MobilePhone(Integer mobilePhoneId, int mobilePhoneNumber, String mobilePhoneOperator) {
+	public MobilePhone(Integer mobilePhoneId, String mobilePhoneNumber, String mobilePhoneOperator) {
 		super();
 		this.mobilePhoneId = mobilePhoneId;
 		this.mobilePhoneNumber = mobilePhoneNumber;
 		this.mobilePhoneOperator = mobilePhoneOperator;
 	}
 
-	public MobilePhone(int mobilePhoneNumber, String mobilePhoneOperator) {
+	public MobilePhone(String mobilePhoneNumber, String mobilePhoneOperator) {
 		super();
 		this.mobilePhoneNumber = mobilePhoneNumber;
 		this.mobilePhoneOperator = mobilePhoneOperator;
@@ -62,11 +64,11 @@ public class MobilePhone {
 		this.mobilePhoneId = mobilePhoneId;
 	}
 
-	public int getMobilePhoneNumber() {
+	public String getMobilePhoneNumber() {
 		return mobilePhoneNumber;
 	}
 
-	public void setMobilePhoneNumber(int mobilePhoneNumber) {
+	public void setMobilePhoneNumber(String mobilePhoneNumber) {
 		this.mobilePhoneNumber = mobilePhoneNumber;
 	}
 

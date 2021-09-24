@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
 import com.example.demo.data.Citizen;
 
 @Repository
@@ -20,7 +19,7 @@ public interface CitizenRepo extends JpaRepository<Citizen, String> {
 
 	List<Citizen> findByPlaceOfBirthIgnoreCase(String placeOfBirth);
 
-	List<Citizen> findByGender(String gender);
+	List<Citizen> findBySex(String sex);
 
 	List<Citizen> findByDateOfBirth(LocalDate dateOfBirth);
 
