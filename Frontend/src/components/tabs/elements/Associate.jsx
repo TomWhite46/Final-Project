@@ -1,22 +1,18 @@
-const Car = () => {
+const Associate = () => {
     return (
         <>
             <table class="dataTable">
                 <tbody>
                     <tr>
-                        <td>Registration number</td>
+                        <td>Association type</td>
                         <td>[data]</td>
                     </tr>
                     <tr>
-                        <td>Make</td>
+                        <td>Forenames</td>
                         <td>[data]</td>
                     </tr>
                     <tr>
-                        <td>Model</td>
-                        <td>[data]</td>
-                    </tr>
-                    <tr>
-                        <td>Colour</td>
+                        <td>Surnames</td>
                         <td>[data]</td>
                     </tr>
                 </tbody>
@@ -26,4 +22,4 @@ const Car = () => {
     )
 }
 
-export default Car;
+export default Associate;

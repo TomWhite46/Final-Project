@@ -1,8 +1,8 @@
 const Biographical = () => {
     return (
         <>
-        <div className="dataDisplay">Biography
-            <table id="dataTable">
+        <div className="dataDisplay">Biographical details:
+            <table className="dataTable">
                 <tbody>
                     <tr>
                         <td>Forenames</td>

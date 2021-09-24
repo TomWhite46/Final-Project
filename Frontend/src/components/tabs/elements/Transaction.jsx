@@ -1,11 +1,15 @@
 const Transaction = () => {
     return (
         <>
-        <div className="dataDisplay">
-            <table id="dataTable">
+
+            <table class="subDataTable">
                 <tbody>
                     <tr>
                         <td>Time</td>
+                        <td>[data]</td>
+                    </tr>
+                    <tr>
+                        <td>ATM/EPOS</td>
                         <td>[data]</td>
                     </tr>
                     <tr>
@@ -18,7 +22,7 @@ const Transaction = () => {
                     </tr>
                 </tbody>
             </table>
-        </div>
+
         </>
 
     )

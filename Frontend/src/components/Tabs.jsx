@@ -6,7 +6,7 @@ import CarInfo from './tabs/CarInfo';
 import Telephone from './tabs/Telephone';
 import Associates from './tabs/Associates';
 
-const Tabs = ({showTabs}) => {
+const Tabs = ({showTabs, personData}) => {
     if (showTabs === false) {
         return <></>
     } else {

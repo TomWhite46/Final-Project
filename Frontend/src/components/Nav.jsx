@@ -16,10 +16,10 @@ const Nav = () => {
             Financial Transactions
             </Link>
             <Link to="/carInfo" onClick={(e)=>changeTab(e)}>
-            Car Info
+            Vehicles
             </Link>
             <Link to="/telephone" onClick={(e)=>changeTab(e)}>
-            Telephone
+            Telephones
             </Link>
             <Link to="/associates" onClick={(e)=>changeTab(e)}>
             Associates
