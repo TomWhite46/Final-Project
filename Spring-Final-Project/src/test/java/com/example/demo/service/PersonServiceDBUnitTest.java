@@ -28,8 +28,8 @@ public class PersonServiceDBUnitTest {
 
 	@Test
 	void testGetAll() {
-		List<Person> testPeople = List.of(
-				new Person("1", true, "Rob", "Fletcher", LocalDate.of(2000, 05, 30), "Shrewsbury", "British", "Male"));
+		List<Person> testPeople = List.of(new Person((long) 1, "true", "Rob", "Fletcher", LocalDate.of(2000, 05, 30),
+				"Shrewsbury", "British", "Male"));
 
 		Mockito.when(this.repo.findAll()).thenReturn(testPeople);
 
@@ -44,8 +44,8 @@ public class PersonServiceDBUnitTest {
 
 	@Test
 	void testGetByFirstName() {
-		List<Person> testPeople = List.of(
-				new Person("1", true, "Rob", "Fletcher", LocalDate.of(2000, 05, 30), "Shrewsbury", "British", "Male"));
+		List<Person> testPeople = List.of(new Person((long) 1, "true", "Rob", "Fletcher", LocalDate.of(2000, 05, 30),
+				"Shrewsbury", "British", "Male"));
 
 		String search = "rob";
 
@@ -60,8 +60,8 @@ public class PersonServiceDBUnitTest {
 
 	@Test
 	void testGetByLastName() {
-		List<Person> testPeople = List.of(
-				new Person("1", true, "Rob", "Fletcher", LocalDate.of(2000, 05, 30), "Shrewsbury", "British", "Male"));
+		List<Person> testPeople = List.of(new Person((long) 1, "true", "Rob", "Fletcher", LocalDate.of(2000, 05, 30),
+				"Shrewsbury", "British", "Male"));
 
 		String search = "fletcher";
 
@@ -76,8 +76,8 @@ public class PersonServiceDBUnitTest {
 
 	@Test
 	void testGetByNationality() {
-		List<Person> testPeople = List.of(
-				new Person("1", true, "Rob", "Fletcher", LocalDate.of(2000, 05, 30), "Shrewsbury", "British", "Male"));
+		List<Person> testPeople = List.of(new Person((long) 1, "true", "Rob", "Fletcher", LocalDate.of(2000, 05, 30),
+				"Shrewsbury", "British", "Male"));
 
 		String search = "british";
 
@@ -92,8 +92,8 @@ public class PersonServiceDBUnitTest {
 
 	@Test
 	void testGetByDOB() {
-		List<Person> testPeople = List.of(
-				new Person("1", true, "Rob", "Fletcher", LocalDate.of(2000, 05, 30), "Shrewsbury", "British", "Male"));
+		List<Person> testPeople = List.of(new Person((long) 1, "true", "Rob", "Fletcher", LocalDate.of(2000, 05, 30),
+				"Shrewsbury", "British", "Male"));
 
 		LocalDate search = LocalDate.of(2000, 05, 30);
 
@@ -108,8 +108,8 @@ public class PersonServiceDBUnitTest {
 
 	@Test
 	void testGetByPOB() {
-		List<Person> testPeople = List.of(
-				new Person("1", true, "Rob", "Fletcher", LocalDate.of(2000, 05, 30), "Shrewsbury", "British", "Male"));
+		List<Person> testPeople = List.of(new Person((long) 1, "true", "Rob", "Fletcher", LocalDate.of(2000, 05, 30),
+				"Shrewsbury", "British", "Male"));
 
 		String search = "shrewsbury";
 
@@ -124,8 +124,8 @@ public class PersonServiceDBUnitTest {
 
 	@Test
 	void testGetByGender() {
-		List<Person> testPeople = List.of(
-				new Person("1", true, "Rob", "Fletcher", LocalDate.of(2000, 05, 30), "Shrewsbury", "British", "Male"));
+		List<Person> testPeople = List.of(new Person((long) 1, "true", "Rob", "Fletcher", LocalDate.of(2000, 05, 30),
+				"Shrewsbury", "British", "Male"));
 
 		String search = "Male";
 
@@ -133,7 +133,7 @@ public class PersonServiceDBUnitTest {
 
 		assertThat(this.service.getByPersonSex(search)).isEqualTo(testPeople);
 
-		Mockito.verify(this.repo, Mockito.times(1)).findByPersonGender(search);
+		Mockito.verify(this.repo, Mockito.times(1)).findByPersonSex(search);
 
 		Mockito.verifyNoMoreInteractions(this.repo);
 	}
@@ -142,7 +142,7 @@ public class PersonServiceDBUnitTest {
 	void testGetByID() {
 		String search = "1";
 
-		Person testPerson = new Person("1", true, "Rob", "Fletcher", LocalDate.of(2000, 05, 30), "Shrewsbury",
+		Person testPerson = new Person((long) 1, "true", "Rob", "Fletcher", LocalDate.of(2000, 05, 30), "Shrewsbury",
 				"British", "Male");
 
 		Mockito.when(this.repo.findById(search)).thenReturn(Optional.of(testPerson));

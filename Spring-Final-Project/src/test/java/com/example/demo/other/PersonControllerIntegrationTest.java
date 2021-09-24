@@ -47,9 +47,9 @@ public class PersonControllerIntegrationTest {
 
 		RequestBuilder request = get("/getAllPeople");
 
-		Person testPerson = new Person("1", true, "Clive", "Clivedon", LocalDate.of(1995, 03, 12), "CliveTown",
+		Person testPerson = new Person((long) 1, "true", "Clive", "Clivedon", LocalDate.of(1995, 03, 12), "CliveTown",
 				"British", "Male");
-		testPerson.setPersonID("1");
+		testPerson.setPersonID((long) 1);
 
 		List<Person> testPeople = new ArrayList<Person>();
 		testPeople.add(testPerson);
@@ -69,8 +69,8 @@ public class PersonControllerIntegrationTest {
 
 		ResultMatcher checkStatus = status().isOk();
 
-		List<Person> testPerson = List.of(
-				new Person("1", true, "Clive", "Clivedon", LocalDate.of(1995, 03, 12), "CliveTown", "British", "Male"));
+		List<Person> testPerson = List.of(new Person((long) 1, "true", "Clive", "Clivedon", LocalDate.of(1995, 03, 12),
+				"CliveTown", "British", "Male"));
 
 		String testPersonAsJSON = this.mapper.writeValueAsString(testPerson);
 

@@ -16,10 +16,10 @@ public class Person {
 
 	@Id
 	@Column(name = "person_id")
-	private String personID;
+	private Long personID;
 
 	@Column(name = "is_citizen")
-	private boolean isCitizen;
+	private String isCitizen;
 	@Column(name = "forenames")
 	private String personForename;
 	@Column(name = "surname")
@@ -39,7 +39,7 @@ public class Person {
 	@OneToMany(mappedBy = "person")
 	Set<Person_Vehicle> carInfo;
 
-	public Person(String personID, boolean isCitizen, String personForename, String personSurname, LocalDate personDOB,
+	public Person(Long personID, String isCitizen, String personForename, String personSurname, LocalDate personDOB,
 			String personPOB, String personNationality, String personGender) {
 		super();
 		this.personID = personID;
@@ -53,7 +53,7 @@ public class Person {
 
 	}
 
-	public Person(boolean isCitizen, String personForename, String personSurname, LocalDate personDOB, String personPOB,
+	public Person(String isCitizen, String personForename, String personSurname, LocalDate personDOB, String personPOB,
 			String personNationality, String personGender) {
 		super();
 		this.isCitizen = isCitizen;
@@ -91,20 +91,20 @@ public class Person {
 				&& Objects.equals(personPOB, other.personPOB) && Objects.equals(personSurname, other.personSurname);
 	}
 
-	public String getPersonID() {
+	public Long getPersonID() {
 		return personID;
 	}
 
-	public void setPersonID(String personID) {
+	public void setPersonID(Long personID) {
 		this.personID = personID;
 	}
 
-	public boolean isIs_Citizen() {
+	public String isIs_Citizen() {
 		return isCitizen;
 	}
 
-	public void setIs_Citizen(boolean is_Citizen) {
-		this.isCitizen = is_Citizen;
+	public void setIsCitizen(String isCitizen) {
+		this.isCitizen = isCitizen;
 	}
 
 	public String getPersonForename() {
