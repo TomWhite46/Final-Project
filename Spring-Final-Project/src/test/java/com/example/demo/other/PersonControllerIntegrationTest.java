@@ -159,6 +159,36 @@ public class PersonControllerIntegrationTest {
 	}
 
 	@Test
+	void testFindPersonByForenamesAndSurname() throws Exception {
+		RequestBuilder request = get("/getByPersonForenamesAndSurname/Bob/Norman");
+
+		ResultMatcher checkStatus = status().isOk();
+
+		Person testPerson = new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male");
+
+		String testPersonAsJson = this.mapper.writeValueAsString(testPerson);
+
+		ResultMatcher checkBody = content().json(testPersonAsJson);
+
+		this.mockMVC.perform(request).andExpect(checkBody).andExpect(checkStatus);
+	}
+
+	@Test
+	void testFindPersonByForenamesAndSurnameAndDob() throws Exception {
+		RequestBuilder request = get("/getByPersonForenamesAndSurname/Bob/Norman/1995-13-12");
+
+		ResultMatcher checkStatus = status().isOk();
+
+		Person testPerson = new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male");
+
+		String testPersonAsJson = this.mapper.writeValueAsString(testPerson);
+
+		ResultMatcher checkBody = content().json(testPersonAsJson);
+
+		this.mockMVC.perform(request).andExpect(checkBody).andExpect(checkStatus);
+	}
+
+	@Test
 	void testNotFindingPersonById() throws Exception {
 		RequestBuilder request = get("/getByID/2");
 

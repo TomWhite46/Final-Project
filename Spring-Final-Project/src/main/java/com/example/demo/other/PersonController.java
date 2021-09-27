@@ -90,4 +90,9 @@ public class PersonController {
 		return new ResponseEntity<>(this.service.getByPersonForenamesAndPersonDOB(forenames, dob), HttpStatus.OK);
 	}
 
+//	@GetMapping("getAllTransactions/{cardNumber}")
+//	public ResponseEntity<AtmTransactionsDTO> getAllAtmTransactions(@PathVariable Long cardNumber) {
+//		return new ResponseEntity<AtmTransactionsDTO>(this.getAllTransactions(cardNumber), HttpStatus.OK);
+//	}
+
 }
