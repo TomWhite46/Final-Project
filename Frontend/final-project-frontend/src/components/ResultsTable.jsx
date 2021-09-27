@@ -1,6 +1,6 @@
 import ResultRow from "./ResultRow";
 
-const ResultsTable = ({showTable, searchResults, setpersonId}) => {
+const ResultsTable = ({showTable, searchResults, setSearchId}) => {
     
     // console.log("test:" + searchResults);
 
@@ -21,7 +21,7 @@ const ResultsTable = ({showTable, searchResults, setpersonId}) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {searchResults.map(({personForenames, personSurname, personDOB}) => <ResultRow key={personForenames + personSurname + personDOB} forenames={personForenames} surname={personSurname} dob={personDOB} setpersonId={setpersonId}/>)}
+                        {searchResults.map(({personID, personForenames, personSurname, personDOB}) => <ResultRow key={personID} id={personID} forenames={personForenames} surname={personSurname} dob={personDOB} setSearchId={setSearchId}/>)}
                     </tbody>
                 </table>
             </>

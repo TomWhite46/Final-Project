@@ -17,7 +17,7 @@ const Car = ({colour, model, vehicleRegistrationNumber, make}) => {
                     </tr>
                     <tr>
                         <td>Colour</td>
-                        <td>{colour}</td>
+                        <td>{colour.charAt(0).toUpperCase() + colour.slice(1)}</td>
                     </tr>
                 </tbody>
             </table>

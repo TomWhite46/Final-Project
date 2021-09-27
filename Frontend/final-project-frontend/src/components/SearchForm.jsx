@@ -11,13 +11,9 @@ const SearchForm = ({setShowTable, setShowTabs, setSearchResults, searchResults}
         const surname = e.target.surname.value;
         const dob = e.target.dob.value;
         
-        axios.get(`http://localhost:8080/getByID/1`) 
-        // ${forename}/${surname}/${dob}`)
-            .then(({data}) => {
-                // console.log(res.data);
-                console.log(searchResults);
-                setSearchResults([data]);
-                console.log(searchResults);
+        axios.get(`http://localhost:8080/getFromSearch/${forename}/${surname}/${dob}`) 
+            .then(({data}) => {        
+                setSearchResults(data);
             })
             .catch (err => console.log(err));
     };
@@ -48,7 +44,7 @@ const SearchForm = ({setShowTable, setShowTabs, setSearchResults, searchResults}
                         <label for="dob">Date of birth: </label>
                     </div>
                     <div className="column2">
-                        <input type="date" id="dob" name="dob" className="formInput"/>
+                        <input type="text" id="dob" name="dob" className="formInput"/>
                     </div>
                 </div>
                 <br/>
