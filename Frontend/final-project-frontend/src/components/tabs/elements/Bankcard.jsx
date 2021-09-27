@@ -1,38 +1,38 @@
 import Transaction from "./Transaction";
 
-const Bankcard = () => {
+// const Bankcard = ({cardNumber, sortCode, eposTransactions}) => {
+    const Bankcard = () => {
 
     const showHideTable = ({target}) => {
         const subData = target.parentElement.children[2];
         if (subData.className==="hide") {
-            console.log("yes");
             subData.className = "show";
             target.innerText = "Hide associated transactions \u25B2"
         } else {
-            console.log("no");
             subData.className = "hide";
             target.innerText = "Show associated transactions \u25BC"
         }
     }
+    
 
     return (
         <>
         <div>
-            <table class="dataTable">
+            <table className="dataTable">
                 <tbody>
                     <tr>    
                         <td>Bank card number</td>
-                        <td>[data]</td>
+                        <td>test</td>
                     </tr>
                     <tr>
                         <td>Sort code</td>
-                        <td>[data]</td>
+                        <td>test</td>
                     </tr>
                 </tbody>
             </table>
-            <div class="dropDownButton" onClick={(e)=>showHideTable(e)}>Show associated transactions &#x25BC;</div>
+            <div className="dropDownButton" onClick={(e)=>showHideTable(e)}>Show associated transactions &#x25BC;</div>
             <div className="hide">
-                <Transaction/>
+                {/* {eposTransactions.map(({timestamp, amount}) => <Transaction timestamp={timestamp} amount={amount} atmEPOS="EPOS" type="-"/>)} */}
                 <Transaction/>
             </div>
         </div>

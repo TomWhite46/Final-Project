@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {useState} from "react";
 import Biographical from './tabs/Biographical';
 import FinancialTransactions from './tabs/FinancialTransactions';
 import Nav from './Nav';
@@ -6,7 +7,10 @@ import CarInfo from './tabs/CarInfo';
 import Telephone from './tabs/Telephone';
 import Associates from './tabs/Associates';
 
-const Tabs = ({showTabs, personData}) => {
+const Tabs = ({showTabs, personId}) => {
+
+    // console.log(bankCards);
+
     if (showTabs === false) {
         return <></>
     } else {

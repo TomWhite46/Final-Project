@@ -1,24 +1,24 @@
-const Transaction = () => {
+const Transaction = ({timestamp, amount, atmEPOS, type}) => {
     return (
         <>
 
-            <table class="subDataTable">
+            <table className="subDataTable">
                 <tbody>
                     <tr>
                         <td>Time</td>
-                        <td>[data]</td>
+                        <td>{timestamp}</td>
                     </tr>
                     <tr>
                         <td>ATM/EPOS</td>
-                        <td>[data]</td>
+                        <td>{atmEPOS}</td>
                     </tr>
                     <tr>
                         <td>Type</td>
-                        <td>[data]</td>
+                        <td>{type}</td>
                     </tr>
                     <tr>
                         <td>Amount</td>
-                        <td>[data]</td>
+                        <td>£{amount}</td>
                     </tr>
                 </tbody>
             </table>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const SearchForm = ({setShowTable, setShowTabs, setSearchResults}) => {
+const SearchForm = ({setShowTable, setShowTabs, setSearchResults, searchResults}) => {
     
     const submitForm = (e) => {
         e.preventDefault();
@@ -11,9 +11,13 @@ const SearchForm = ({setShowTable, setShowTabs, setSearchResults}) => {
         const surname = e.target.surname.value;
         const dob = e.target.dob.value;
         
-        axios.get(`http://localhost:8080/search/${forename}/${surname}/${dob}`)
-            .then(res => {
-                setSearchResults(res.data);
+        axios.get(`http://localhost:8080/getByID/1`) 
+        // ${forename}/${surname}/${dob}`)
+            .then(({data}) => {
+                // console.log(res.data);
+                console.log(searchResults);
+                setSearchResults([data]);
+                console.log(searchResults);
             })
             .catch (err => console.log(err));
     };

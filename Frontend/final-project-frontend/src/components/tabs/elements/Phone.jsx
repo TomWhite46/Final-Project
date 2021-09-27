@@ -1,7 +1,7 @@
 const Phone = () => {
     return (
         <>
-            <table class="dataTable">
+            <table className="dataTable">
                 <tbody>
                     <tr>
                         <td>Telephone number</td>

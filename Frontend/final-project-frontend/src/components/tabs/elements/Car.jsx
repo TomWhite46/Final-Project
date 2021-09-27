@@ -1,23 +1,23 @@
-const Car = () => {
+const Car = ({colour, model, vehicleRegistrationNumber, make}) => {
     return (
         <>
-            <table class="dataTable">
+            <table className="dataTable">
                 <tbody>
                     <tr>
                         <td>Registration number</td>
-                        <td>[data]</td>
+                        <td>{vehicleRegistrationNumber}</td>
                     </tr>
                     <tr>
                         <td>Make</td>
-                        <td>[data]</td>
+                        <td>{make}</td>
                     </tr>
                     <tr>
                         <td>Model</td>
-                        <td>[data]</td>
+                        <td>{model}</td>
                     </tr>
                     <tr>
                         <td>Colour</td>
-                        <td>[data]</td>
+                        <td>{colour}</td>
                     </tr>
                 </tbody>
             </table>

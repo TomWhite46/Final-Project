@@ -1,7 +1,7 @@
 const Associate = () => {
     return (
         <>
-            <table class="dataTable">
+            <table className="dataTable">
                 <tbody>
                     <tr>
                         <td>Association type</td>

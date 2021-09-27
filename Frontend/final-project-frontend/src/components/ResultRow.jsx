@@ -1,5 +1,5 @@
 import axios from "axios";
-const ResultRow = ({forenames, surname, dob, setPersonData}) => {
+const ResultRow = ({forenames, surname, dob, setpersonId}) => {
     
     const id = 4; //get rid of this and replace with incoming id
 
@@ -15,7 +15,7 @@ const ResultRow = ({forenames, surname, dob, setPersonData}) => {
         //make axios request to update current person data
         axios.get(`http://localhost:8080/getPersonData/${id}`)
             .then(res => {
-                setPersonData(res.data);
+                setpersonId(res.data);
             })
             .catch (err => console.log(err));
     }

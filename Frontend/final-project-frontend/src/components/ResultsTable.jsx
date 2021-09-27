@@ -1,7 +1,9 @@
 import ResultRow from "./ResultRow";
 
-const ResultsTable = ({showTable, searchResults, setPersonData}) => {
+const ResultsTable = ({showTable, searchResults, setpersonId}) => {
     
+    // console.log("test:" + searchResults);
+
     if (showTable === false) {
         return <></>
     } else if (searchResults == false) {
@@ -19,7 +21,7 @@ const ResultsTable = ({showTable, searchResults, setPersonData}) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {searchResults.map(({forenames, surname, dob}) => <ResultRow forenames={forenames} surname={surname} dob={dob} setPersonData={setPersonData}/>)}
+                        {searchResults.map(({personForenames, personSurname, personDOB}) => <ResultRow key={personForenames + personSurname + personDOB} forenames={personForenames} surname={personSurname} dob={personDOB} setpersonId={setpersonId}/>)}
                     </tbody>
                 </table>
             </>
