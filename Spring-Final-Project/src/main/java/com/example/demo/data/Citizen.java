@@ -14,8 +14,8 @@ import javax.persistence.OneToMany;
 public class Citizen {
 
 	@Id
-	@Column(name = "citizen_id")
-	private Float id;
+	@Column(name = "citizen_id", columnDefinition = "char")
+	private String id;
 
 	@Column
 	private String forenames;
@@ -30,7 +30,7 @@ public class Citizen {
 	@OneToMany(mappedBy = "citizen")
 	Set<Person_Citizen> identity;
 
-	public Citizen(Float id, String forenames, String surname, String address, String dob, String placeOfBirth,
+	public Citizen(String id, String forenames, String surname, String address, String dob, String placeOfBirth,
 			String sex) {
 		super();
 		this.id = id;
@@ -76,11 +76,11 @@ public class Citizen {
 				&& Objects.equals(surname, other.surname);
 	}
 
-	public Float getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Float id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

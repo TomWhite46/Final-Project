@@ -6,7 +6,7 @@ import com.example.demo.data.Citizen;
 
 public interface CitizenService {
 
-	public Citizen getByCitizenID(Float id);
+	public Citizen getByCitizenID(String id);
 
 	public List<Citizen> getAllCitizens();
 
@@ -21,5 +21,11 @@ public interface CitizenService {
 	public List<Citizen> getByCitizenPOB(String placeOfBirth);
 
 	public List<Citizen> getByCitizenSex(String sex);
+
+	public List<Citizen> getByCitizenForenamesAndSurname(String forenames, String surname);
+
+	public List<Citizen> getByCitizenForenamesAndDob(String forenames, String dob);
+
+	public List<Citizen> getByCitizenForenamesAndSurnameAndDob(String forenames, String surname, String dob);
 
 }

@@ -2,11 +2,15 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import com.example.demo.data.Citizen;
 import com.example.demo.data.Person;
+import com.example.demo.dto.AllDetailsDTO;
 
 public interface PersonService {
 
 	public Person getByPersonID(Long id);
+
+	public AllDetailsDTO getFullDetailsFromPerson(Long id);
 
 	public List<Person> getAllPerson();
 
@@ -21,6 +25,8 @@ public interface PersonService {
 	public List<Person> getByPersonPOB(String placeOfBirth);
 
 	public List<Person> getByPersonSex(String sex);
+
+	Citizen getFullDetailsFromPerson(String id);
 
 	// public List<Person> getCitizens(boolean isCitizen);
 

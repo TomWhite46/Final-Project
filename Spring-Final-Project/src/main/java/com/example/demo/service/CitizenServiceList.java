@@ -13,7 +13,7 @@ public class CitizenServiceList implements CitizenService {
 	private List<Citizen> citizens = new ArrayList<>();
 
 	@Override
-	public Citizen getByCitizenID(Float id) {
+	public Citizen getByCitizenID(String id) {
 
 		return null;
 	}
@@ -60,6 +60,21 @@ public class CitizenServiceList implements CitizenService {
 	@Override
 	public List<Citizen> getByCitizenSex(String sex) {
 
+		return null;
+	}
+
+	@Override
+	public List<Citizen> getByCitizenForenamesAndSurname(String forenames, String surname) {
+		return null;
+	}
+
+	@Override
+	public List<Citizen> getByCitizenForenamesAndDob(String forenames, String dob) {
+		return null;
+	}
+
+	@Override
+	public List<Citizen> getByCitizenForenamesAndSurnameAndDob(String forenames, String surname, String dob) {
 		return null;
 	}
 

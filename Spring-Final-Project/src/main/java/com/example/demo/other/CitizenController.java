@@ -63,13 +63,29 @@ public class CitizenController {
 	}
 
 	@GetMapping("/getByCitizenID/{id}")
-	public ResponseEntity<Citizen> getByCitizenID(@PathVariable Float id) {
+	public ResponseEntity<Citizen> getByCitizenID(@PathVariable String id) {
 		return new ResponseEntity<>(this.service.getByCitizenID(id), HttpStatus.OK);
 	}
 
-//	@GetMapping("/getAll/{forenames}/{surname}")
-//	public ResponseEntity<List<Citizen>> sortAndFilterCitizens(@PathVariable String forenames,
-//			@PathVariable String surname, @RequestBody Citizen citizen) {
-//			return ResponseEntity.ok(this.service.sortAndFilterCitizens(forenames, surname, citizen));
-//	}
+	@GetMapping("/getByCitizenForenamesAndSurname/{forenames}/{surname}")
+	public ResponseEntity<List<Citizen>> getByCitizenForenamesAndSurname(@PathVariable String forenames,
+			@PathVariable String surname) {
+		return new ResponseEntity<>(this.service.getByCitizenForenamesAndSurname(forenames, surname), HttpStatus.OK);
+	}
+
+	@GetMapping("/getByCitizenForenamesAndSurnameAndDob/{forenames}/{surname}/{dob}")
+	public ResponseEntity<List<Citizen>> getByCitizenForenamesAndSurnameAndDob(@PathVariable String forenames,
+			@PathVariable String surname, @PathVariable String dob) {
+		return new ResponseEntity<>(this.service.getByCitizenForenamesAndSurnameAndDob(forenames, surname, dob),
+				HttpStatus.OK);
+	}
+
+	@GetMapping("/getByCitizenForenameAndDob/{forenames}/{dob}")
+	public ResponseEntity<List<Citizen>> getByCitizenForenamesAndDob(@PathVariable String forenames,
+			@PathVariable String dob) {
+		return new ResponseEntity<>(this.service.getByCitizenForenamesAndDob(forenames, dob), HttpStatus.OK);
+	}
+
 }
+
+//	

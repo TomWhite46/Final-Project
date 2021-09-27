@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.data.Citizen;
 
 @Repository
-public interface CitizenRepo extends JpaRepository<Citizen, Float> {
+public interface CitizenRepo extends JpaRepository<Citizen, String> {
 
 	List<Citizen> findByForenamesIgnoreCase(String forenames);
 
@@ -21,5 +21,11 @@ public interface CitizenRepo extends JpaRepository<Citizen, Float> {
 	List<Citizen> findBySex(String sex);
 
 	List<Citizen> findByDob(String dob);
+
+	List<Citizen> findCitizenByForenamesAndSurname(String forenames, String surname);
+
+	List<Citizen> findCitizenByForenamesAndDob(String forenames, String dob);
+
+	List<Citizen> findCitizenByForenamesAndSurnameAndDob(String forenames, String surname, String dob);
 
 }

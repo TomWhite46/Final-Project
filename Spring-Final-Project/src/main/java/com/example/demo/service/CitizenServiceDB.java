@@ -56,7 +56,22 @@ public class CitizenServiceDB implements CitizenService {
 	}
 
 	@Override
-	public Citizen getByCitizenID(Float id) {
+	public List<Citizen> getByCitizenForenamesAndSurname(String forenames, String surname) {
+		return this.repo.findCitizenByForenamesAndSurname(forenames, surname);
+	}
+
+	@Override
+	public List<Citizen> getByCitizenForenamesAndDob(String forenames, String dob) {
+		return this.repo.findCitizenByForenamesAndDob(forenames, dob);
+	}
+
+	@Override
+	public List<Citizen> getByCitizenForenamesAndSurnameAndDob(String forenames, String surname, String dob) {
+		return this.repo.findCitizenByForenamesAndSurnameAndDob(forenames, surname, dob);
+	}
+
+	@Override
+	public Citizen getByCitizenID(String id) {
 		Optional<Citizen> found = this.repo.findById(id);
 		if (found.isEmpty())
 			return null;

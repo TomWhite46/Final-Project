@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.data.Person;
+import com.example.demo.dto.AllDetailsDTO;
 import com.example.demo.service.PersonService;
 
 @RestController
@@ -62,6 +63,11 @@ public class PersonController {
 	@GetMapping("/getByID/{id}")
 	public ResponseEntity<Person> getByPersonID(@PathVariable Long id) {
 		return new ResponseEntity<>(this.service.getByPersonID(id), HttpStatus.OK);
+	}
+
+	@GetMapping("/getFullDetails/{id}")
+	public ResponseEntity<AllDetailsDTO> getFullDetailsFromPerson(@PathVariable Long id) {
+		return new ResponseEntity<AllDetailsDTO>(this.service.getFullDetailsFromPerson(id), HttpStatus.OK);
 	}
 
 }

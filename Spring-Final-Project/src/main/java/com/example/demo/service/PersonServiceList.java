@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.data.Citizen;
 import com.example.demo.data.Person;
+import com.example.demo.dto.AllDetailsDTO;
 
 @Service
 public class PersonServiceList implements PersonService {
@@ -15,6 +17,12 @@ public class PersonServiceList implements PersonService {
 	// TODO Auto-generated method stub
 //		return null;
 //	}
+
+	@Override
+	public Citizen getFullDetailsFromPerson(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	private List<Person> people = new ArrayList<>();
 
@@ -65,6 +73,12 @@ public class PersonServiceList implements PersonService {
 
 	@Override
 	public List<Person> getByPersonSex(String sex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AllDetailsDTO getFullDetailsFromPerson(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

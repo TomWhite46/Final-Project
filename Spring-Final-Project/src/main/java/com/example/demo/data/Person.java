@@ -35,8 +35,8 @@ public class Person {
 	@OneToMany(mappedBy = "person")
 	Set<Person_Citizen> identity;
 
-	@OneToMany(mappedBy = "person")
-	Set<Person_Vehicle> carInfo;
+//	@OneToMany(mappedBy = "person")
+//	Set<Person_Vehicle> carInfo;
 
 	public Person(Long personID, String isCitizen, String personForenames, String personSurname, String personDOB,
 			String personPOB, String personNationality, String personSex) {
