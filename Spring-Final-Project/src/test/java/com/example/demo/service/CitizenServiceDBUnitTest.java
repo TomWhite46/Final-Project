@@ -33,7 +33,7 @@ public class CitizenServiceDBUnitTest {
 	@Test
 	void testGetAll() {
 		List<Citizen> testCitizens = List
-				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
+				.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		Mockito.when(this.repo.findAll()).thenReturn(testCitizens);
 
@@ -49,7 +49,7 @@ public class CitizenServiceDBUnitTest {
 	@Test
 	void testGetByFirstName() {
 		List<Citizen> testCitizens = List
-				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
+				.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String search = "rob";
 
@@ -65,7 +65,7 @@ public class CitizenServiceDBUnitTest {
 	@Test
 	void testGetByLastName() {
 		List<Citizen> testCitizens = List
-				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
+				.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String search = "fletcher";
 
@@ -81,7 +81,7 @@ public class CitizenServiceDBUnitTest {
 	@Test
 	void testGetByAddress() {
 		List<Citizen> testCitizens = List
-				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
+				.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String search = "2 Grange Close";
 
@@ -97,7 +97,7 @@ public class CitizenServiceDBUnitTest {
 	@Test
 	void testGetByDOB() {
 		List<Citizen> testCitizens = List
-				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
+				.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String testDOB = "2000, 05, 30";
 
@@ -113,7 +113,7 @@ public class CitizenServiceDBUnitTest {
 	@Test
 	void testGetByPOB() {
 		List<Citizen> testCitizens = List
-				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
+				.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String search = "shrewsbury";
 
@@ -129,7 +129,7 @@ public class CitizenServiceDBUnitTest {
 	@Test
 	void testGetByGender() {
 		List<Citizen> testCitizens = List
-				.of(new Citizen((float) 1, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
+				.of(new Citizen("1", "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury", "Male"));
 
 		String search = "Male";
 
@@ -144,7 +144,7 @@ public class CitizenServiceDBUnitTest {
 
 	@Test
 	void testGetByID() {
-		Float search = (float) 1;
+		String search = "1";
 
 		Citizen testCitizen = new Citizen(search, "Rob", "Fletcher", "2 Grange Close", "2000, 05, 30", "Shrewsbury",
 				"Male");

@@ -30,7 +30,7 @@ public class PersonController {
 		return new ResponseEntity<>(created, HttpStatus.OK);
 	}
 
-	@GetMapping("/GetByPersonForenames/{forenames}")
+	@GetMapping("/getByPersonForenames/{forenames}")
 	public ResponseEntity<List<Person>> getByPersonForenames(@PathVariable String forenames) {
 		return new ResponseEntity<>(this.service.getByPersonForenames(forenames), HttpStatus.OK);
 	}
@@ -68,6 +68,26 @@ public class PersonController {
 	@GetMapping("/getFullDetails/{id}")
 	public ResponseEntity<AllDetailsDTO> getFullDetailsFromPerson(@PathVariable Long id) {
 		return new ResponseEntity<AllDetailsDTO>(this.service.getFullDetailsFromPerson(id), HttpStatus.OK);
+	}
+
+	@GetMapping("/getByPersonForenamesAndSurname/{forenames}/{surname}")
+	public ResponseEntity<List<Person>> getByPersonForenamesAndSurname(@PathVariable String forenames,
+			@PathVariable String surname) {
+		return new ResponseEntity<>(this.service.getByPersonForenamesAndPersonSurname(forenames, surname),
+				HttpStatus.OK);
+	}
+
+	@GetMapping("/getByPersonForenamesAndSurnameAndDob/{forenames}/{surname}/{dob}")
+	public ResponseEntity<List<Person>> getByPersonForenamesAndSurnameAndDob(@PathVariable String forenames,
+			@PathVariable String surname, @PathVariable String dob) {
+		return new ResponseEntity<>(
+				this.service.getByPersonForenamesAndPersonSurnameAndPersonDOB(forenames, surname, dob), HttpStatus.OK);
+	}
+
+	@GetMapping("/getByPersonForenameAndDob/{forenames}/{dob}")
+	public ResponseEntity<List<Person>> getByPersonForenamesAndDob(@PathVariable String forenames,
+			@PathVariable String dob) {
+		return new ResponseEntity<>(this.service.getByPersonForenamesAndPersonDOB(forenames, dob), HttpStatus.OK);
 	}
 
 }

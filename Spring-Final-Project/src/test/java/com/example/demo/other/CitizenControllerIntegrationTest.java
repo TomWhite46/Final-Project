@@ -47,7 +47,7 @@ public class CitizenControllerIntegrationTest {
 
 		RequestBuilder request = get("/getAllCitizens");
 
-		Citizen testCitizen = new Citizen((float) 1, "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male");
+		Citizen testCitizen = new Citizen("1", "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male");
 
 		List<Citizen> testCitizens = new ArrayList<Citizen>();
 		testCitizens.add(testCitizen);
@@ -68,7 +68,7 @@ public class CitizenControllerIntegrationTest {
 		ResultMatcher checkStatus = status().isOk();
 
 		List<Citizen> testCitizen = List
-				.of(new Citizen((float) 1, "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
+				.of(new Citizen("1", "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
 
 		String testCitizenAsJSON = this.mapper.writeValueAsString(testCitizen);
 
@@ -84,7 +84,7 @@ public class CitizenControllerIntegrationTest {
 		ResultMatcher checkStatus = status().isOk();
 
 		List<Citizen> testCitizen = List
-				.of(new Citizen((float) 1, "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
+				.of(new Citizen("1", "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
 
 		String testCitizenAsJSON = this.mapper.writeValueAsString(testCitizen);
 
@@ -100,7 +100,7 @@ public class CitizenControllerIntegrationTest {
 		ResultMatcher checkStatus = status().isOk();
 
 		List<Citizen> testCitizen = List
-				.of(new Citizen((float) 1, "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
+				.of(new Citizen("1", "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
 
 		String testCitizenAsJSON = this.mapper.writeValueAsString(testCitizen);
 
@@ -116,7 +116,7 @@ public class CitizenControllerIntegrationTest {
 		ResultMatcher checkStatus = status().isOk();
 
 		List<Citizen> testCitizen = List
-				.of(new Citizen((float) 1, "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
+				.of(new Citizen("1", "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
 
 		String testCitizenAsJSON = this.mapper.writeValueAsString(testCitizen);
 
@@ -132,7 +132,7 @@ public class CitizenControllerIntegrationTest {
 		ResultMatcher checkStatus = status().isOk();
 
 		List<Citizen> testCitizen = List
-				.of(new Citizen((float) 1, "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
+				.of(new Citizen("1", "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
 
 		String testCitizenAsJSON = this.mapper.writeValueAsString(testCitizen);
 
@@ -148,7 +148,7 @@ public class CitizenControllerIntegrationTest {
 		ResultMatcher checkStatus = status().isOk();
 
 		List<Citizen> testCitizen = List
-				.of(new Citizen((float) 1, "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
+				.of(new Citizen("1", "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male"));
 
 		String testCitizenAsJSON = this.mapper.writeValueAsString(testCitizen);
 
@@ -163,7 +163,7 @@ public class CitizenControllerIntegrationTest {
 
 		ResultMatcher checkStatus = status().isOk();
 
-		Citizen testCitizen = new Citizen((float) 1, "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male");
+		Citizen testCitizen = new Citizen("1", "Bob", "Norman", "Swindon", "1995-13-12", "Swindon", "Male");
 
 		String testCitizenAsJSON = this.mapper.writeValueAsString(testCitizen);
 

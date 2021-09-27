@@ -20,7 +20,6 @@ public class PersonServiceList implements PersonService {
 
 	@Override
 	public Citizen getFullDetailsFromPerson(String id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -43,43 +42,52 @@ public class PersonServiceList implements PersonService {
 
 	@Override
 	public List<Person> getByPersonForenames(String forenames) {
-
 		return null;
 	}
 
 	@Override
 	public List<Person> getByPersonSurname(String surname) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Person> getByPersonNationality(String nationality) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Person> getByPersonDOB(String dateOfBirth) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Person> getByPersonPOB(String placeOfBirth) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Person> getByPersonSex(String sex) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public AllDetailsDTO getFullDetailsFromPerson(Long id) {
-		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Person> getByPersonForenamesAndPersonSurname(String personForenames, String personSurname) {
+		return null;
+	}
+
+	@Override
+	public List<Person> getByPersonForenamesAndPersonDOB(String personForenames, String personDOB) {
+		return null;
+	}
+
+	@Override
+	public List<Person> getByPersonForenamesAndPersonSurnameAndPersonDOB(String personForenames, String personSurname,
+			String personDOB) {
 		return null;
 	}
 

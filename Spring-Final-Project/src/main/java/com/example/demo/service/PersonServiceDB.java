@@ -68,8 +68,8 @@ public class PersonServiceDB implements PersonService {
 	}
 
 	@Override
-	public List<Person> getByPersonForenames(String forenames) {
-		return this.repo.findByPersonForenamesIgnoreCase(forenames);
+	public List<Person> getByPersonForenames(String personForenames) {
+		return this.repo.findByPersonForenamesIgnoreCase(personForenames);
 	}
 
 	@Override
@@ -103,9 +103,21 @@ public class PersonServiceDB implements PersonService {
 		return null;
 	}
 
-	// @Override
-	// public List<Person> getCitizens(boolean isCitizen){
-	// return this.repo.findIsCitizen(isCitizen);
-	// }
+	@Override
+	public List<Person> getByPersonForenamesAndPersonSurname(String personForenames, String personSurname) {
+		return this.repo.findPersonByPersonForenamesAndPersonSurname(personForenames, personSurname);
+	}
+
+	@Override
+	public List<Person> getByPersonForenamesAndPersonDOB(String personForenames, String personDOB) {
+		return this.repo.findPersonByPersonForenamesAndPersonDOB(personForenames, personDOB);
+	}
+
+	@Override
+	public List<Person> getByPersonForenamesAndPersonSurnameAndPersonDOB(String personForenames, String personSurname,
+			String personDOB) {
+		return this.repo.findPersonByPersonForenamesAndPersonSurnameAndPersonDOB(personForenames, personSurname,
+				personDOB);
+	}
 
 }

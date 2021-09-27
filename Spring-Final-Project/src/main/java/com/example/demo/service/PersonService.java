@@ -8,13 +8,13 @@ import com.example.demo.dto.AllDetailsDTO;
 
 public interface PersonService {
 
-	public Person getByPersonID(Long id);
+	public Person getByPersonID(Long personID);
 
 	public AllDetailsDTO getFullDetailsFromPerson(Long id);
 
 	public List<Person> getAllPerson();
 
-	public List<Person> getByPersonForenames(String forenames);
+	public List<Person> getByPersonForenames(String personForenames);
 
 	public List<Person> getByPersonSurname(String surname);
 
@@ -30,4 +30,10 @@ public interface PersonService {
 
 	// public List<Person> getCitizens(boolean isCitizen);
 
+	public List<Person> getByPersonForenamesAndPersonSurname(String personForenames, String personSurname);
+
+	public List<Person> getByPersonForenamesAndPersonDOB(String personForenames, String personDOB);
+
+	public List<Person> getByPersonForenamesAndPersonSurnameAndPersonDOB(String personForenames, String personSurname,
+			String personDOB);
 }
