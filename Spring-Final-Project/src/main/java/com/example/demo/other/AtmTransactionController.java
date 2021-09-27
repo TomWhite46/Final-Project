@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.data.AtmTransaction;
+import com.example.demo.data.EposTransaction;
 import com.example.demo.dto.AtmTransactionsDTO;
 import com.example.demo.dto.EposTransactionDTO;
 import com.example.demo.service.AtmTransactionsService;
-import com.example.demo.service.BankcardService;
 import com.example.demo.service.EposTransactionService;
 
 @RestController
@@ -25,15 +26,10 @@ public class AtmTransactionController {
 	@Autowired
 	private EposTransactionService eposService;
 
-	@Autowired
-	private BankcardService bankCardService;
-
-	public AtmTransactionController(AtmTransactionsService service, EposTransactionService eposService,
-			BankcardService bankcardService) {
+	public AtmTransactionController(AtmTransactionsService service, EposTransactionService eposService) {
 		super();
 		this.service = service;
 		this.eposService = eposService;
-		this.bankCardService = bankCardService;
 	}
 
 	@GetMapping("getAllTransactions/{cardNumber}")
@@ -44,6 +40,16 @@ public class AtmTransactionController {
 	@GetMapping("getAllEposTransactions/{cardNumber}")
 	public ResponseEntity<List<EposTransactionDTO>> getAllEposTransactions(@PathVariable Long cardNumber) {
 		return ResponseEntity.ok(this.eposService.getAllEposTransaction(cardNumber));
+	}
+
+	@GetMapping("getByAtmCardNumber/{cardNumber}")
+	public ResponseEntity<List<AtmTransaction>> getByAtmCardNumber(@PathVariable Long cardNumber) {
+		return ResponseEntity.ok(this.service.getByAtmCardNumber(cardNumber));
+	}
+
+	@GetMapping("getByEposCardNumber/{cardNumber}")
+	public ResponseEntity<List<EposTransaction>> getByEposCardNumber(@PathVariable Long cardNumber) {
+		return ResponseEntity.ok(this.eposService.getByEposCardNumber(cardNumber));
 	}
 
 }

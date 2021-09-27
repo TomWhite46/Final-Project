@@ -17,31 +17,34 @@ public class EposTransaction {
 
 	@Column(name = "epos_id")
 	private Integer eposId;
-	private String timestamp;
+	@Column(name = "timestamp")
+	private String eposTimestamp;
 	@Column(name = "card_number")
-	private Long cardNumber;
+	private Long eposCardNumber;
 	@Column(name = "payee_account")
 	private Long payeeAccount;
-	private double amount;
+	@Column(name = "amount")
+	private double eposAmount;
 
-	public EposTransaction(Integer id, Integer eposId, String timestamp, Long cardNumber, Long payeeAccount,
-			double amount) {
+	public EposTransaction(Integer id, Integer eposId, String eposTimestamp, Long eposCardNumber, Long payeeAccount,
+			double eposAmount) {
 		super();
 		this.id = id;
 		this.eposId = eposId;
-		this.timestamp = timestamp;
-		this.cardNumber = cardNumber;
+		this.eposTimestamp = eposTimestamp;
+		this.eposCardNumber = eposCardNumber;
 		this.payeeAccount = payeeAccount;
-		this.amount = amount;
+		this.eposAmount = eposAmount;
 	}
 
-	public EposTransaction(Integer eposId, String timestamp, Long cardNumber, Long payeeAccount, double amount) {
+	public EposTransaction(Integer eposId, String eposTimestamp, Long eposCardNumber, Long payeeAccount,
+			double eposAmount) {
 		super();
 		this.eposId = eposId;
-		this.timestamp = timestamp;
-		this.cardNumber = cardNumber;
+		this.eposTimestamp = eposTimestamp;
+		this.eposCardNumber = eposCardNumber;
 		this.payeeAccount = payeeAccount;
-		this.amount = amount;
+		this.eposAmount = eposAmount;
 	}
 
 	public EposTransaction() {
@@ -64,20 +67,20 @@ public class EposTransaction {
 		this.eposId = eposId;
 	}
 
-	public String getTimestamp() {
-		return timestamp;
+	public String getEposTimestamp() {
+		return eposTimestamp;
 	}
 
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
+	public void setEposTimestamp(String eposTimestamp) {
+		this.eposTimestamp = eposTimestamp;
 	}
 
-	public Long getCardNumber() {
-		return cardNumber;
+	public Long getEposCardNumber() {
+		return eposCardNumber;
 	}
 
-	public void setCardNumber(Long cardNumber) {
-		this.cardNumber = cardNumber;
+	public void setEposCardNumber(Long eposCardNumber) {
+		this.eposCardNumber = eposCardNumber;
 	}
 
 	public Long getPayeeAccount() {
@@ -88,17 +91,17 @@ public class EposTransaction {
 		this.payeeAccount = payeeAccount;
 	}
 
-	public double getAmount() {
-		return amount;
+	public double getEposAmount() {
+		return eposAmount;
 	}
 
-	public void setAmount(double amount) {
-		this.amount = amount;
+	public void setEposAmount(double eposAmount) {
+		this.eposAmount = eposAmount;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(amount, cardNumber, eposId, id, payeeAccount, timestamp);
+		return Objects.hash(eposAmount, eposCardNumber, eposId, eposTimestamp, id, payeeAccount);
 	}
 
 	@Override
@@ -113,10 +116,10 @@ public class EposTransaction {
 			return false;
 		}
 		EposTransaction other = (EposTransaction) obj;
-		return Double.doubleToLongBits(amount) == Double.doubleToLongBits(other.amount)
-				&& Objects.equals(cardNumber, other.cardNumber) && Objects.equals(eposId, other.eposId)
-				&& Objects.equals(id, other.id) && Objects.equals(payeeAccount, other.payeeAccount)
-				&& Objects.equals(timestamp, other.timestamp);
+		return Double.doubleToLongBits(eposAmount) == Double.doubleToLongBits(other.eposAmount)
+				&& Objects.equals(eposCardNumber, other.eposCardNumber) && Objects.equals(eposId, other.eposId)
+				&& Objects.equals(eposTimestamp, other.eposTimestamp) && Objects.equals(id, other.id)
+				&& Objects.equals(payeeAccount, other.payeeAccount);
 	}
 
 }

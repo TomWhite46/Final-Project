@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.data.AtmTransaction;
@@ -13,6 +14,7 @@ import com.example.demo.dto.AtmTransactionsDTO;
 @Service
 public class AtmTransactionsService {
 
+	@Autowired
 	private AtmTransactionsRepo repo;
 
 	private ModelMapper mapper;
@@ -29,6 +31,10 @@ public class AtmTransactionsService {
 
 	private AtmTransaction mapFromDTO(AtmTransactionsDTO atmTransaction) {
 		return this.mapper.map(atmTransaction, AtmTransaction.class);
+	}
+
+	public List<AtmTransaction> getByAtmCardNumber(Long cardNumber) {
+		return this.repo.findByCardNumber(cardNumber);
 	}
 
 	public AtmTransactionsDTO addAtmTransaction(AtmTransaction atmTransaction) {

@@ -36,4 +36,8 @@ public class EposTransactionService {
 		return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
 	}
 
+	public List<EposTransaction> getByEposCardNumber(Long cardNumber) {
+		return this.repo.findByEposCardNumber(cardNumber);
+	}
+
 }
