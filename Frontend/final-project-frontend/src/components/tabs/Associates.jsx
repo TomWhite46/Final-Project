@@ -10,25 +10,25 @@ const Associates = (searchId) => {
     const [colleagues, setColleagues] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8081/getFriendsByPersonId/${searchId.searchId}`) 
+        axios.get(`http://54.247.130.198:8081/getFriendsByPersonId/${searchId.searchId}`) 
         .then(({data}) => {        
             setFriends(data);
         })
         .catch (err => console.log(err));
 
-        axios.get(`http://localhost:8081/getPartnersByPersonId/${searchId.searchId}`) 
+        axios.get(`http://54.247.130.198:8081/getPartnersByPersonId/${searchId.searchId}`) 
         .then(({data}) => {        
             setPartners(data);
         })
         .catch (err => console.log(err));
 
-        axios.get(`http://localhost:8081/getPhoneContactsByPersonId/${searchId.searchId}`) 
+        axios.get(`http://54.247.130.198:8081/getPhoneContactsByPersonId/${searchId.searchId}`) 
         .then(({data}) => {        
             setContacts(data);
         })
         .catch (err => console.log(err));
 
-        axios.get(`http://localhost:8081/getColleaguesByPersonId/${searchId.searchId}`) 
+        axios.get(`http://54.247.130.198:8081/getColleaguesByPersonId/${searchId.searchId}`) 
         .then(({data}) => {        
             setColleagues(data);
         })

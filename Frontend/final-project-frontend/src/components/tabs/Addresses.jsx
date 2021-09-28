@@ -9,13 +9,13 @@ const Addresses = (searchId) => {
             const [addresses, setAddresses] = useState([]);
             
             useEffect(() => {
-                axios.get(`http://localhost:8081/getBusinessAddressPersonId/${searchId.searchId}`) 
+                axios.get(`http://54.247.130.198:8081/getBusinessAddressPersonId/${searchId.searchId}`) 
                 .then(({data}) => {        
                     setBusinessAddresses(data);
                 })
                 .catch (err => console.log(err));
 
-                axios.get(`http://localhost:8081/getAddressPersonId/${searchId.searchId}`) 
+                axios.get(`http://54.247.130.198:8081/getAddressPersonId/${searchId.searchId}`) 
                 .then(({data}) => {        
                     setAddresses(data);
                 })

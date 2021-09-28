@@ -7,7 +7,7 @@ const CarInfo = (searchId) => {
 const [cars, setCars] = useState([]);
 
 useEffect(() => {
-    axios.get(`http://localhost:8081/getVehicleByPersonId/${searchId.searchId}`) 
+    axios.get(`http://54.247.130.198:8081/getVehicleByPersonId/${searchId.searchId}`) 
     .then(({data}) => {        
         
         setCars(data);

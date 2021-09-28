@@ -11,7 +11,7 @@ const SearchForm = ({setShowTable, setShowTabs, setSearchResults, searchResults}
         const surname = e.target.surname.value;
         const dob = e.target.dob.value;
         
-        axios.get(`http://localhost:8081/getFromSearch/${forename}/${surname}/${dob}`) 
+        axios.get(`http://54.247.130.198:8081/getFromSearch/${forename}/${surname}/${dob}`) 
             .then(({data}) => {        
                 setSearchResults(data);
             })

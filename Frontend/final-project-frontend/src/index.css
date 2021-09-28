@@ -78,7 +78,7 @@ table {
 }
 
 .scroll {
-  height:300px;
+  max-height:300px;
   overflow:auto; 
   border: 1px solid black;
   background: grey;
