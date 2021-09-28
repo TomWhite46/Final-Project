@@ -1,18 +1,26 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BusinessAddress from "./elements/BusinessAddress";
+import Address from "./elements/Address";
 
 const Addresses = (searchId) => {
 
             const [businessAddresses, setBusinessAddresses] = useState([]);
+            const [addresses, setAddresses] = useState([]);
             
             useEffect(() => {
-                axios.get(`http://localhost:8080/getBusinessAddressPersonId/${searchId.searchId}`) 
+                axios.get(`http://localhost:8081/getBusinessAddressPersonId/${searchId.searchId}`) 
                 .then(({data}) => {        
-                    
                     setBusinessAddresses(data);
                 })
                 .catch (err => console.log(err));
+
+                axios.get(`http://localhost:8081/getAddressPersonId/${searchId.searchId}`) 
+                .then(({data}) => {        
+                    setAddresses(data);
+                })
+                .catch (err => console.log(err));
+
             }, [searchId]);
 
             const showHide = ({target}, str) => {
@@ -29,10 +37,10 @@ const Addresses = (searchId) => {
 
     return (
         <>
-            <div className="dataDisplay">Addresses associated with individual:
+            <div className="dataDisplay"><strong>Addresses associated with individual:</strong>
                 <div id="business address(es)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show business address(es) &#x25BC;</div>
                 <div className="hide">
-                    <table className="dataTable">
+                    <table className="topHeads">
                         <thead>
                             <tr>
                                 <th>Business name</th>
@@ -44,7 +52,24 @@ const Addresses = (searchId) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {businessAddresses.map(({businessAddressId, businessName, businessAddressStreetName, businessAddressTypeOfBusiness, businessAddressPostcode, businessAddressTown, businessAddressHouseNumber}) => <BusinessAddress name={businessName} type={businessAddressTypeOfBusiness} house={businessAddressHouseNumber} street={businessAddressStreetName} town={businessAddressTown} postcode={businessAddressPostcode}/>)}
+                            {businessAddresses.map(({businessAddressId, businessName, businessAddressStreetName, businessAddressTypeOfBusiness, businessAddressPostcode, businessAddressTown, businessAddressHouseNumber}) => <BusinessAddress key={businessAddressId} name={businessName} type={businessAddressTypeOfBusiness} house={businessAddressHouseNumber} street={businessAddressStreetName} town={businessAddressTown} postcode={businessAddressPostcode}/>)}
+    
+                        </tbody>
+                    </table>
+                </div>
+                <div id="home address(es)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show home address(es) &#x25BC;</div>
+                <div className="hide">
+                    <table className="topHeads">
+                        <thead>
+                            <tr>
+                                <th>House number</th>
+                                <th>Street</th>
+                                <th>Town</th>
+                                <th>Postcode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {addresses.map(({addressId, streetName, postcode, town, houseNumber}) => <Address key={addressId} house={houseNumber} street={streetName} town={town} postcode={postcode}/>)}
     
                         </tbody>
                     </table>

@@ -73,7 +73,15 @@ table {
 }
 #resultsTable {
   margin-top: 10px;
-  min-width: 500px;
+  width:100%;
+  border:none;
+}
+
+.scroll {
+  height:300px;
+  overflow:auto; 
+  border: 1px solid black;
+  background: grey;
 }
 
 .dataTable {

@@ -10,25 +10,25 @@ const Associates = (searchId) => {
     const [colleagues, setColleagues] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/getFriendsByPersonId/${searchId.searchId}`) 
+        axios.get(`http://localhost:8081/getFriendsByPersonId/${searchId.searchId}`) 
         .then(({data}) => {        
             setFriends(data);
         })
         .catch (err => console.log(err));
 
-        axios.get(`http://localhost:8080/getPartnersByPersonId/${searchId.searchId}`) 
+        axios.get(`http://localhost:8081/getPartnersByPersonId/${searchId.searchId}`) 
         .then(({data}) => {        
             setPartners(data);
         })
         .catch (err => console.log(err));
 
-        axios.get(`http://localhost:8080/getPhoneContactsByPersonId/${searchId.searchId}`) 
+        axios.get(`http://localhost:8081/getPhoneContactsByPersonId/${searchId.searchId}`) 
         .then(({data}) => {        
             setContacts(data);
         })
         .catch (err => console.log(err));
 
-        axios.get(`http://localhost:8080/getColleaguesByPersonId/${searchId.searchId}`) 
+        axios.get(`http://localhost:8081/getColleaguesByPersonId/${searchId.searchId}`) 
         .then(({data}) => {        
             setColleagues(data);
         })
@@ -51,7 +51,7 @@ const Associates = (searchId) => {
     }
 
     return (
-        <div className="dataDisplay">Known associates of individual:
+        <div className="dataDisplay"><strong>Known associates of individual:</strong>
             <div id="partner(s)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show partner(s) &#x25BC;</div>
             <div className="hide">
                         <AssociateTable associates={partners}/>

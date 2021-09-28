@@ -7,7 +7,7 @@ const CarInfo = (searchId) => {
 const [cars, setCars] = useState([]);
 
 useEffect(() => {
-    axios.get(`http://localhost:8080/getVehicleByPersonId/${searchId.searchId}`) 
+    axios.get(`http://localhost:8081/getVehicleByPersonId/${searchId.searchId}`) 
     .then(({data}) => {        
         
         setCars(data);
@@ -17,7 +17,7 @@ useEffect(() => {
 
     return (
         <>
-            <div className="dataDisplay">Vehicles associated with individual:
+            <div className="dataDisplay"><strong>Vehicles associated with individual:</strong>
             {cars.map(({vehicleId, vehicleColour, vehicleModel, vehicleRegistrationNumber, vehicleMake}) => <Car key={vehicleId} colour={vehicleColour} model={vehicleModel} vehicleRegistrationNumber={vehicleRegistrationNumber} make={vehicleMake}/>)}
             </div>
         </>

@@ -7,7 +7,7 @@ const Telephone = (searchId) => {
     const [phones, setPhones] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/getPhoneByPersonId/${searchId.searchId}`) 
+        axios.get(`http://localhost:8081/getPhoneByPersonId/${searchId.searchId}`) 
         .then(({data}) => {        
             setPhones(data);
         })
@@ -16,7 +16,7 @@ const Telephone = (searchId) => {
 
     return (
         <>
-            <div className="dataDisplay">Telephones associated with individual:
+            <div className="dataDisplay"><strong>Telephones associated with individual:</strong>
             {phones.map(({mobilePhoneId, mobilePhoneNumber, mobilePhoneOperator}) => <Phone key={mobilePhoneId} number={mobilePhoneNumber} operator={mobilePhoneOperator}/>)}
             </div>
         </>

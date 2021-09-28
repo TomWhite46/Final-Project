@@ -2,8 +2,6 @@ import ResultRow from "./ResultRow";
 
 const ResultsTable = ({showTable, searchResults, setSearchId}) => {
     
-    // console.log("test:" + searchResults);
-
     if (showTable === false) {
         return <></>
     } else if (searchResults == false) {
@@ -11,19 +9,21 @@ const ResultsTable = ({showTable, searchResults, setSearchId}) => {
     } else {
         return (
             <>
-                <div>Please select a person from the matches below:</div>    
-                <table id="resultsTable">
-                    <thead>
-                        <tr>
-                            <th>Forenames</th>
-                            <th>Surname</th>
-                            <th>Date of Birth</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {searchResults.map(({personID, personForenames, personSurname, personDOB}) => <ResultRow key={personID} id={personID} forenames={personForenames} surname={personSurname} dob={personDOB} setSearchId={setSearchId}/>)}
-                    </tbody>
-                </table>
+                <div>Please select a person from the matches below:</div>
+                <div className="scroll">
+                    <table id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>Forenames</th>
+                                <th>Surname</th>
+                                <th>Date of Birth</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {searchResults.map(({personID, personForenames, personSurname, personDOB}) => <ResultRow key={personID} id={personID} forenames={personForenames} surname={personSurname} dob={personDOB} setSearchId={setSearchId}/>)}
+                        </tbody>
+                    </table>
+                </div>    
             </>
         )
     }

@@ -6,7 +6,7 @@ const Biographical = (searchId) => {
     const [person, setPerson] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/getByID/${searchId.searchId}`) 
+        axios.get(`http://localhost:8081/getByID/${searchId.searchId}`) 
         .then(({data}) => {        
             setPerson(data);
             console.log(data);
@@ -18,7 +18,7 @@ const Biographical = (searchId) => {
 
     return (
         <>
-        <div className="dataDisplay">Biographical details:
+        <div className="dataDisplay"><strong>Biographical details:</strong>
             <table className="dataTable">
                 <tbody>
                     <tr>
