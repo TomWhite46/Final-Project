@@ -11,12 +11,12 @@ import javax.persistence.OneToMany;
 @Entity
 public class Vehicle {
 
+	@Column(name = "colour")
+	private String vehicleColour;
 	@Id
 	@Column(name = "vehicle_id")
 	private Integer vehicleId;
 
-	@Column(name = "colour")
-	private String vehicleColour;
 	@Column(name = "model")
 	private String vehicleModel;
 	@Column(name = "vehicle_registration_number")
@@ -27,7 +27,7 @@ public class Vehicle {
 	@OneToMany(mappedBy = "vehicle")
 	Set<Person_Vehicle> carInfo;
 
-	public Vehicle(Integer vehicleId, String vehicleColour, String vehicleModel, String vehicleRegistrationNumber,
+	public Vehicle(String vehicleColour, Integer vehicleId, String vehicleModel, String vehicleRegistrationNumber,
 			String vehicleMake) {
 		super();
 		this.vehicleId = vehicleId;

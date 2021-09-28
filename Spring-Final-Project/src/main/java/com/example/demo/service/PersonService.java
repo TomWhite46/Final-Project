@@ -28,12 +28,21 @@ public interface PersonService {
 
 	Citizen getFullDetailsFromPerson(String id);
 
-	// public List<Person> getCitizens(boolean isCitizen);
-
 	public List<Person> getByPersonForenamesAndPersonSurname(String personForenames, String personSurname);
 
 	public List<Person> getByPersonForenamesAndPersonDOB(String personForenames, String personDOB);
 
 	public List<Person> getByPersonForenamesAndPersonSurnameAndPersonDOB(String personForenames, String personSurname,
 			String personDOB);
+
+	public List<Person> getPersonFromSearch(String forenames, String surname, String dob);
+
+	public List<Person> getFriendsFromPersonId(Long personId);
+
+	public List<Person> getPartnersFromPersonId(Long personId);
+
+	public List<Person> getPhoneContactsByPersonId(Long personId);
+
+	public List<Person> getColleaguesByPersonId(Long personId);
+
 }

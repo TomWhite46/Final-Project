@@ -29,4 +29,10 @@ public class BusinessAddressService {
 		return found;
 	}
 
+	public List<BusinessAddress> getBusinessAddressPersonId(long personId) {
+		List<BusinessAddress> address = this.repo.getBusinessAddressPersonId(personId);
+		return address;
+
+	}
+
 }

@@ -91,4 +91,34 @@ public class PersonServiceList implements PersonService {
 		return null;
 	}
 
+	@Override
+	public List<Person> getPersonFromSearch(String forenames, String surname, String dob) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Person> getFriendsFromPersonId(Long personId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Person> getPartnersFromPersonId(Long personId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Person> getPhoneContactsByPersonId(Long personId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Person> getColleaguesByPersonId(Long personId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -146,7 +146,7 @@ public class Person {
 		this.personNationality = personNationality;
 	}
 
-	public String getByPersonSex() {
+	public String getPersonSex() {
 		return personSex;
 	}
 

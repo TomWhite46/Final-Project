@@ -120,4 +120,49 @@ public class PersonServiceDB implements PersonService {
 				personDOB);
 	}
 
+	@Override
+	public List<Person> getPersonFromSearch(String forenames, String surname, String dob) {
+		List<Person> person = this.repo.getPersonFromSearch(forenames, surname, dob);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	}
+
+	@Override
+	public List<Person> getFriendsFromPersonId(Long personId) {
+		List<Person> person = this.repo.getFriendsFromPersonId(personId);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
+
+	@Override
+	public List<Person> getPartnersFromPersonId(Long personId) {
+		List<Person> person = this.repo.getPartnersFromPersonId(personId);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
+
+	@Override
+	public List<Person> getPhoneContactsByPersonId(Long personId) {
+		List<Person> person = this.repo.getPhoneContactsByPersonId(personId);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
+
+	@Override
+	public List<Person> getColleaguesByPersonId(Long personId) {
+		List<Person> person = this.repo.getColleaguesByPersonId(personId);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
+
 }

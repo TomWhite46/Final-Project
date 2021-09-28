@@ -92,9 +92,30 @@ public class PersonController {
 		return new ResponseEntity<>(this.service.getByPersonForenamesAndPersonDOB(forenames, dob), HttpStatus.OK);
 	}
 
-//	@GetMapping("getAllTransactions/{cardNumber}")
-//	public ResponseEntity<AtmTransactionsDTO> getAllAtmTransactions(@PathVariable Long cardNumber) {
-//		return new ResponseEntity<AtmTransactionsDTO>(this.getAllTransactions(cardNumber), HttpStatus.OK);
-//	}
+	@GetMapping("getFromSearch/{forenames}/{surname}/{dob}")
+	public ResponseEntity<List<Person>> getPersonFromSearch(@PathVariable String forenames,
+			@PathVariable String surname, @PathVariable String dob) {
+		return new ResponseEntity<>(this.service.getPersonFromSearch(forenames, surname, dob), HttpStatus.OK);
+	}
+
+	@GetMapping("getFriendsByPersonId/{personId}")
+	public ResponseEntity<List<Person>> getFriendsFromPersonId(@PathVariable long personId) {
+		return new ResponseEntity<>(this.service.getFriendsFromPersonId(personId), HttpStatus.OK);
+	}
+
+	@GetMapping("getPartnersByPersonId/{personId}")
+	public ResponseEntity<List<Person>> getPartnersFromPersonId(@PathVariable long personId) {
+		return new ResponseEntity<>(this.service.getPartnersFromPersonId(personId), HttpStatus.OK);
+	}
+
+	@GetMapping("getPhoneContactsByPersonId/{personId}")
+	public ResponseEntity<List<Person>> getPhoneContactsByPersonId(@PathVariable long personId) {
+		return new ResponseEntity<>(this.service.getPhoneContactsByPersonId(personId), HttpStatus.OK);
+	}
+
+	@GetMapping("getColleaguesByPersonId/{personId}")
+	public ResponseEntity<List<Person>> getColleaguesByPersonId(@PathVariable long personId) {
+		return new ResponseEntity<>(this.service.getColleaguesByPersonId(personId), HttpStatus.OK);
+	}
 
 }
