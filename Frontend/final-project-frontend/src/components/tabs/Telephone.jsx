@@ -9,7 +9,6 @@ const Telephone = (searchId) => {
     useEffect(() => {
         axios.get(`http://localhost:8080/getPhoneByPersonId/${searchId.searchId}`) 
         .then(({data}) => {        
-            console.log(data);
             setPhones(data);
         })
         .catch (err => console.log(err));

@@ -1,4 +1,4 @@
-import Associate from "./elements/Associate";
+import AssociateTable from "./elements/AssociateTable";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -6,30 +6,67 @@ const Associates = (searchId) => {
 
     const [friends, setFriends] = useState([]);
     const [partners, setPartners] = useState([]);
+    const [contacts, setContacts] = useState([]);
+    const [colleagues, setColleagues] = useState([]);
 
-useEffect(() => {
-    axios.get(`http://localhost:8080/getFriendsByPersonId/${searchId.searchId}`) 
-    .then(({data}) => {        
-        setFriends(data);
-        console.log(data);
-    })
-    .catch (err => console.log(err));
+    useEffect(() => {
+        axios.get(`http://localhost:8080/getFriendsByPersonId/${searchId.searchId}`) 
+        .then(({data}) => {        
+            setFriends(data);
+        })
+        .catch (err => console.log(err));
 
-    axios.get(`http://localhost:8080/getPartnersByPersonId/${searchId.searchId}`) 
-    .then(({data}) => {        
-        setPartners(data);
-    })
-    .catch (err => console.log(err));
+        axios.get(`http://localhost:8080/getPartnersByPersonId/${searchId.searchId}`) 
+        .then(({data}) => {        
+            setPartners(data);
+        })
+        .catch (err => console.log(err));
 
-}, [searchId]);
+        axios.get(`http://localhost:8080/getPhoneContactsByPersonId/${searchId.searchId}`) 
+        .then(({data}) => {        
+            setContacts(data);
+        })
+        .catch (err => console.log(err));
+
+        axios.get(`http://localhost:8080/getColleaguesByPersonId/${searchId.searchId}`) 
+        .then(({data}) => {        
+            setColleagues(data);
+        })
+        .catch (err => console.log(err));
+
+    }, [searchId]);
+
+    
+
+    const showHide = ({target}, str) => {
+        const subData = target.nextSibling;
+        str= target.id;
+        if (subData.className==="hide") {
+            subData.className = "show";
+            target.innerText = `Hide ${str} \u25B2`
+        } else {
+            subData.className = "hide";
+            target.innerText = `Show ${str} \u25BC`
+        }
+    }
 
     return (
         <div className="dataDisplay">Known associates of individual:
-            <div>
-                {partners.map(({personID, personForenames, personSurname, personDOB})=> <Associate key={personID} type="Partner" forenames={personForenames} surname={personSurname} dob={personDOB}/>)}
+            <div id="partner(s)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show partner(s) &#x25BC;</div>
+            <div className="hide">
+                        <AssociateTable associates={partners}/>
             </div>
-            <div>
-                {friends.map(({personID, personForenames, personSurname, personDOB})=> <Associate key={personID} type="Friend" forenames={personForenames} surname={personSurname} dob={personDOB}/>)}
+            <div id="friend(s)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show friend(s) &#x25BC;</div>
+            <div className="hide">
+                        <AssociateTable associates={friends}/>
+            </div>
+            <div id="phone contact(s)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show phone contact(s) &#x25BC;</div>
+            <div className="hide">
+                        <AssociateTable associates={contacts}/>
+            </div>
+            <div id="colleague(s)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show colleague(s) &#x25BC;</div>
+            <div className="hide">
+                        <AssociateTable associates={colleagues}/>
             </div>
         </div>
     )

@@ -10,6 +10,11 @@ const ResultRow = ({id, forenames, surname, dob, setSearchId}) => {
         console.log(target.parentElement.id);
     }
 
+    if(console.log===undefined) {
+        console.log(dob);
+    }
+    
+
     return(
         <tr id={id} onClick={(e)=>selectRow(e)}>
             <td>{forenames}</td>

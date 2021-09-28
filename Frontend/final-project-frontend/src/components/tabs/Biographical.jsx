@@ -1,12 +1,20 @@
-const Biographical = () => {
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-    const forenames = "test";
-    const surname = "test";
-    const dob = "test";
-    const placeOfBirth = "test";
-    const sex ="test";
-    const nationality = "test";
-    const homeAddress = "test";
+const Biographical = (searchId) => {
+
+    const [person, setPerson] = useState([]);
+
+    useEffect(() => {
+        axios.get(`http://localhost:8080/getByID/${searchId.searchId}`) 
+        .then(({data}) => {        
+            setPerson(data);
+            console.log(data);
+        })
+        .catch (err => console.log(err));
+    }, [searchId]);
+
+    const {personForenames, personSurname, personDOB, personPOB, personNationality, personSex} = person;
 
     return (
         <>
@@ -15,37 +23,28 @@ const Biographical = () => {
                 <tbody>
                     <tr>
                         <td>Forenames</td>
-                        <td>{forenames}</td>
+                        <td>{personForenames}</td>
                     </tr>
                     <tr>
                         <td>Surname</td>
-                        <td>{surname}</td>
+                        <td>{personSurname}</td>
                     </tr>
                     <tr>
                         <td>Date of Birth</td>
-                        <td>{dob}</td>
+                        <td>{personDOB}</td>
                     </tr>
                     <tr>
                         <td>Place of Birth</td>
-                        <td>{placeOfBirth}</td>
+                        <td>{personPOB}</td>
                     </tr>
                     <tr>
                         <td>Sex</td>
-                        <td>{sex}</td>
+                        <td>{personSex}</td>
                     </tr>
                     <tr>
                         <td>Nationality</td>
-                        <td>{nationality}</td>
+                        <td>{personNationality}</td>
                     </tr>
-                    <tr>
-                        <td>Home Address</td>
-                        <td>{homeAddress}</td>
-                    </tr>
-                    <tr>
-                        <td>Business Address</td>
-                        <td>Business address</td>
-                    </tr>
-
                 </tbody>
             </table>
         </div>
