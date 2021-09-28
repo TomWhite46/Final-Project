@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -62,6 +63,11 @@ public class AtmTransactionController {
 	@GetMapping("getAllEposInfo/{eposId}")
 	public ResponseEntity<Optional<Epos>> getByEposId(@PathVariable Integer eposId) {
 		return ResponseEntity.ok(this.eposService.getByEposId(eposId));
+	}
+
+	@GetMapping("getByAtmId/{atmId}")
+	public ResponseEntity<AtmPoint> getByAtmId1(@PathVariable Integer atmId) {
+		return new ResponseEntity<>(this.service.getByAtmId(atmId), HttpStatus.OK);
 	}
 
 }

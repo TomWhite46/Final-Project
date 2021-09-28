@@ -52,6 +52,14 @@ public class AtmTransactionsService {
 
 	public Optional<AtmPoint> getAllAtmInfo(Integer atmId) {
 		return this.atmPointRepo.findById(atmId);
+
+	}
+
+	public AtmPoint getByAtmId(Integer atmId) {
+		Optional<AtmPoint> found = this.atmPointRepo.findById(atmId);
+		if (found.isEmpty())
+			return null;
+		return found.get();
 	}
 
 }

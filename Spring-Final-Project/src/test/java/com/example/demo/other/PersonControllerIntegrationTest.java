@@ -64,7 +64,7 @@ public class PersonControllerIntegrationTest {
 
 	@Test
 	void testFindByForename() throws Exception {
-		RequestBuilder request = get("/GetByPersonForenames/Bob");
+		RequestBuilder request = get("/getByPersonForenames/Bob");
 
 		ResultMatcher checkStatus = status().isOk();
 
@@ -164,7 +164,8 @@ public class PersonControllerIntegrationTest {
 
 		ResultMatcher checkStatus = status().isOk();
 
-		Person testPerson = new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male");
+		List<Person> testPerson = List
+				.of(new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male"));
 
 		String testPersonAsJson = this.mapper.writeValueAsString(testPerson);
 
@@ -175,11 +176,12 @@ public class PersonControllerIntegrationTest {
 
 	@Test
 	void testFindPersonByForenamesAndSurnameAndDob() throws Exception {
-		RequestBuilder request = get("/getByPersonForenamesAndSurname/Bob/Norman/1995-13-12");
+		RequestBuilder request = get("/getByPersonForenamesAndSurnameAndDob/Bob/Norman/1995-13-12");
 
 		ResultMatcher checkStatus = status().isOk();
 
-		Person testPerson = new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male");
+		List<Person> testPerson = List
+				.of(new Person((long) 1, "true", "Bob", "Norman", "1995-13-12", "Swindon", "British", "Male"));
 
 		String testPersonAsJson = this.mapper.writeValueAsString(testPerson);
 
@@ -199,7 +201,7 @@ public class PersonControllerIntegrationTest {
 
 	@Test
 	void testNotFindingPersonByForename() throws Exception {
-		RequestBuilder request = get("/GetByPersonForenames/Clive");
+		RequestBuilder request = get("/getByPersonForenames/Clive");
 
 		ResultMatcher checkBody = content().json("[]");
 
