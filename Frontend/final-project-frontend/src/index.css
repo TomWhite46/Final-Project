@@ -1,15 +1,18 @@
 body {
-  margin: 0;
+  align-content: center;
+  margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-width:600px;
+  max-height: 100vh;
+  max-width: 100vw;
 }
 
 #resultsTable {
   border: 1px solid black;
+  border-radius: 7px;
 }
 
 table#resultsTable > thead > tr, .topHeads > thead > tr {
@@ -22,12 +25,13 @@ nav {
   margin-top:40px;
   margin-bottom: 8px;
   white-space: nowrap;
+  border-radius: 7px;
 }
 
 nav > a {
   text-align: center;
   margin-right: -5px;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 7px;
   border-top: 1px solid black;
   border-left: 1px solid black;
   border-right: 1px solid black;
@@ -55,6 +59,7 @@ nav > a:hover {
   font-weight:bolder;
   background-color: darkgray;
   border-bottom: 1px solid darkgrey;
+  border-radius: 7px;
 }
 
 .active:hover {
@@ -69,11 +74,12 @@ nav > a:hover {
 table {
   border-collapse: collapse;
   table-layout:auto;
+  margin: auto;
 
 }
 #resultsTable {
   margin-top: 10px;
-  width:100%;
+  width:500px;
   border:none;
 }
 
@@ -82,6 +88,8 @@ table {
   overflow:auto; 
   border: 1px solid black;
   background: grey;
+  max-width: 100vw;
+  margin: auto;
 }
 
 .dataTable {
@@ -116,14 +124,17 @@ th, td {
 
 tr:nth-child(even) {
   background-color: lightgray;
+  color: black;
 }
 tr:nth-child(odd) {
   background-color: white;
+  color: black;
 }
 
 .formInput {
   width: 100%;
-  max-width: 500px;
+  max-width: 100vw;
+  border-radius: 7px;
 }
 
 .row {
@@ -140,6 +151,7 @@ tr:nth-child(odd) {
 
 .searchForm {
   max-width: 500px;
+  margin: auto;
 }
 
 .selected {
@@ -160,6 +172,7 @@ h2 {
   background-color: darkgray;
   padding: 5px;
   width: 700px;
+  margin: auto;
 }
 
 .hide {
@@ -176,5 +189,53 @@ h2 {
 
 #resultsTable tbody tr, #associates tr {
   cursor: pointer;
+  margin: auto;
 }
 
+:root {
+  --bg-color: #fff;
+  --text-color: #000;
+}
+
+[data-theme="dark"] {
+  --bg-color: #3F3F3F;
+  --text-color: #fff;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.content {
+  max-width: 100vw;
+  margin: auto;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: x-large;
+  background: black;
+  color:teal;
+  cursor: pointer;
+  border-radius: 100px;
+  border: none;
+  box-shadow: 0 5px 10px #ccc;
+}
+
+.back-to-top:hover {
+  background: black;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.dark-mode-button {
+  display: flex;
+  justify-content: flex-end;
+  background-color: grey;
+  border-radius: 7px;
+}
