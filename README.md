@@ -19,7 +19,7 @@
 
 <p>The first thing we did for our project was to create a list of features based on the brief for the scenario that we have chosen. From this we then organised these features based on MoSCoW methodologies (as shown below). We placed the features which we thought were necessary for the minimum viable product in the ‘Must Have’ column. Then the remaining features were placed under the three remaining columns based on how difficult and time consuming they would be when compared to how much of a positive impact they would have on the end product.</p>
 
-##insert MOSCOW##
+![Moscow](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/MoSCoW%20prioritisation.png?)
 
 The next bit of planning we undertook was to create a couple of wireframe diagrams to figure out what we wanted our front-end application to look like, and to figure out which components we would need to create and which requests we would need to create for the backend.
 
