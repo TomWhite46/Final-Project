@@ -53,6 +53,7 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
 <p>For our version control, we used GitHub. By using this, it allowed us to create a private repository with each of us as collaborators, which meant that each of us could push up or pull down each other’s work and make changes where needed. This helped to make the project much more collaborative.</p>
 <p>We had the main branch, alongside a dev branch. From the dev branch we had a dev-backend and a dev-frontend branch allowing for members on our team to work in whichever area they needed. We also created another branch off dev-backend while we tried to sort out a lot of the backend as we were having some issues initially. By using this as our version control, it has allowed us to make sure we were all working from the same up-to-date versions of our files and that we always had that online back-up in case we had any issues locally.</p>
 <p>Another advantage of using this as our version control, was that if there was a branch merge that needed to happen or was ready to happen, every member of the team is then added as a reviewer to make sure that everyone is happy with this decision. This adds to its usefulness when working as part of a team.</p>
+
 ![GitReview](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/GitReviewers.png)
 
 ![ReviewApproved](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/GitChangesApproved.png)
