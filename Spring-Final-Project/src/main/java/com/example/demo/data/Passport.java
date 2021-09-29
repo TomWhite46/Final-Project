@@ -1,63 +1,93 @@
 package com.example.demo.data;
 
-import java.time.LocalDate;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import com.example.demo.Gender;
-
 @Entity
 public class Passport {
 
 	@Id
+	@Column(name = "passport_number")
 	private Long passportNumber;
 
 	@Column
-	private String passportSurname;
-	private String passportForename;
-	private String passportNationality;
-	private LocalDate passportDateOfBirth;
-	private Gender passportGender;
-	private String passportPlaceOfBirth;
+	private String surname;
+	private String forenames;
+	private String nationality;
+	private String dob;
+	private String sex;
+	@Column(name = "place_of_birth")
+	private String placeOfBirth;
+	@Column(name = "issuing_country")
 	private String passportIssuingCountry;
-	private LocalDate passportDateOfIssue;
-	private LocalDate passportDateOfExpiry;
+	@Column(name = "date_of_issue")
+	private String passportDateOfIssue;
+	@Column(name = "date_of_expiry")
+	private String passportDateOfExpiry;
 
-	public Passport(Long passportNumber, String passportSurname, String passportForename, String passportNationality,
-			LocalDate passportDateOfBirth, Gender passportGender, String passportPlaceOfBirth,
-			String passportIssuingCountry, LocalDate passportDateOfIssue, LocalDate passportDateOfExpiry) {
+	public Passport(Long passportNumber, String surname, String forenames, String nationality, String dob, String sex,
+			String placeOfBirth, String passportIssuingCountry, String passportDateOfIssue,
+			String passportDateOfExpiry) {
 		super();
 		this.passportNumber = passportNumber;
-		this.passportSurname = passportSurname;
-		this.passportForename = passportForename;
-		this.passportNationality = passportNationality;
-		this.passportDateOfBirth = passportDateOfBirth;
-		this.passportGender = passportGender;
-		this.passportPlaceOfBirth = passportPlaceOfBirth;
+		this.surname = surname;
+		this.forenames = forenames;
+		this.nationality = nationality;
+		this.dob = dob;
+		this.sex = sex;
+		this.placeOfBirth = placeOfBirth;
 		this.passportIssuingCountry = passportIssuingCountry;
 		this.passportDateOfIssue = passportDateOfIssue;
 		this.passportDateOfExpiry = passportDateOfExpiry;
 	}
 
-	public Passport(String passportSurname, String passportForename, String passportNationality,
-			LocalDate passportDateOfBirth, Gender passportGender, String passportPlaceOfBirth,
-			String passportIssuingCountry, LocalDate passportDateOfIssue, LocalDate passportDateOfExpiry) {
+	public Passport(String surname, String forenames, String nationality, String dob, String sex, String placeOfBirth,
+			String passportIssuingCountry, String passportDateOfIssue, String passportDateOfExpiry) {
 		super();
-		this.passportSurname = passportSurname;
-		this.passportForename = passportForename;
-		this.passportNationality = passportNationality;
-		this.passportDateOfBirth = passportDateOfBirth;
-		this.passportGender = passportGender;
-		this.passportPlaceOfBirth = passportPlaceOfBirth;
+		this.surname = surname;
+		this.forenames = forenames;
+		this.nationality = nationality;
+		this.dob = dob;
+		this.sex = sex;
+		this.placeOfBirth = placeOfBirth;
 		this.passportIssuingCountry = passportIssuingCountry;
 		this.passportDateOfIssue = passportDateOfIssue;
 		this.passportDateOfExpiry = passportDateOfExpiry;
 	}
 
 	public Passport() {
-		// TODO Auto-generated constructor stub
+
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(dob, forenames, nationality, passportDateOfExpiry, passportDateOfIssue,
+				passportIssuingCountry, passportNumber, placeOfBirth, sex, surname);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Passport other = (Passport) obj;
+		return Objects.equals(dob, other.dob) && Objects.equals(forenames, other.forenames)
+				&& Objects.equals(nationality, other.nationality)
+				&& Objects.equals(passportDateOfExpiry, other.passportDateOfExpiry)
+				&& Objects.equals(passportDateOfIssue, other.passportDateOfIssue)
+				&& Objects.equals(passportIssuingCountry, other.passportIssuingCountry)
+				&& Objects.equals(passportNumber, other.passportNumber)
+				&& Objects.equals(placeOfBirth, other.placeOfBirth) && Objects.equals(sex, other.sex)
+				&& Objects.equals(surname, other.surname);
 	}
 
 	public Long getPassportNumber() {
@@ -68,52 +98,52 @@ public class Passport {
 		this.passportNumber = passportNumber;
 	}
 
-	public String getPassportSurname() {
-		return passportSurname;
+	public String getSurname() {
+		return surname;
 	}
 
-	public void setPassportSurname(String passportSurname) {
-		this.passportSurname = passportSurname;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
-	public String getPassportForename() {
-		return passportForename;
+	public String getForenames() {
+		return forenames;
 	}
 
-	public void setPassportForename(String passportForename) {
-		this.passportForename = passportForename;
+	public void setForenames(String forenames) {
+		this.forenames = forenames;
 	}
 
-	public String getPassportNationality() {
-		return passportNationality;
+	public String getNationality() {
+		return nationality;
 	}
 
-	public void setPassportNationality(String passportNationality) {
-		this.passportNationality = passportNationality;
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
 	}
 
-	public LocalDate getPassportDateOfBirth() {
-		return passportDateOfBirth;
+	public String getDob() {
+		return dob;
 	}
 
-	public void setPassportDateOfBirth(LocalDate passportDateOfBirth) {
-		this.passportDateOfBirth = passportDateOfBirth;
+	public void setDob(String dob) {
+		this.dob = dob;
 	}
 
-	public Gender getPassportGender() {
-		return passportGender;
+	public String getSex() {
+		return sex;
 	}
 
-	public void setPassportGender(Gender passportGender) {
-		this.passportGender = passportGender;
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
-	public String getPassportPlaceOfBirth() {
-		return passportPlaceOfBirth;
+	public String getPlaceOfBirth() {
+		return placeOfBirth;
 	}
 
-	public void setPassportPlaceOfBirth(String passportPlaceOfBirth) {
-		this.passportPlaceOfBirth = passportPlaceOfBirth;
+	public void setPlaceOfBirth(String placeOfBirth) {
+		this.placeOfBirth = placeOfBirth;
 	}
 
 	public String getPassportIssuingCountry() {
@@ -124,30 +154,28 @@ public class Passport {
 		this.passportIssuingCountry = passportIssuingCountry;
 	}
 
-	public LocalDate getPassportDateOfIssue() {
+	public String getPassportDateOfIssue() {
 		return passportDateOfIssue;
 	}
 
-	public void setPassportDateOfIssue(LocalDate passportDateOfIssue) {
+	public void setPassportDateOfIssue(String passportDateOfIssue) {
 		this.passportDateOfIssue = passportDateOfIssue;
 	}
 
-	public LocalDate getPassportDateOfExpiry() {
+	public String getPassportDateOfExpiry() {
 		return passportDateOfExpiry;
 	}
 
-	public void setPassportDateOfExpiry(LocalDate passportDateOfExpiry) {
+	public void setPassportDateOfExpiry(String passportDateOfExpiry) {
 		this.passportDateOfExpiry = passportDateOfExpiry;
 	}
 
 	@Override
 	public String toString() {
-		return "Passport [passportNumber=" + passportNumber + ", passportSurname=" + passportSurname
-				+ ", passportForename=" + passportForename + ", passportNationality=" + passportNationality
-				+ ", passportDateOfBirth=" + passportDateOfBirth + ", passportGender=" + passportGender
-				+ ", passportPlaceOfBirth=" + passportPlaceOfBirth + ", passportIssuingCountry="
-				+ passportIssuingCountry + ", passportDateOfIssue=" + passportDateOfIssue + ", passportDateOfExpiry="
-				+ passportDateOfExpiry + "]";
+		return "Passport [passportNumber=" + passportNumber + ", surname=" + surname + ", forenames=" + forenames
+				+ ", nationality=" + nationality + ", dob=" + dob + ", sex=" + sex + ", placeOfBirth=" + placeOfBirth
+				+ ", passportIssuingCountry=" + passportIssuingCountry + ", passportDateOfIssue=" + passportDateOfIssue
+				+ ", passportDateOfExpiry=" + passportDateOfExpiry + "]";
 	}
 
 }
