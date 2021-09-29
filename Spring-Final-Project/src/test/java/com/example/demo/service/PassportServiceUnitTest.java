@@ -38,11 +38,11 @@ public class PassportServiceUnitTest {
 		Mockito.verifyNoMoreInteractions(this.repo);
 	}
 
-	@Test
-	void testGetByPassportNumber() {
-		Long passportNumber = (long) 1;
-		
-		Passport testPassport = new Passport(passportNumber)
-	}
+//	@Test
+//	void testGetByPassportNumber() {
+//		Long passportNumber = (long) 1;
+//		
+//		Passport testPassport = new Passport(passportNumber)
+//	}
 
 }
