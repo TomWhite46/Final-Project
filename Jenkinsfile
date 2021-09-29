@@ -15,6 +15,7 @@ pipeline {
                 sh 'docker-compose build' 
                 sh 'rm application-prod.properties'
                 }
+            }
         }
         
         
