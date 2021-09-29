@@ -38,20 +38,15 @@ public class MobilePhoneServiceUnitTest {
 		Mockito.verifyNoMoreInteractions(this.repo);
 	}
 
-// 	@Test
-// 	void testGetPhoneByPersonId() {
+	@Test
+	void testGetPhoneByPersonId() {
 
-// 		List<MobilePhone> testMobilePhone = List.of(new MobilePhone(1, "07551 123123", "Three"));
+		List<MobilePhone> testMobilePhone = List.of(new MobilePhone(1, "07551 123123", "Three"));
 
-// 		int personId = 0;
+		Long personId = (long) 0;
 
-// 		Mockito.when(this.repo.getPhoneByPersonId(personId)).thenReturn(testMobilePhone);
+		Mockito.when(this.service.getPhoneByPersonId(personId)).thenReturn(testMobilePhone);
 
-// 		assertThat(this.service.getPhoneByPersonId(personId)).isEqualTo(testMobilePhone);
-
-// 		Mockito.verify(this.repo, Mockito.times(1)).findAll();
-// 		Mockito.verifyNoMoreInteractions(this.repo);
-
-// 	}
+	}
 
 }
