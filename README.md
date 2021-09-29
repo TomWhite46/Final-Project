@@ -20,21 +20,23 @@
 <p>The first thing we did for our project was to create a list of features based on the brief for the scenario that we have chosen. From this we then organised these features based on MoSCoW methodologies (as shown below). We placed the features which we thought were necessary for the minimum viable product in the ‘Must Have’ column. Then the remaining features were placed under the three remaining columns based on how difficult and time consuming they would be when compared to how much of a positive impact they would have on the end product.</p>
 
 ![Moscow](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/MoSCoW%20prioritisation.png)
-![MoSCoW2](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/MoSCow%20prioritisation2.png)
+
+![MoSCoW2](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/MoSCow%20prioritisation2.png)
 
 The next bit of planning we undertook was to create a couple of wireframe diagrams to figure out what we wanted our front-end application to look like, and to figure out which components we would need to create and which requests we would need to create for the backend.
 
- ![Wireframe](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/otherinitialwireframe.png)
- ![WireframeFinal](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/WireframeFinal.png)
+ ![Wireframe](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/otherinitialwireframe.png)
+ 
+ ![WireframeFinal](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/WireframeFinal.png)
  
 <p>After we had created our Jira board, we created a risk assessment matrix based on the risks we have identified for the project which would negatively impact the project. This is something which we continuously looked at throughout the project and have amended throughout the project based on any new risks which have become apparent.</p>
 
 <h3>Risk Assessment for 1st Sprint</h3>
-![RiskAssessment](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/RiskAssessment1.png?token=AUSM7MGCWSRSKW53FBBUY2DBKTPII)
+![RiskAssessment](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/RiskAssessment1.png)
 
 
 <h3>2nd Risk Assessment (End of 1st Sprint/Start of 2nd)</h3>
-![RiskAssessment2](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/RiskAssessment2.png?token=AUSM7MGJZ5HEPYXX746FEBDBKTPJI)
+![RiskAssessment2](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/RiskAssessment2.png)
 
 
 <h2>2) Project Management</h2>
@@ -42,16 +44,18 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
 <p>Each of the tasks that we created were given a story point estimate which we used to help us judge how much work we had remaining on the project. We also used the prioritisation arrows for these tasks, which were given different priority levels based on the MoSCoW prioritisation list.</p>
 <p>We split our stories and tasks up into two sprints, one for the first week and one for the second week. We also assigned tasks to specific members of the team, which allowed us to easily see which parts of the project were being worked on by a specific person.</p>
 <h3>Jira Board for Sprint 1</h3>
-![Sprint1](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/example%20of%20sprint%201.png?token=AUSM7MHGKJEBEZDIUHEPASDBKTPKO)
+![Sprint1](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/example%20of%20sprint%201.png)
+
 <h3>Jira Board for Sprint 2</h3>
- ![Sprint1](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/Sprint2Readme.png?token=AUSM7MH7PNIORRGC2GGYLVLBKTPLO)
+ ![Sprint1](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/Sprint2Readme.png)
 
 <h2>3) Version Control</h2>
 <p>For our version control, we used GitHub. By using this, it allowed us to create a private repository with each of us as collaborators, which meant that each of us could push up or pull down each other’s work and make changes where needed. This helped to make the project much more collaborative.</p>
 <p>We had the main branch, alongside a dev branch. From the dev branch we had a dev-backend and a dev-frontend branch allowing for members on our team to work in whichever area they needed. We also created another branch off dev-backend while we tried to sort out a lot of the backend as we were having some issues initially. By using this as our version control, it has allowed us to make sure we were all working from the same up-to-date versions of our files and that we always had that online back-up in case we had any issues locally.</p>
 <p>Another advantage of using this as our version control, was that if there was a branch merge that needed to happen or was ready to happen, every member of the team is then added as a reviewer to make sure that everyone is happy with this decision. This adds to its usefulness when working as part of a team.</p>
-![GitReview](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/GitReviewers.png?token=AUSM7MAR2U2DX6IA2JCS7TDBKTPS4)
-![ReviewApproved](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/GitChangesApproved.png?token=AUSM7MH4S44LG3OWRE2W7ZTBKTPUG)
+![GitReview](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/GitReviewers.png)
+
+![ReviewApproved](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/GitChangesApproved.png)
 
 
 <h2>4) AWS Architecture</h2>
@@ -78,13 +82,13 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
 <h4>Security Groups</h4>
 <p>The security groups in AWS allow for us to lock down our infrastructure to only allow the traffic we want to let in. For example, the RDS has a security group that only allows connections from each member of the team from their own IP addresses and from IPs within the VPC that the application is using. This helps to keep that data as secure as possible which is exactly what you want when using data of this nature.</p>
 
-![AWSArchitecture](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/AWSarchitecture.png?token=AUSM7MAOGPBCQ5KMS4ZLHPTBKTPW6)
+![AWSArchitecture](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/AWSarchitecture.png)
 
 <h2>5) Data Set</h2>
 <p>For our RDS database, we used created MySQL database for the tables as we have relational data and that works as a relational database. 
 From the tables which were given, these were the tables we decided to add to the RDS:</p>
 
-![ERDDiagram](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/ERD%20diagram%20for%20database%20tables.png?token=AUSM7MFRZ7ZX2UWA7RKYSM3BKTPZQ)
+![ERDDiagram](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/ERD%20diagram%20for%20database%20tables.png)
 
 <p>From these tables that were added to the RDS, the only ones that weren’t used for this build are the ‘cell_tower’ table and the ‘passport’ table. With the tables we have included, it does mean we can achieve the MVP for scenario 1 by including what we believe to be the most important information about a person.</p>
 <p>This is because the ‘cell_tower’ table provides longitude and latitude locations rather than addresses so without the use of a map, the data isn’t all that relevant to the scenario we chose. If we were to expand to scenario 2 however, this data would then become more useful, and as it’s already loaded into the database, we would be able to use that data straight away. </p>
