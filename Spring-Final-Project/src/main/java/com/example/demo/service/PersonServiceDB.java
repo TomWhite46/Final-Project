@@ -3,29 +3,18 @@ package com.example.demo.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.data.Citizen;
 import com.example.demo.data.Person;
-import com.example.demo.data.Person_Citizen;
-import com.example.demo.data.repo.CitizenRepo;
-import com.example.demo.data.repo.PersonCitizenRepo;
 import com.example.demo.data.repo.PersonRepo;
-import com.example.demo.dto.AllDetailsDTO;
 
 @Service
 @Primary
 public class PersonServiceDB implements PersonService {
 
 	private PersonRepo repo;
-
-	@Autowired
-	private PersonCitizenRepo personCitizenRepo;
-
-	@Autowired
-	private CitizenRepo citizenRepo;
 
 	public PersonServiceDB(PersonRepo repo) {
 		super();
@@ -37,29 +26,8 @@ public class PersonServiceDB implements PersonService {
 		Optional<Person> found = this.repo.findById(personID);
 		if (found.isEmpty())
 			return null;
-
+		found.get().setPersonDOB(found.get().getPersonDOB().substring(0, 10));
 		return found.get();
-	}
-
-	@Override
-	public AllDetailsDTO getFullDetailsFromPerson(Long personID) {
-		Optional<Person> person = this.repo.findById(personID);
-		if (person.isEmpty()) {
-			return null;
-		}
-
-		Person_Citizen person_citizen = this.personCitizenRepo.findByPerson(person.get());
-		Optional<Citizen> citizen = this.citizenRepo.findById(person_citizen.getCitizen().getId());
-		if (citizen.isEmpty()) {
-			return null;
-		}
-
-		AllDetailsDTO allDetails = new AllDetailsDTO();
-		allDetails.person = person.get();
-		allDetails.citizen = citizen.get();
-
-		System.out.println(person_citizen);
-		return null;
 	}
 
 	@Override
@@ -99,7 +67,6 @@ public class PersonServiceDB implements PersonService {
 
 	@Override
 	public Citizen getFullDetailsFromPerson(String id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -159,6 +126,15 @@ public class PersonServiceDB implements PersonService {
 	@Override
 	public List<Person> getColleaguesByPersonId(Long personId) {
 		List<Person> person = this.repo.getColleaguesByPersonId(personId);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
+
+	@Override
+	public List<Person> findPersonByReg(String reg) {
+		List<Person> person = this.repo.findPersonByReg(reg);
 		for (Person prs : person) {
 			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
 		}

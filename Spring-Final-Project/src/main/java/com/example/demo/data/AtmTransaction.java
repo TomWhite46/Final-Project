@@ -10,20 +10,22 @@ import javax.persistence.Id;
 
 @Entity
 public class AtmTransaction {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	@Column(name = "atm_id")
 	private Integer atmId;
-
 	@Column
 	private String timestamp;
+
 	@Column(name = "card_number")
 	private Long cardNumber;
 	private String type;
 	private double amount;
+
+//	@ManyToOne
+//	private Bankcard bankcard;
 
 	public AtmTransaction(Integer id, Integer atmId, String timestamp, Long cardNumber, String type, double amount) {
 		super();
@@ -118,5 +120,13 @@ public class AtmTransaction {
 				&& Objects.equals(id, other.id) && Objects.equals(timestamp, other.timestamp)
 				&& Objects.equals(type, other.type);
 	}
+
+//	public Bankcard getBankcard() {
+//		return bankcard;
+//	}
+//
+//	public void setBankcard(Bankcard bankcard) {
+//		this.bankcard = bankcard;
+//	}
 
 }

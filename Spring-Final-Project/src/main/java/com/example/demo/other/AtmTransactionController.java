@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -65,9 +64,14 @@ public class AtmTransactionController {
 		return ResponseEntity.ok(this.eposService.getByEposId(eposId));
 	}
 
-	@GetMapping("getByAtmId/{atmId}")
-	public ResponseEntity<AtmPoint> getByAtmId1(@PathVariable Integer atmId) {
-		return new ResponseEntity<>(this.service.getByAtmId(atmId), HttpStatus.OK);
+	@GetMapping("getAtmTransactionByPersonId/{personId}")
+	public ResponseEntity<List<AtmTransaction>> getAtmTransactionByPersonId(@PathVariable Long personId) {
+		return ResponseEntity.ok(this.service.getAtmTransactionByPersonId(personId));
+	}
+
+	@GetMapping("getEposTransactionByPersonId/{personId}")
+	public ResponseEntity<List<EposTransaction>> getEposTransactionByPersonId(@PathVariable Long personId) {
+		return ResponseEntity.ok(this.eposService.getEposTransactionByPersonId(personId));
 	}
 
 }

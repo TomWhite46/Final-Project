@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.data.Person;
-import com.example.demo.dto.AllDetailsDTO;
 import com.example.demo.service.PersonService;
 
 @RestController
@@ -26,77 +25,14 @@ public class PersonController {
 		this.service = service;
 	}
 
-	@GetMapping("/getAllPeople")
-	public ResponseEntity<List<Person>> getAllPeople() {
-		List<Person> created = this.service.getAllPerson();
-		return new ResponseEntity<>(created, HttpStatus.OK);
-	}
-
-	@GetMapping("/getByPersonForenames/{forenames}")
-	public ResponseEntity<List<Person>> getByPersonForenames(@PathVariable String forenames) {
-		return new ResponseEntity<>(this.service.getByPersonForenames(forenames), HttpStatus.OK);
-	}
-
-	@GetMapping("/getByLastName/{surname}")
-	public ResponseEntity<List<Person>> getByPersonSurname(@PathVariable String surname) {
-		return new ResponseEntity<>(this.service.getByPersonSurname(surname), HttpStatus.OK);
-	}
-
-	@GetMapping("/getByNationality/{nationality}")
-	public ResponseEntity<List<Person>> getByPersonNationality(@PathVariable String nationality) {
-		return new ResponseEntity<>(this.service.getByPersonNationality(nationality), HttpStatus.OK);
-	}
-
-	@GetMapping("/getByDOB/{dob}")
-	public ResponseEntity<List<Person>> getByPersonDOB(@PathVariable String dob) {
-		return new ResponseEntity<>(this.service.getByPersonDOB(dob), HttpStatus.OK);
-	}
-
-	@GetMapping("/getByPOB/{placeOfBirth}")
-	public ResponseEntity<List<Person>> getByPersonPOB(@PathVariable String placeOfBirth) {
-		return new ResponseEntity<>(this.service.getByPersonPOB(placeOfBirth), HttpStatus.OK);
-	}
-
-	@GetMapping("/getByPersonSex/{sex}")
-	public ResponseEntity<List<Person>> getByPersonSex(@PathVariable String sex) {
-		return new ResponseEntity<>(this.service.getByPersonSex(sex), HttpStatus.OK);
-	}
+//	get single person by ID
 
 	@GetMapping("/getByID/{id}")
 	public ResponseEntity<Person> getByPersonID(@PathVariable Long id) {
 		return new ResponseEntity<>(this.service.getByPersonID(id), HttpStatus.OK);
 	}
 
-	@GetMapping("/getFullDetails/{id}")
-	public ResponseEntity<AllDetailsDTO> getFullDetailsFromPerson(@PathVariable Long id) {
-		return new ResponseEntity<AllDetailsDTO>(this.service.getFullDetailsFromPerson(id), HttpStatus.OK);
-	}
-
-	@GetMapping("/getByPersonForenamesAndSurname/{forenames}/{surname}")
-	public ResponseEntity<List<Person>> getByPersonForenamesAndSurname(@PathVariable String forenames,
-			@PathVariable String surname) {
-		return new ResponseEntity<>(this.service.getByPersonForenamesAndPersonSurname(forenames, surname),
-				HttpStatus.OK);
-	}
-
-	@GetMapping("/getByPersonForenamesAndSurnameAndDob/{forenames}/{surname}/{dob}")
-	public ResponseEntity<List<Person>> getByPersonForenamesAndSurnameAndDob(@PathVariable String forenames,
-			@PathVariable String surname, @PathVariable String dob) {
-		return new ResponseEntity<>(
-				this.service.getByPersonForenamesAndPersonSurnameAndPersonDOB(forenames, surname, dob), HttpStatus.OK);
-	}
-
-	@GetMapping("/getByPersonForenameAndDob/{forenames}/{dob}")
-	public ResponseEntity<List<Person>> getByPersonForenamesAndDob(@PathVariable String forenames,
-			@PathVariable String dob) {
-		return new ResponseEntity<>(this.service.getByPersonForenamesAndPersonDOB(forenames, dob), HttpStatus.OK);
-	}
-
-	@GetMapping("getFromSearch/{forenames}/{surname}/{dob}")
-	public ResponseEntity<List<Person>> getPersonFromSearch(@PathVariable String forenames,
-			@PathVariable String surname, @PathVariable String dob) {
-		return new ResponseEntity<>(this.service.getPersonFromSearch(forenames, surname, dob), HttpStatus.OK);
-	}
+//	get other people based on join tables
 
 	@GetMapping("getFriendsByPersonId/{personId}")
 	public ResponseEntity<List<Person>> getFriendsFromPersonId(@PathVariable long personId) {
@@ -116,6 +52,51 @@ public class PersonController {
 	@GetMapping("getColleaguesByPersonId/{personId}")
 	public ResponseEntity<List<Person>> getColleaguesByPersonId(@PathVariable long personId) {
 		return new ResponseEntity<>(this.service.getColleaguesByPersonId(personId), HttpStatus.OK);
+	}
+
+//	procedures for handling search with different variables blank
+
+	@GetMapping("findPersonByForenameSurnameDob/{forenames}/{surname}/{dob}")
+	public ResponseEntity<List<Person>> findPersonByForenameSurnameDob(@PathVariable String forenames,
+			@PathVariable String surname, @PathVariable String dob) {
+		return new ResponseEntity<>(this.service.getPersonFromSearch(forenames, surname, dob), HttpStatus.OK);
+	}
+
+	@GetMapping("findPersonByForenameSurname/{forenames}/{surname}")
+	public ResponseEntity<List<Person>> findPersonByForenameSurname(@PathVariable String forenames,
+			@PathVariable String surname) {
+		return new ResponseEntity<>(this.service.getPersonFromSearch(forenames, surname, ""), HttpStatus.OK);
+	}
+
+	@GetMapping("findPersonByForenameDob/{forenames}/{dob}")
+	public ResponseEntity<List<Person>> findPersonByForenameDob(@PathVariable String forenames,
+			@PathVariable String dob) {
+		return new ResponseEntity<>(this.service.getPersonFromSearch(forenames, "", dob), HttpStatus.OK);
+	}
+
+	@GetMapping("findPersonByForename/{forenames}")
+	public ResponseEntity<List<Person>> findPersonByForename(@PathVariable String forenames) {
+		return new ResponseEntity<>(this.service.getPersonFromSearch(forenames, "", ""), HttpStatus.OK);
+	}
+
+	@GetMapping("findPersonBySurnameDob/{surname}/{dob}")
+	public ResponseEntity<List<Person>> findPersonBySurnameDob(@PathVariable String surname, @PathVariable String dob) {
+		return new ResponseEntity<>(this.service.getPersonFromSearch("", surname, dob), HttpStatus.OK);
+	}
+
+	@GetMapping("findPersonBySurname/{surname}")
+	public ResponseEntity<List<Person>> findPersonBySurname(@PathVariable String surname) {
+		return new ResponseEntity<>(this.service.getPersonFromSearch("", surname, ""), HttpStatus.OK);
+	}
+
+	@GetMapping("findPersonByDob/{dob}")
+	public ResponseEntity<List<Person>> findPersonByDob(@PathVariable String dob) {
+		return new ResponseEntity<>(this.service.getPersonFromSearch("", "", dob), HttpStatus.OK);
+	}
+
+	@GetMapping("findPersonByReg/{reg}")
+	public ResponseEntity<List<Person>> findPersonByReg(@PathVariable String reg) {
+		return new ResponseEntity<>(this.service.findPersonByReg(reg), HttpStatus.OK);
 	}
 
 }

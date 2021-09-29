@@ -4,13 +4,10 @@ import java.util.List;
 
 import com.example.demo.data.Citizen;
 import com.example.demo.data.Person;
-import com.example.demo.dto.AllDetailsDTO;
 
 public interface PersonService {
 
 	public Person getByPersonID(Long personID);
-
-	public AllDetailsDTO getFullDetailsFromPerson(Long id);
 
 	public List<Person> getAllPerson();
 
@@ -44,5 +41,7 @@ public interface PersonService {
 	public List<Person> getPhoneContactsByPersonId(Long personId);
 
 	public List<Person> getColleaguesByPersonId(Long personId);
+
+	public List<Person> findPersonByReg(String reg);
 
 }

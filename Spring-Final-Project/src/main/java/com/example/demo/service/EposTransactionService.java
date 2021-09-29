@@ -49,4 +49,12 @@ public class EposTransactionService {
 	public Optional<Epos> getByEposId(Integer eposId) {
 		return this.eposRepo.findById(eposId);
 	}
+
+	public List<EposTransaction> getEposTransactionByPersonId(Long personId) {
+		List<EposTransaction> transactions = this.repo.getEposTransactionByPersonId(personId);
+		for (EposTransaction transaction : transactions) {
+			transaction.setEposTimestamp(transaction.getEposTimestamp().substring(0, 19).replace('T', ' '));
+		}
+		return transactions;
+	}
 }
