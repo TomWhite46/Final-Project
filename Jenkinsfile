@@ -14,7 +14,7 @@ pipeline {
 
                 script {
                     if (fileExists ('./Spring-Final-Project/src/main/resources/application-prod.properties')) {
-                        rm './Spring-Final-Project/src/main/resources/application-prod.properties'
+                        sh 'rm ./Spring-Final-Project/src/main/resources/application-prod.properties'
                     }
                 }
 
