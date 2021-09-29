@@ -19,13 +19,13 @@
 
 <p>The first thing we did for our project was to create a list of features based on the brief for the scenario that we have chosen. From this we then organised these features based on MoSCoW methodologies (as shown below). We placed the features which we thought were necessary for the minimum viable product in the ‘Must Have’ column. Then the remaining features were placed under the three remaining columns based on how difficult and time consuming they would be when compared to how much of a positive impact they would have on the end product.</p>
 
-![Moscow](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/MoSCoW%20prioritisation.png?token=AUSM7MG2SV7EAARGHV5QAMLBKTPG4)
-![MoSCoW2](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/MoSCow%20prioritisation2.png?token=AUSM7MFCLS3TQOPTPKALJHTBKTOTA)
+![Moscow](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/MoSCoW%20prioritisation.png)
+![MoSCoW2](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/MoSCow%20prioritisation2.png)
 
 The next bit of planning we undertook was to create a couple of wireframe diagrams to figure out what we wanted our front-end application to look like, and to figure out which components we would need to create and which requests we would need to create for the backend.
 
- ![Wireframe](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/otherinitialwireframe.png?token=AUSM7MBYUY5XXXPZC3IZ4ALBKTPPI)
- ![WireframeFinal](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/WireframeFinal.png?token=AUSM7MG5MDCDEDX7NAGHW4LBKTPQK)
+ ![Wireframe](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/otherinitialwireframe.png)
+ ![WireframeFinal](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/WireframeFinal.png)
  
 <p>After we had created our Jira board, we created a risk assessment matrix based on the risks we have identified for the project which would negatively impact the project. This is something which we continuously looked at throughout the project and have amended throughout the project based on any new risks which have become apparent.</p>
 
