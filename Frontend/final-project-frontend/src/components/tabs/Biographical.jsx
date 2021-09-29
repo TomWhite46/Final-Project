@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Biographical = (searchId) => {
+const Biographical = ({searchId, url}) => {
 
     const [person, setPerson] = useState([]);
-
+    
     useEffect(() => {
-        axios.get(`http://54.247.130.198:8081/getByID/${searchId.searchId}`) 
+        axios.get(`${url}/getByID/${searchId}`) 
         .then(({data}) => {        
             setPerson(data);
-            console.log(data);
         })
         .catch (err => console.log(err));
     }, [searchId]);

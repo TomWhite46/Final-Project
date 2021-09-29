@@ -1,21 +1,36 @@
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const SearchForm = ({setShowTable, setShowTabs, setSearchResults, searchResults}) => {
+const SearchForm = ({setShowTable, setShowTabs, setSearchResults, url}) => {
     
     const submitForm = (e) => {
-        e.preventDefault();
-        setShowTable(true);
-        setShowTabs(true);
+        e.preventDefault();        
         const forename = e.target.forename.value;
         const surname = e.target.surname.value;
         const dob = e.target.dob.value;
         
-        axios.get(`http://54.247.130.198:8081/getFromSearch/${forename}/${surname}/${dob}`) 
+        let request = "findPersonBy";
+        (forename === "" ? console.log("no forename") : request += "Forename");
+        (surname === "" ? console.log("no surname") : request += "Surname");
+        (dob === "" ? console.log("no dob") : request += "Dob");
+
+        if (request === "findPersonBy") {
+            alert("Please enter data in at least one field.");
+            return;
+        }
+
+        setShowTabs(false);
+        setSearchResults("loading")
+        setShowTable(true);
+        
+        axios.get(`${url}/${request}/${forename}/${surname}/${dob}`) 
             .then(({data}) => {        
                 setSearchResults(data);
             })
-            .catch (err => console.log(err));
+            .catch (err => {
+                console.log(err);
+                setSearchResults("error");
+            })
     };
     
     return (

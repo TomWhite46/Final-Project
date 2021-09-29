@@ -6,10 +6,11 @@ import CarInfo from './tabs/CarInfo';
 import Telephone from './tabs/Telephone';
 import Associates from './tabs/Associates';
 import Addresses from './tabs/Addresses';
+import Locations from './tabs/Locations';
 
-const Tabs = ({showTabs, searchId}) => {
+const Tabs = ({showTabs, setSearchResults, searchId, setSearchId, url}) => {
 
-    // console.log(bankCards);
+
 
     if (showTabs === false) {
         return <></>
@@ -20,22 +21,25 @@ const Tabs = ({showTabs, searchId}) => {
                     <Nav/>
                     <Switch>
                         <Route exact path="/">
-                            <Biographical searchId = {searchId}/>
+                            <Biographical searchId = {searchId} url={url}/>
                         </Route>
                         <Route path="/addresses">
-                            <Addresses searchId = {searchId}/>
+                            <Addresses searchId = {searchId} url={url}/>
                         </Route>
                         <Route path="/financialTransactions">
-                            <FinancialTransactions/>
+                            <FinancialTransactions searchId = {searchId} url={url}/>
                         </Route>
                         <Route path="/carInfo">
-                            <CarInfo searchId = {searchId}/>
+                            <CarInfo searchId = {searchId} url={url}/>
                         </Route>
                         <Route path="/telephone">
-                            <Telephone searchId = {searchId}/>
+                            <Telephone searchId = {searchId} url={url}/>
                         </Route>
                         <Route path="/associates">
-                            <Associates searchId = {searchId}/>
+                            <Associates setSearchResults={setSearchResults} searchId = {searchId} setSearchId={setSearchId} url={url}/>
+                        </Route>
+                        <Route path="/locations">
+                            <Locations searchId = {searchId} url={url}/>
                         </Route>
                     </Switch>
                 </Router>

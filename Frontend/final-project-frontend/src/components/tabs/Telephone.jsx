@@ -2,12 +2,12 @@ import Phone from "./elements/Phone";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Telephone = (searchId) => {
+const Telephone = ({searchId, url}) => {
 
     const [phones, setPhones] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://54.247.130.198:8081/getPhoneByPersonId/${searchId.searchId}`) 
+        axios.get(`${url}/getPhoneByPersonId/${searchId}`) 
         .then(({data}) => {        
             setPhones(data);
         })
