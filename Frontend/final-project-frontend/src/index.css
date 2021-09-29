@@ -174,7 +174,7 @@ h2 {
   cursor: pointer;
 }
 
-#resultsTable tbody tr {
+#resultsTable tbody tr, #associates tr {
   cursor: pointer;
 }
 

@@ -3,19 +3,19 @@ import axios from "axios";
 import BusinessAddress from "./elements/BusinessAddress";
 import Address from "./elements/Address";
 
-const Addresses = (searchId) => {
+const Addresses = ({searchId, url}) => {
 
             const [businessAddresses, setBusinessAddresses] = useState([]);
             const [addresses, setAddresses] = useState([]);
             
             useEffect(() => {
-                axios.get(`http://54.247.130.198:8081/getBusinessAddressPersonId/${searchId.searchId}`) 
+                axios.get(`${url}/getBusinessAddressPersonId/${searchId}`) 
                 .then(({data}) => {        
                     setBusinessAddresses(data);
                 })
                 .catch (err => console.log(err));
 
-                axios.get(`http://54.247.130.198:8081/getAddressPersonId/${searchId.searchId}`) 
+                axios.get(`${url}/getAddressPersonId/${searchId}`) 
                 .then(({data}) => {        
                     setAddresses(data);
                 })

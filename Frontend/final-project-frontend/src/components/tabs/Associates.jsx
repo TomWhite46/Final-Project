@@ -2,33 +2,33 @@ import AssociateTable from "./elements/AssociateTable";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Associates = (searchId) => {
+const Associates = ({searchId, url, setSearchId, setSearchResults}) => {
 
     const [friends, setFriends] = useState([]);
     const [partners, setPartners] = useState([]);
     const [contacts, setContacts] = useState([]);
     const [colleagues, setColleagues] = useState([]);
-
     useEffect(() => {
-        axios.get(`http://54.247.130.198:8081/getFriendsByPersonId/${searchId.searchId}`) 
+        
+        axios.get(`${url}/getFriendsByPersonId/${searchId}`) 
         .then(({data}) => {        
             setFriends(data);
         })
         .catch (err => console.log(err));
 
-        axios.get(`http://54.247.130.198:8081/getPartnersByPersonId/${searchId.searchId}`) 
+        axios.get(`${url}/getPartnersByPersonId/${searchId}`) 
         .then(({data}) => {        
             setPartners(data);
         })
         .catch (err => console.log(err));
 
-        axios.get(`http://54.247.130.198:8081/getPhoneContactsByPersonId/${searchId.searchId}`) 
+        axios.get(`${url}/getPhoneContactsByPersonId/${searchId}`) 
         .then(({data}) => {        
             setContacts(data);
         })
         .catch (err => console.log(err));
 
-        axios.get(`http://54.247.130.198:8081/getColleaguesByPersonId/${searchId.searchId}`) 
+        axios.get(`${url}/getColleaguesByPersonId/${searchId}`) 
         .then(({data}) => {        
             setColleagues(data);
         })
@@ -51,22 +51,22 @@ const Associates = (searchId) => {
     }
 
     return (
-        <div className="dataDisplay"><strong>Known associates of individual:</strong>
+        <div  className="dataDisplay"><strong>Known associates of individual:</strong>
             <div id="partner(s)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show partner(s) &#x25BC;</div>
             <div className="hide">
-                        <AssociateTable associates={partners}/>
+                        <AssociateTable associates={partners} setSearchResults={setSearchResults} setSearchId={setSearchId} url={url}/>
             </div>
             <div id="friend(s)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show friend(s) &#x25BC;</div>
             <div className="hide">
-                        <AssociateTable associates={friends}/>
+                        <AssociateTable associates={friends} setSearchResults={setSearchResults} setSearchId={setSearchId} url={url}/>
             </div>
             <div id="phone contact(s)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show phone contact(s) &#x25BC;</div>
             <div className="hide">
-                        <AssociateTable associates={contacts}/>
+                        <AssociateTable associates={contacts} setSearchResults={setSearchResults} setSearchId={setSearchId} url={url}/>
             </div>
             <div id="colleague(s)" className="dropDownButton" onClick={(e)=>showHide(e)}>Show colleague(s) &#x25BC;</div>
             <div className="hide">
-                        <AssociateTable associates={colleagues}/>
+                        <AssociateTable associates={colleagues} setSearchResults={setSearchResults} setSearchId={setSearchId} url={url}/>
             </div>
         </div>
     )

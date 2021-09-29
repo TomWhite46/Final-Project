@@ -2,12 +2,12 @@ import Car from "./elements/Car";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const CarInfo = (searchId) => {
+const CarInfo = ({searchId, url}) => {
 
 const [cars, setCars] = useState([]);
 
 useEffect(() => {
-    axios.get(`http://54.247.130.198:8081/getVehicleByPersonId/${searchId.searchId}`) 
+    axios.get(`${url}/getVehicleByPersonId/${searchId}`) 
     .then(({data}) => {        
         
         setCars(data);
