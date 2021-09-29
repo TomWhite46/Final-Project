@@ -207,6 +207,8 @@ h2 {
   text-align: center;
   background-color: var(--bg-color);
   color: var(--text-color);
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .content {
@@ -233,7 +235,7 @@ h2 {
   filter: invert(100%);
 }
 
-.dark-mode-button {
+.dark-mode-btn {
   display: flex;
   justify-content: flex-end;
   background-color: grey;

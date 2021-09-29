@@ -24,7 +24,7 @@ function App() {
   const [showButton, setShowButton] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 0) {
+      if (window.pageYOffset > 10) {
         setShowButton(true);
       } else {
         setShowButton(false);
