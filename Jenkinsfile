@@ -10,8 +10,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "docker-compose build"
-            }
+              withCredentials([file(credentialsId: 'application-prod.properties', variable: 'APP-PROD')]) {
+                sh 'cp "$APP-PROD" ./Spring-Final-Project/src/main/resources/application-prod.properties'
+                sh 'docker-compose build' 
+                sh 'rm application-prod.properties'
+                }
         }
         
         
