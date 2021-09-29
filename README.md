@@ -29,11 +29,11 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
 <p>After we had created our Jira board, we created a risk assessment matrix based on the risks we have identified for the project which would negatively impact the project. This is something which we continuously looked at throughout the project and have amended throughout the project based on any new risks which have become apparent.</p>
 
 <h3>Risk Assessment for 1st Sprint</h3>
-![RiskAssessment](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/RiskAssessment1.png?token=AUSM7MAGBM4V6XM5AEO5MTLBKTOVQ)
+![RiskAssessment](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/example%20of%20sprint%201.png?token=AUSM7MCT4F4LGR3LJCWAVIDBKTO76)
 
 
 <h3>2nd Risk Assessment (End of 1st Sprint/Start of 2nd)</h3>
-![RiskAssessment2](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/RiskAssessment2.png?token=AUSM7MCCIIHDKIWXO64G7ZDBKTOX4)
+![RiskAssessment2](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/Sprint2Readme.png?token=AUSM7MFKLID5ZV5HTD323ZDBKTO3Y)
 
 
 <h2>2) Project Management</h2>
@@ -41,7 +41,7 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
 <p>Each of the tasks that we created were given a story point estimate which we used to help us judge how much work we had remaining on the project. We also used the prioritisation arrows for these tasks, which were given different priority levels based on the MoSCoW prioritisation list.</p>
 <p>We split our stories and tasks up into two sprints, one for the first week and one for the second week. We also assigned tasks to specific members of the team, which allowed us to easily see which parts of the project were being worked on by a specific person.</p>
 <h3>Jira Board for Sprint 1</h3>
-![Sprint1](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/example%20of%20sprint%201.png?token=AUSM7MFUQYQSIPBVMLBHOCTBKTOZK)
+![Sprint1](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/example%20of%20sprint%201.png?token=AUSM7MGL52R6IGJFLM26G7DBKTPEQ)
 <h3>Jira Board for Sprint 2</h3>
  ![Sprint1](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/Sprint2Readme.png?token=AUSM7MFKLID5ZV5HTD323ZDBKTO3Y)
 
