@@ -7,7 +7,7 @@ import {useState, useEffect} from "react";
 
 function App() {
 
-  const url = "http://localhost:8081";
+  const url = "http://54.247.130.198:8081";
 
   const [showTable, setShowTable] = useState(false);
   const [showTabs, setShowTabs] = useState(false);
