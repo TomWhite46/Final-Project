@@ -1,34 +1,38 @@
 package com.example.demo.data;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Bankcard {
 
-	@Id
-	@Column(name="bankcard_id")
+	@Column(name = "bankcard_id")
 	private Integer bankcardId;
-
-	@Column(name="sort_code")
+	@Column(name = "sort_code")
 	private String bankcardSortcode;
-	@Column(name="card_number")
-	private Long bankcardCardNumber;
+	@Id
+	@Column(name = "card_number")
+	private Long cardNumber;
 
-	public Bankcard(Integer bankcardId, String bankcardSortcode, Long bankcardCardNumber) {
+	@OneToMany(mappedBy = "cardNumber") // sets the FK
+	private List<AtmTransaction> atmTransactions;
+
+	public Bankcard(Integer bankcardId, String bankcardSortcode, Long cardNumber) {
 		super();
 		this.bankcardId = bankcardId;
 		this.bankcardSortcode = bankcardSortcode;
-		this.bankcardCardNumber = bankcardCardNumber;
+		this.cardNumber = cardNumber;
 	}
 
-	public Bankcard(String bankcardSortcode, Long bankcardCardNumber) {
+	public Bankcard(String bankcardSortcode, Long cardNumber) {
 		super();
 		this.bankcardSortcode = bankcardSortcode;
-		this.bankcardCardNumber = bankcardCardNumber;
+		this.cardNumber = cardNumber;
 	}
 
 	public Bankcard() {
@@ -37,7 +41,7 @@ public class Bankcard {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(bankcardCardNumber, bankcardId, bankcardSortcode);
+		return Objects.hash(cardNumber, bankcardId, bankcardSortcode);
 	}
 
 	@Override
@@ -52,7 +56,7 @@ public class Bankcard {
 			return false;
 		}
 		Bankcard other = (Bankcard) obj;
-		return Objects.equals(bankcardCardNumber, other.bankcardCardNumber) && bankcardId == other.bankcardId
+		return Objects.equals(cardNumber, other.cardNumber) && bankcardId == other.bankcardId
 				&& Objects.equals(bankcardSortcode, other.bankcardSortcode);
 	}
 
@@ -72,18 +76,18 @@ public class Bankcard {
 		this.bankcardSortcode = bankcardSortcode;
 	}
 
-	public Long getBankcardCardNumber() {
-		return bankcardCardNumber;
+	public Long getCardNumber() {
+		return cardNumber;
 	}
 
-	public void setBankcardCardNumber(Long bankcardCardNumber) {
-		this.bankcardCardNumber = bankcardCardNumber;
+	public void setCardNumber(Long cardNumber) {
+		this.cardNumber = cardNumber;
 	}
 
 	@Override
 	public String toString() {
-		return "Bankcard [bankcardId=" + bankcardId + ", bankcardSortcode=" + bankcardSortcode + ", bankcardCardNumber="
-				+ bankcardCardNumber + "]";
+		return "Bankcard [bankcardId=" + bankcardId + ", bankcardSortcode=" + bankcardSortcode + ", cardNumber="
+				+ cardNumber + "]";
 	}
 
 }
