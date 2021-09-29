@@ -12,7 +12,8 @@ pipeline {
             steps {
               withCredentials([file(credentialsId: 'application-prod.properties', variable: 'APP_PROD')]) {
                 sh 'cp "$APP_PROD" ./Spring-Final-Project/src/main/resources/application-prod.properties'
-                sh 'docker-compose build' 
+                sh 'docker-compose build'
+                sh 'rm ./Spring-Final-Project/src/main/resources/application-prod.properties'
                 }
             }
         }
