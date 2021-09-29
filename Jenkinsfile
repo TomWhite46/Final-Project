@@ -11,6 +11,13 @@ pipeline {
         stage('Build') {
             steps {
               withCredentials([file(credentialsId: 'application-prod.properties', variable: 'APP_PROD')]) {
+
+                script {
+                    if (fileExists ('./Spring-Final-Project/src/main/resources/application-prod.properties')) {
+                        rm './Spring-Final-Project/src/main/resources/application-prod.properties'
+                    }
+                }
+
                 sh 'cp "$APP_PROD" ./Spring-Final-Project/src/main/resources/application-prod.properties'
                 sh 'docker-compose build'
                 sh 'rm ./Spring-Final-Project/src/main/resources/application-prod.properties'
