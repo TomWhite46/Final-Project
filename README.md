@@ -20,6 +20,7 @@
 <p>The first thing we did for our project was to create a list of features based on the brief for the scenario that we have chosen. From this we then organised these features based on MoSCoW methodologies (as shown below). We placed the features which we thought were necessary for the minimum viable product in the ‘Must Have’ column. Then the remaining features were placed under the three remaining columns based on how difficult and time consuming they would be when compared to how much of a positive impact they would have on the end product.</p>
 
 ![Moscow](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/MoSCoW%20prioritisation.png?token=AUSM7MEXXM5MA2LWACXAUR3BKTOLM)
+![MoSCoW2](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/MoSCow%20prioritisation2.png?token=AUSM7MFCLS3TQOPTPKALJHTBKTOTA)
 
 The next bit of planning we undertook was to create a couple of wireframe diagrams to figure out what we wanted our front-end application to look like, and to figure out which components we would need to create and which requests we would need to create for the backend.
 
@@ -28,11 +29,11 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
 <p>After we had created our Jira board, we created a risk assessment matrix based on the risks we have identified for the project which would negatively impact the project. This is something which we continuously looked at throughout the project and have amended throughout the project based on any new risks which have become apparent.</p>
 
 <h3>Risk Assessment for 1st Sprint</h3>
-##INSERT RISK ASSESSMENT 1##
+![RiskAssessment](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/RiskAssessment1.png?token=AUSM7MAGBM4V6XM5AEO5MTLBKTOVQ)
 
 
 <h3>2nd Risk Assessment (End of 1st Sprint/Start of 2nd)</h3>
-##INSERT RISK ASSESSMENT 2##
+![RiskAssessment2](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/RiskAssessment2.png?token=AUSM7MCCIIHDKIWXO64G7ZDBKTOX4)
 
 
 <h2>2) Project Management</h2>
@@ -40,9 +41,9 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
 <p>Each of the tasks that we created were given a story point estimate which we used to help us judge how much work we had remaining on the project. We also used the prioritisation arrows for these tasks, which were given different priority levels based on the MoSCoW prioritisation list.</p>
 <p>We split our stories and tasks up into two sprints, one for the first week and one for the second week. We also assigned tasks to specific members of the team, which allowed us to easily see which parts of the project were being worked on by a specific person.</p>
 <h3>Jira Board for Sprint 1</h3>
- ##INSERT JIRA SPRINT 1##
+![Sprint1](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/example%20of%20sprint%201.png?token=AUSM7MFUQYQSIPBVMLBHOCTBKTOZK)
 <h3>Jira Board for Sprint 2</h3>
- ##INSERT JIRA SPRINT 2##
+ ![Sprint1](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/Sprint2Readme.png?token=AUSM7MFKLID5ZV5HTD323ZDBKTO3Y)
 
 <h2>3) Version Control</h2>
 <p>For our version control, we used GitHub. By using this, it allowed us to create a private repository with each of us as collaborators, which meant that each of us could push up or pull down each other’s work and make changes where needed. This helped to make the project much more collaborative.</p>
