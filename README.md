@@ -32,7 +32,7 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
 <p>After we had created our Jira board, we created a risk assessment matrix based on the risks we have identified for the project which would negatively impact the project. This is something which we continuously looked at throughout the project and have amended throughout the project based on any new risks which have become apparent.</p>
 
 <h3>Risk Assessment for 1st Sprint</h3>
-![RiskAssessment](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/RiskAssessment1.png)
+![RiskAssessment](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/RiskAssessment1.png)
 
 
 <h3>2nd Risk Assessment (End of 1st Sprint/Start of 2nd)</h3>
