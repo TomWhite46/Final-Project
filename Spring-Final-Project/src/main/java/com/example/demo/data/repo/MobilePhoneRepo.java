@@ -13,4 +13,5 @@ import com.example.demo.data.MobilePhone;
 public interface MobilePhoneRepo extends JpaRepository<MobilePhone, Integer> {
 	@Query(value = "SELECT * FROM mobile_phone WHERE phone_id IN (select mobile_phone_id from person_mobile_phone where person_id = :personId)", nativeQuery = true)
 	List<MobilePhone> getPhoneByPersonId(@Param("personId") long personId);
+
 }
