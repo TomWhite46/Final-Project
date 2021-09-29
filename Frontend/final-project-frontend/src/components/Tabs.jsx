@@ -6,6 +6,7 @@ import CarInfo from './tabs/CarInfo';
 import Telephone from './tabs/Telephone';
 import Associates from './tabs/Associates';
 import Addresses from './tabs/Addresses';
+import Locations from './tabs/Locations';
 
 const Tabs = ({showTabs, setSearchResults, searchId, setSearchId, url}) => {
 
@@ -36,6 +37,9 @@ const Tabs = ({showTabs, setSearchResults, searchId, setSearchId, url}) => {
                         </Route>
                         <Route path="/associates">
                             <Associates setSearchResults={setSearchResults} searchId = {searchId} setSearchId={setSearchId} url={url}/>
+                        </Route>
+                        <Route path="/locations">
+                            <Locations searchId = {searchId} url={url}/>
                         </Route>
                     </Switch>
                 </Router>

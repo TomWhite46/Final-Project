@@ -11,6 +11,7 @@ const Associate = ({id, forenames, surname, dob, setSearchResults, setSearchId, 
         .then(({data}) => {        
             setSearchResults([data]);
             setSearchId(newId);
+            document.querySelector("#resultsTable > tbody > tr:first-child").className = "selected";
         })
         .catch (err => console.log(err));
 

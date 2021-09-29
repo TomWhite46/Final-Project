@@ -27,6 +27,9 @@ const Nav = () => {
             <Link to="/associates" onClick={(e)=>changeTab(e)}>
             Associates
             </Link>
+            <Link to="/locations" onClick={(e)=>changeTab(e)}>
+            Locations
+            </Link>
         </nav>
     )
 }
