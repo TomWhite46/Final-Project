@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  nginx:
+  image: nginx:latest
+  ports:
+  - target: 80
+    published: 80
+    protocol: tcp
+    # deploy:
+    # replicas: 2
+  volumes:
+  - type: bind
+    source: ./nginx.conf
+    target: /etc/nginx/nginx.conf
+
+frontend:
+  image: wkurtze/redshift-frontendimage:latest
+  build: ./frontend
+  ports:
+  - target: 3000
+    published: 3000
+    protocol: tcp
+    # deploy:
+    # replicas: 2
+
+backend:
+  image: wkurtze/redshift-backendimage:latest
+  build: ./backend
+  ports:
+  - target: 8081
+    published: 8081
+    protocol: tcp
+    #  deploy:
+    # replicas: 3
+    # environment:
+    # DATABASE_URI: ${DB_URI}
+    # SECRET_KEY: ${SEC_KEY}
