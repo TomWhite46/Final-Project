@@ -25,9 +25,9 @@
 
 The next bit of planning we undertook was to create a couple of wireframe diagrams to figure out what we wanted our front-end application to look like, and to figure out which components we would need to create and which requests we would need to create for the backend.
 
- ![Wireframe](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/otherinitialwireframe.png)
+![Wireframe](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/otherinitialwireframe.png)
  
- ![WireframeFinal](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/WireframeFinal.png)
+![WireframeFinal](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/WireframeFinal.png)
  
 <p>After we had created our Jira board, we created a risk assessment matrix based on the risks we have identified for the project which would negatively impact the project. This is something which we continuously looked at throughout the project and have amended throughout the project based on any new risks which have become apparent.</p>
 
@@ -36,7 +36,7 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
 
 
 <h3>2nd Risk Assessment (End of 1st Sprint/Start of 2nd)</h3>
-![RiskAssessment2](https://github.com/TomWhite46/Final-Project/blob/7722ea96505aea2cd46c2a510e67a26a00072cfe/ReadMe%20pictures/RiskAssessment2.png)
+![RiskAssessment](https://github.com/TomWhite46/Final-Project/blob/7722ea96505aea2cd46c2a510e67a26a00072cfe/ReadMe%20pictures/RiskAssessment2.png)
 
 
 <h2>2) Project Management</h2>
