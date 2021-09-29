@@ -47,4 +47,7 @@ public interface PersonRepo extends JpaRepository<Person, Long> {
 	@Query(value = "SELECT * FROM person WHERE person_id IN (SELECT person_id FROM person_business_address WHERE person_id <> :personId AND address_id IN (SELECT address_id FROM person_business_address WHERE person_id = :personId))", nativeQuery = true)
 	List<Person> getColleaguesByPersonId(@Param("personId") Long personId);
 
+	@Query(value = "SELECT * FROM person WHERE person_id IN (SELECT person_id FROM person_vehicle WHERE vehicle_id IN (SELECT vehicle_id FROM vehicle WHERE vehicle_registration_number=:reg))", nativeQuery = true)
+	List<Person> findPersonByReg(@Param("reg") String reg);
+
 }

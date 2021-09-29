@@ -42,4 +42,6 @@ public interface PersonService {
 
 	public List<Person> getColleaguesByPersonId(Long personId);
 
+	public List<Person> findPersonByReg(String reg);
+
 }

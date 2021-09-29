@@ -64,4 +64,14 @@ public class AtmTransactionController {
 		return ResponseEntity.ok(this.eposService.getByEposId(eposId));
 	}
 
+	@GetMapping("getAtmTransactionByPersonId/{personId}")
+	public ResponseEntity<List<AtmTransaction>> getAtmTransactionByPersonId(@PathVariable Long personId) {
+		return ResponseEntity.ok(this.service.getAtmTransactionByPersonId(personId));
+	}
+
+	@GetMapping("getEposTransactionByPersonId/{personId}")
+	public ResponseEntity<List<EposTransaction>> getEposTransactionByPersonId(@PathVariable Long personId) {
+		return ResponseEntity.ok(this.eposService.getEposTransactionByPersonId(personId));
+	}
+
 }

@@ -94,4 +94,9 @@ public class PersonController {
 		return new ResponseEntity<>(this.service.getPersonFromSearch("", "", dob), HttpStatus.OK);
 	}
 
+	@GetMapping("findPersonByReg/{reg}")
+	public ResponseEntity<List<Person>> findPersonByReg(@PathVariable String reg) {
+		return new ResponseEntity<>(this.service.findPersonByReg(reg), HttpStatus.OK);
+	}
+
 }

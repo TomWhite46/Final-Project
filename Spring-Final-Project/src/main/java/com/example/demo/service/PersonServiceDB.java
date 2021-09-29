@@ -132,4 +132,13 @@ public class PersonServiceDB implements PersonService {
 		return person;
 	};
 
+	@Override
+	public List<Person> findPersonByReg(String reg) {
+		List<Person> person = this.repo.findPersonByReg(reg);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
+
 }

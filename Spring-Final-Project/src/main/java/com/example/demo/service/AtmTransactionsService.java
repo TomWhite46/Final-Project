@@ -54,4 +54,12 @@ public class AtmTransactionsService {
 		return this.atmPointRepo.findById(atmId);
 	}
 
+	public List<AtmTransaction> getAtmTransactionByPersonId(Long personId) {
+		List<AtmTransaction> transactions = this.repo.getAtmTransactionByPersonId(personId);
+		for (AtmTransaction transaction : transactions) {
+			transaction.setTimestamp(transaction.getTimestamp().substring(0, 19).replace('T', ' '));
+		}
+		return transactions;
+	}
+
 }
