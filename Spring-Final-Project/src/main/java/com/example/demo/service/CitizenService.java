@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import com.example.demo.data.Citizen;
@@ -11,16 +10,22 @@ public interface CitizenService {
 
 	public List<Citizen> getAllCitizens();
 
-	public List<Citizen> getByCitizenFirstName(String forename);
+	public List<Citizen> getByCitizenForenames(String forenames);
 
-	public List<Citizen> getByCitizenLastName(String surname);
+	public List<Citizen> getByCitizenSurname(String surname);
 
 	public List<Citizen> getByCitizenAddress(String address);
 
-	public List<Citizen> getByCitizenDOB(LocalDate dateOfBirth);
+	public List<Citizen> getByCitizenDob(String dob);
 
 	public List<Citizen> getByCitizenPOB(String placeOfBirth);
 
-	public List<Citizen> getByCitizenGender(String gender);
+	public List<Citizen> getByCitizenSex(String sex);
+
+	public List<Citizen> getByCitizenForenamesAndSurname(String forenames, String surname);
+
+	public List<Citizen> getByCitizenForenamesAndDob(String forenames, String dob);
+
+	public List<Citizen> getByCitizenForenamesAndSurnameAndDob(String forenames, String surname, String dob);
 
 }

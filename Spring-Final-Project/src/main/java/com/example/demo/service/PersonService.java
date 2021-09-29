@@ -1,29 +1,47 @@
 package com.example.demo.service;
 
-import java.time.LocalDate;
 import java.util.List;
 
-
+import com.example.demo.data.Citizen;
 import com.example.demo.data.Person;
 
 public interface PersonService {
 
-	public Person getByPersonID(String personID);
+	public Person getByPersonID(Long personID);
 
 	public List<Person> getAllPerson();
 
-	public List<Person> getByPersonFirstName(String forename);
+	public List<Person> getByPersonForenames(String personForenames);
 
-	public List<Person> getByPersonLastName(String surname);
+	public List<Person> getByPersonSurname(String surname);
 
 	public List<Person> getByPersonNationality(String nationality);
 
-	public List<Person> getByPersonDOB(LocalDate dateOfBirth);
+	public List<Person> getByPersonDOB(String dob);
 
 	public List<Person> getByPersonPOB(String placeOfBirth);
 
-	public List<Person> getByPersonGender(String gender);
+	public List<Person> getByPersonSex(String sex);
 
-	// public List<Person> getCitizens(boolean isCitizen);
+	Citizen getFullDetailsFromPerson(String id);
+
+	public List<Person> getByPersonForenamesAndPersonSurname(String personForenames, String personSurname);
+
+	public List<Person> getByPersonForenamesAndPersonDOB(String personForenames, String personDOB);
+
+	public List<Person> getByPersonForenamesAndPersonSurnameAndPersonDOB(String personForenames, String personSurname,
+			String personDOB);
+
+	public List<Person> getPersonFromSearch(String forenames, String surname, String dob);
+
+	public List<Person> getFriendsFromPersonId(Long personId);
+
+	public List<Person> getPartnersFromPersonId(Long personId);
+
+	public List<Person> getPhoneContactsByPersonId(Long personId);
+
+	public List<Person> getColleaguesByPersonId(Long personId);
+
+	public List<Person> findPersonByReg(String reg);
 
 }

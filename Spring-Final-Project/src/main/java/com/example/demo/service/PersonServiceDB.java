@@ -1,11 +1,12 @@
 package com.example.demo.service;
 
-import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.data.Citizen;
 import com.example.demo.data.Person;
 import com.example.demo.data.repo.PersonRepo;
 
@@ -21,9 +22,12 @@ public class PersonServiceDB implements PersonService {
 	}
 
 	@Override
-	public Person getByPersonID(String personID) {
-		Person found = this.repo.findById(personID).get();
-		return found;
+	public Person getByPersonID(Long personID) {
+		Optional<Person> found = this.repo.findById(personID);
+		if (found.isEmpty())
+			return null;
+		found.get().setPersonDOB(found.get().getPersonDOB().substring(0, 10));
+		return found.get();
 	}
 
 	@Override
@@ -32,12 +36,12 @@ public class PersonServiceDB implements PersonService {
 	}
 
 	@Override
-	public List<Person> getByPersonFirstName(String forename) {
-		return this.repo.findByPersonForenameIgnoreCase(forename);
+	public List<Person> getByPersonForenames(String personForenames) {
+		return this.repo.findByPersonForenamesIgnoreCase(personForenames);
 	}
 
 	@Override
-	public List<Person> getByPersonLastName(String surname) {
+	public List<Person> getByPersonSurname(String surname) {
 		return this.repo.findByPersonSurnameIgnoreCase(surname);
 	}
 
@@ -47,7 +51,7 @@ public class PersonServiceDB implements PersonService {
 	}
 
 	@Override
-	public List<Person> getByPersonDOB(LocalDate dateOfBirth) {
+	public List<Person> getByPersonDOB(String dateOfBirth) {
 		return this.repo.findByPersonDOB(dateOfBirth);
 	}
 
@@ -57,13 +61,84 @@ public class PersonServiceDB implements PersonService {
 	}
 
 	@Override
-	public List<Person> getByPersonGender(String gender) {
-		return this.repo.findByPersonGender(gender);
+	public List<Person> getByPersonSex(String sex) {
+		return this.repo.findByPersonSex(sex);
 	}
 
-	// @Override
-	// public List<Person> getCitizens(boolean isCitizen){
-	// return this.repo.findIsCitizen(isCitizen);
-	// }
+	@Override
+	public Citizen getFullDetailsFromPerson(String id) {
+		return null;
+	}
+
+	@Override
+	public List<Person> getByPersonForenamesAndPersonSurname(String personForenames, String personSurname) {
+		return this.repo.findPersonByPersonForenamesAndPersonSurname(personForenames, personSurname);
+	}
+
+	@Override
+	public List<Person> getByPersonForenamesAndPersonDOB(String personForenames, String personDOB) {
+		return this.repo.findPersonByPersonForenamesAndPersonDOB(personForenames, personDOB);
+	}
+
+	@Override
+	public List<Person> getByPersonForenamesAndPersonSurnameAndPersonDOB(String personForenames, String personSurname,
+			String personDOB) {
+		return this.repo.findPersonByPersonForenamesAndPersonSurnameAndPersonDOB(personForenames, personSurname,
+				personDOB);
+	}
+
+	@Override
+	public List<Person> getPersonFromSearch(String forenames, String surname, String dob) {
+		List<Person> person = this.repo.getPersonFromSearch(forenames, surname, dob);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	}
+
+	@Override
+	public List<Person> getFriendsFromPersonId(Long personId) {
+		List<Person> person = this.repo.getFriendsFromPersonId(personId);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
+
+	@Override
+	public List<Person> getPartnersFromPersonId(Long personId) {
+		List<Person> person = this.repo.getPartnersFromPersonId(personId);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
+
+	@Override
+	public List<Person> getPhoneContactsByPersonId(Long personId) {
+		List<Person> person = this.repo.getPhoneContactsByPersonId(personId);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
+
+	@Override
+	public List<Person> getColleaguesByPersonId(Long personId) {
+		List<Person> person = this.repo.getColleaguesByPersonId(personId);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
+
+	@Override
+	public List<Person> findPersonByReg(String reg) {
+		List<Person> person = this.repo.findPersonByReg(reg);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	};
 
 }

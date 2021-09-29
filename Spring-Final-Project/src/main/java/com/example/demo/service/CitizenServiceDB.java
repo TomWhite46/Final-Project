@@ -1,13 +1,10 @@
 package com.example.demo.service;
 
-import java.time.LocalDate;
 import java.util.List;
-
-import javax.transaction.Transactional;
+import java.util.Optional;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
-
 
 import com.example.demo.data.Citizen;
 import com.example.demo.data.repo.CitizenRepo;
@@ -29,12 +26,12 @@ public class CitizenServiceDB implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenFirstName(String forename) {
-		return this.repo.findByForenameIgnoreCase(forename);
+	public List<Citizen> getByCitizenForenames(String forenames) {
+		return this.repo.findByForenamesIgnoreCase(forenames);
 	}
 
 	@Override
-	public List<Citizen> getByCitizenLastName(String surname) {
+	public List<Citizen> getByCitizenSurname(String surname) {
 		return this.repo.findBySurnameIgnoreCase(surname);
 	}
 
@@ -49,20 +46,37 @@ public class CitizenServiceDB implements CitizenService {
 	}
 
 	@Override
-	public List<Citizen> getByCitizenGender(String gender) {
-		return this.repo.findByGender(gender);
+	public List<Citizen> getByCitizenSex(String sex) {
+		return this.repo.findBySex(sex);
 	}
 
 	@Override
-	public List<Citizen> getByCitizenDOB(LocalDate dateOfBirth) {
-		return this.repo.findByDateOfBirth(dateOfBirth);
+	public List<Citizen> getByCitizenDob(String dob) {
+		return this.repo.findByDob(dob);
 	}
 
 	@Override
-	@Transactional
+	public List<Citizen> getByCitizenForenamesAndSurname(String forenames, String surname) {
+		return this.repo.findCitizenByForenamesAndSurname(forenames, surname);
+	}
+
+	@Override
+	public List<Citizen> getByCitizenForenamesAndDob(String forenames, String dob) {
+		return this.repo.findCitizenByForenamesAndDob(forenames, dob);
+	}
+
+	@Override
+	public List<Citizen> getByCitizenForenamesAndSurnameAndDob(String forenames, String surname, String dob) {
+		return this.repo.findCitizenByForenamesAndSurnameAndDob(forenames, surname, dob);
+	}
+
+	@Override
 	public Citizen getByCitizenID(String id) {
-		Citizen found = this.repo.findById(id).get();
-		return found;
+		Optional<Citizen> found = this.repo.findById(id);
+		if (found.isEmpty())
+			return null;
+
+		return found.get();
 	}
 
 }

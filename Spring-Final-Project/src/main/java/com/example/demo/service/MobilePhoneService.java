@@ -2,8 +2,6 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.stereotype.Service;
 
 import com.example.demo.data.MobilePhone;
@@ -19,14 +17,13 @@ public class MobilePhoneService {
 		this.repo = repo;
 	}
 
-	public List<MobilePhone> getAllPassports() {
+	public List<MobilePhone> getAllMobilePhones() {
 		return this.repo.findAll();
 	}
 
-	@Transactional
-	public MobilePhone getByMobilePhoneId(Integer id) {
-		MobilePhone found = this.repo.findById(id).get();
-		return found;
+	public List<MobilePhone> getPhoneByPersonId(long personId) {
+		List<MobilePhone> phones = this.repo.getPhoneByPersonId(personId);
+		return phones;
 	}
 
 }

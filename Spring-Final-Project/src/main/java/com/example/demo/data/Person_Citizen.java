@@ -15,7 +15,7 @@ public class Person_Citizen {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@ManyToOne
 	@MapsId("personID")
@@ -33,11 +33,15 @@ public class Person_Citizen {
 		this.citizen = citizen;
 	}
 
-	public int getId() {
+	public Person_Citizen() {
+
+	}
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

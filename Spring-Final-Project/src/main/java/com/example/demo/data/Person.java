@@ -1,6 +1,5 @@
 package com.example.demo.data;
 
-import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Set;
 
@@ -16,53 +15,53 @@ public class Person {
 
 	@Id
 	@Column(name = "person_id")
-	private String personID;
+	private Long personID;
 
 	@Column(name = "is_citizen")
-	private boolean isCitizen;
+	private String isCitizen;
 	@Column(name = "forenames")
-	private String personForename;
+	private String personForenames;
 	@Column(name = "surname")
 	private String personSurname;
 	@Column(name = "dob")
-	private LocalDate personDOB;
+	private String personDOB;
 	@Column(name = "place_of_birth")
 	private String personPOB;
 	@Column(name = "nationality")
 	private String personNationality;
 	@Column(name = "sex")
-	private String personGender;
+	private String personSex;
 
 	@OneToMany(mappedBy = "person")
 	Set<Person_Citizen> identity;
 
-	@OneToMany(mappedBy = "person")
-	Set<Person_Vehicle> carInfo;
+//	@OneToMany(mappedBy = "person")
+//	Set<Person_Vehicle> carInfo;
 
-	public Person(String personID, boolean isCitizen, String personForename, String personSurname, LocalDate personDOB,
-			String personPOB, String personNationality, String personGender) {
+	public Person(Long personID, String isCitizen, String personForenames, String personSurname, String personDOB,
+			String personPOB, String personNationality, String personSex) {
 		super();
 		this.personID = personID;
 		this.isCitizen = isCitizen;
-		this.personForename = personForename;
+		this.personForenames = personForenames;
 		this.personSurname = personSurname;
 		this.personDOB = personDOB;
 		this.personPOB = personPOB;
 		this.personNationality = personNationality;
-		this.personGender = personGender;
+		this.personSex = personSex;
 
 	}
 
-	public Person(boolean isCitizen, String personForename, String personSurname, LocalDate personDOB, String personPOB,
-			String personNationality, String personGender) {
+	public Person(String isCitizen, String personForenames, String personSurname, String personDOB, String personPOB,
+			String personNationality, String personSex) {
 		super();
 		this.isCitizen = isCitizen;
-		this.personForename = personForename;
+		this.personForenames = personForenames;
 		this.personSurname = personSurname;
 		this.personDOB = personDOB;
 		this.personPOB = personPOB;
 		this.personNationality = personNationality;
-		this.personGender = personGender;
+		this.personSex = personSex;
 	}
 
 	public Person() {
@@ -71,7 +70,7 @@ public class Person {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(isCitizen, personDOB, personForename, personGender, personID, personNationality, personPOB,
+		return Objects.hash(isCitizen, personDOB, personForenames, personSex, personID, personNationality, personPOB,
 				personSurname);
 	}
 
@@ -85,34 +84,34 @@ public class Person {
 			return false;
 		Person other = (Person) obj;
 		return isCitizen == other.isCitizen && Objects.equals(personDOB, other.personDOB)
-				&& Objects.equals(personForename, other.personForename) && personGender == other.personGender
+				&& Objects.equals(personForenames, other.personForenames) && personSex == other.personSex
 				&& Objects.equals(personID, other.personID)
 				&& Objects.equals(personNationality, other.personNationality)
 				&& Objects.equals(personPOB, other.personPOB) && Objects.equals(personSurname, other.personSurname);
 	}
 
-	public String getPersonID() {
+	public Long getPersonID() {
 		return personID;
 	}
 
-	public void setPersonID(String personID) {
+	public void setPersonID(Long personID) {
 		this.personID = personID;
 	}
 
-	public boolean isIs_Citizen() {
+	public String isIs_Citizen() {
 		return isCitizen;
 	}
 
-	public void setIs_Citizen(boolean is_Citizen) {
-		this.isCitizen = is_Citizen;
+	public void setIsCitizen(String isCitizen) {
+		this.isCitizen = isCitizen;
 	}
 
-	public String getPersonForename() {
-		return personForename;
+	public String getPersonForenames() {
+		return personForenames;
 	}
 
-	public void setPersonForename(String personForename) {
-		this.personForename = personForename;
+	public void setPersonForename(String personForenames) {
+		this.personForenames = personForenames;
 	}
 
 	public String getPersonSurname() {
@@ -123,11 +122,11 @@ public class Person {
 		this.personSurname = personSurname;
 	}
 
-	public LocalDate getPersonDOB() {
+	public String getPersonDOB() {
 		return personDOB;
 	}
 
-	public void setPersonDOB(LocalDate personDOB) {
+	public void setPersonDOB(String personDOB) {
 		this.personDOB = personDOB;
 	}
 
@@ -147,19 +146,19 @@ public class Person {
 		this.personNationality = personNationality;
 	}
 
-	public String getPersonGender() {
-		return personGender;
+	public String getPersonSex() {
+		return personSex;
 	}
 
-	public void setPersonGender(String personGender) {
-		this.personGender = personGender;
+	public void setByPersonSex(String personSex) {
+		this.personSex = personSex;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [personID=" + personID + ", is_Citizen=" + isCitizen + ", personForename=" + personForename
+		return "Person [personID=" + personID + ", is_Citizen=" + isCitizen + ", personForenames=" + personForenames
 				+ ", personSurname=" + personSurname + ", personDOB=" + personDOB + ", personPOB=" + personPOB
-				+ ", personNationality=" + personNationality + ", personGender=" + personGender + "]";
+				+ ", personNationality=" + personNationality + ", personSex=" + personSex + "]";
 	}
 
 }

@@ -2,8 +2,6 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.stereotype.Service;
 
 import com.example.demo.data.Bankcard;
@@ -23,10 +21,8 @@ public class BankcardService {
 		return this.repo.findAll();
 	}
 
-	@Transactional
-	public Bankcard getByBankCardId(Integer id) {
-		Bankcard found = this.repo.findById(id).get();
-		return found;
+	public List<Bankcard> getBankcardByPersonId(Long personId) {
+		return this.repo.getBankcardByPersonId(personId);
 	}
 
 }

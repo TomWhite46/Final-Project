@@ -1,6 +1,5 @@
 package com.example.demo.data;
 
-import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Set;
 
@@ -10,30 +9,28 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-
-
 @Embeddable
 @Entity
 public class Citizen {
 
 	@Id
-	@Column(name="citizen_id")
+	@Column(name = "citizen_id", columnDefinition = "char")
 	private String id;
 
 	@Column
 	private String forenames;
 	private String surname;
-	@Column(name="home_address")
+	@Column(name = "home_address")
 	private String address;
-	private LocalDate dob;
-	@Column(name="place_of_birth")
+	private String dob;
+	@Column(name = "place_of_birth")
 	private String placeOfBirth;
 	private String sex;
-	
+
 	@OneToMany(mappedBy = "citizen")
 	Set<Person_Citizen> identity;
 
-	public Citizen(String id, String forenames, String surname, String address, LocalDate dob, String placeOfBirth,
+	public Citizen(String id, String forenames, String surname, String address, String dob, String placeOfBirth,
 			String sex) {
 		super();
 		this.id = id;
@@ -44,8 +41,8 @@ public class Citizen {
 		this.placeOfBirth = placeOfBirth;
 		this.sex = sex;
 	}
-	public Citizen(String forenames, String surname, String address, LocalDate dob, String placeOfBirth,
-			String sex) {
+
+	public Citizen(String forenames, String surname, String address, String dob, String placeOfBirth, String sex) {
 		super();
 		this.forenames = forenames;
 		this.surname = surname;
@@ -54,13 +51,16 @@ public class Citizen {
 		this.placeOfBirth = placeOfBirth;
 		this.sex = sex;
 	}
+
 	public Citizen() {
-		
+
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(address, dob, forenames, id, placeOfBirth, sex, surname);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -75,59 +75,67 @@ public class Citizen {
 				&& Objects.equals(placeOfBirth, other.placeOfBirth) && Objects.equals(sex, other.sex)
 				&& Objects.equals(surname, other.surname);
 	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getForenames() {
 		return forenames;
 	}
+
 	public void setForenames(String forenames) {
 		this.forenames = forenames;
 	}
+
 	public String getSurname() {
 		return surname;
 	}
+
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public LocalDate getDob() {
+
+	public String getDob() {
 		return dob;
 	}
-	public void setDob(LocalDate dob) {
+
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
+
 	public String getPlaceOfBirth() {
 		return placeOfBirth;
 	}
+
 	public void setPlaceOfBirth(String placeOfBirth) {
 		this.placeOfBirth = placeOfBirth;
 	}
+
 	public String getSex() {
 		return sex;
 	}
+
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
+
 	@Override
 	public String toString() {
 		return "Citizen [id=" + id + ", forenames=" + forenames + ", surname=" + surname + ", address=" + address
 				+ ", dob=" + dob + ", placeOfBirth=" + placeOfBirth + ", sex=" + sex + "]";
 	}
-	
-	
-	
-	
-	
-
-	
 
 }

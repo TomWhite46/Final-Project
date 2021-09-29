@@ -25,4 +25,9 @@ public class VehicleService {
 		Vehicle found = this.repo.findById(id).get();
 		return found;
 	}
+
+	public List<Vehicle> getVehicleByPersonId(Long personId) {
+		List<Vehicle> vehicles = this.repo.getVehicleByPersonId(personId);
+		return vehicles;
+	};
 }
