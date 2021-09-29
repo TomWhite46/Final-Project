@@ -13,13 +13,18 @@ const SearchFormReg = ({setShowTable, setShowTabs, setSearchResults, url}) => {
             return;
         }
 
+        setShowTabs(false);
+        setSearchResults("loading")
         setShowTable(true);
         
         axios.get(`${url}/findPersonByReg/${reg}`) 
             .then(({data}) => {        
                 setSearchResults(data);
             })
-            .catch (err => console.log(err));
+            .catch (err => {
+                console.log(err);
+                setSearchResults("error");
+            })
     };
     
     return (

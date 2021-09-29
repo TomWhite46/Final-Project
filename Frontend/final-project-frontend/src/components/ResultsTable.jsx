@@ -4,8 +4,12 @@ const ResultsTable = ({showTable, searchResults, setShowTabs, setSearchId}) => {
     
     if (showTable === false) {
         return <></>
+    } else if (searchResults === "loading") {
+        return <div>Getting results...</div>    
     } else if (searchResults == false) {
         return <div>No matches were found.</div>
+    } else if (searchResults === "error") {
+        return <div>Error retrieving results.</div>
     } else {
         return (
             <>

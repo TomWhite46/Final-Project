@@ -4,8 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const SearchForm = ({setShowTable, setShowTabs, setSearchResults, url}) => {
     
     const submitForm = (e) => {
-        e.preventDefault();
-
+        e.preventDefault();        
         const forename = e.target.forename.value;
         const surname = e.target.surname.value;
         const dob = e.target.dob.value;
@@ -20,13 +19,18 @@ const SearchForm = ({setShowTable, setShowTabs, setSearchResults, url}) => {
             return;
         }
 
+        setShowTabs(false);
+        setSearchResults("loading")
         setShowTable(true);
         
         axios.get(`${url}/${request}/${forename}/${surname}/${dob}`) 
             .then(({data}) => {        
                 setSearchResults(data);
             })
-            .catch (err => console.log(err));
+            .catch (err => {
+                console.log(err);
+                setSearchResults("error");
+            })
     };
     
     return (
