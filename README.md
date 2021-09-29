@@ -36,7 +36,7 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
 
 
 <h3>2nd Risk Assessment (End of 1st Sprint/Start of 2nd)</h3>
-![RiskAssessment2](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/RiskAssessment2.png)
+![RiskAssessment2](https://raw.githubusercontent.com/TomWhite46/Final-Project/dev/ReadMe%20pictures/RiskAssessment2.png?)
 
 
 <h2>2) Project Management</h2>
