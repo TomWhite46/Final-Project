@@ -31,21 +31,28 @@ The next bit of planning we undertook was to create a couple of wireframe diagra
  
 <p>After we had created our Jira board, we created a risk assessment matrix based on the risks we have identified for the project which would negatively impact the project. This is something which we continuously looked at throughout the project and have amended throughout the project based on any new risks which have become apparent.</p>
 
-<h3>Risk Assessment for 1st Sprint</h3>![RiskAssessment](https://github.com/TomWhite46/Final-Project/blob/579e01b40ee0f1d23f74ab5467784cd04ace0c69/ReadMe%20pictures/RiskAssessment1.png)
+<h3>Risk Assessment for 1st Sprint</h3>
+
+![RiskAssessment](https://github.com/TomWhite46/Final-Project/blob/579e01b40ee0f1d23f74ab5467784cd04ace0c69/ReadMe%20pictures/RiskAssessment1.png)
 
 
 
-<h3>2nd Risk Assessment (End of 1st Sprint/Start of 2nd)</h3>![RiskAssessment](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/RiskAssessment2.png)
+<h3>2nd Risk Assessment (End of 1st Sprint/Start of 2nd)</h3>
+
+![RiskAssessment](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/RiskAssessment2.png)
 
 
 <h2>2) Project Management</h2>
 <p>In order to manage our project, we used Jira Software to create an Agile Scrum Board which is based online. We used this to create tasks based on the features we created based on the brief. We created 4 main Epics (Version Control, Backend, Frontend and DevOps) which the majority of our tasks fell under. We also created user stories based on what we thought the user would want from the application.</p>
 <p>Each of the tasks that we created were given a story point estimate which we used to help us judge how much work we had remaining on the project. We also used the prioritisation arrows for these tasks, which were given different priority levels based on the MoSCoW prioritisation list.</p>
 <p>We split our stories and tasks up into two sprints, one for the first week and one for the second week. We also assigned tasks to specific members of the team, which allowed us to easily see which parts of the project were being worked on by a specific person.</p>
-<h3>Jira Board for Sprint 1</h3> ![Sprint1](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/example%20of%20sprint%201.png)
+<h3>Jira Board for Sprint 1</h3> 
+
+![Sprint1](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/example%20of%20sprint%201.png)
 
 <h3>Jira Board for Sprint 2</h3>
- ![Sprint1](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/Sprint2Readme.png)
+
+![Sprint1](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/Sprint2Readme.png)
 
 <h2>3) Version Control</h2>
 <p>For our version control, we used GitHub. By using this, it allowed us to create a private repository with each of us as collaborators, which meant that each of us could push up or pull down each other’s work and make changes where needed. This helped to make the project much more collaborative.</p>
