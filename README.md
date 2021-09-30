@@ -25,8 +25,10 @@
 
 The next bit of planning we undertook was to create a couple of wireframe diagrams to figure out what we wanted our front-end application to look like, and to figure out which components we would need to create and which requests we would need to create for the backend.
 
+This is the initial wireframe diagram that we created.
 ![Wireframe](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/otherinitialwireframe.png)
- 
+
+We then worked as a team to try to update this wireframe diagram, and designed a new diagram which we believe is more user friendly than the original diagram and has the data in displayed in a more intuitive layout for the user. 
 ![WireframeFinal](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/WireframeFinal.png)
  
 <p>After we had created our Jira board, we created a risk assessment matrix based on the risks we have identified for the project which would negatively impact the project. This is something which we continuously looked at throughout the project and have amended throughout the project based on any new risks which have become apparent.</p>
