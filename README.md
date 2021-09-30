@@ -126,6 +126,7 @@ From the tables which were given, these were the tables we decided to add to the
 <p>Before the webhook though, we added Private SSH key as a credential and set up polling for every 5 minutes until webhook could be created by Tom. We then put Public SSH key into Steph’s GitHub account so that Jenkins can be authenticated to the private repository.</p>
 
 ![JenkinsPipeline](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/JenkinsPipeline.png)
+Here is an example of our Jenkins Pipeline completing the build, push and deploy stages from the Jenkinsfile.
 
 <h4>NGINX</h4>
 <p>NGINX is a high performance web server that can be used as a reverse proxy and load balancer among other things. In our case, we have used NGINX as a web server and reverse proxy. This allows us to connect to the application on port 80 as this is the standard HTTP port, rather than the react port or the backend port. The use of a reverse proxy helps to direct the traffic within our private network as the users should not be able to directly access anywhere in that network other than that NGINX server.</p>
