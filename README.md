@@ -99,6 +99,8 @@ From the tables which were given, these were the tables we decided to add to the
 <p>From these tables that were added to the RDS, the only ones that weren’t used for this build are the ‘cell_tower’ table and the ‘passport’ table. With the tables we have included, it does mean we can achieve the MVP for scenario 1 by including what we believe to be the most important information about a person.</p>
 <p>This is because the ‘cell_tower’ table provides longitude and latitude locations rather than addresses so without the use of a map, the data isn’t all that relevant to the scenario we chose. If we were to expand to scenario 2 however, this data would then become more useful, and as it’s already loaded into the database, we would be able to use that data straight away. </p>
 <p>The ‘passport’ table wasn’t used in the end as the crucial information we wanted to include, we could get from elsewhere so there was no need to use that table to gain that information.</p>
+
+![MovementOfDataLog](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/Movement%20of%20data%20log.PNG)
 <h2>6) Backend</h2>
 <p>For the backend of this project, we made a Spring-Boot Maven app using Java as the coding language, and Eclipse as our IDE.</p>
 <p>Java as a language is a general purpose, class-based, object orientated programming language. Compared to other languages, such as C#, Java was designed to be simpler and easier to use. This means it’s also easier for us to write, compile, debug and learn than other languages. It’s also a highly compatible language and can work with most devices easier than some languages.</p>
@@ -122,6 +124,9 @@ From the tables which were given, these were the tables we decided to add to the
 <h4>Jenkins</h4>
 </p>The use of Jenkins, allows us to create a CI Pipeline which will build, test, push and deploy the application to the swarm. We have added the repository for the project to the configuration of the CI Pipeline allowing for polling and with the use of a webhook as a build trigger, it means that as soon as any changes are pushed to the GitHub repo, this will cause Jenkins to go through each stage of the process automatically without any manual input.</p>
 <p>Before the webhook though, we added Private SSH key as a credential and set up polling for every 5 minutes until webhook could be created by Tom. We then put Public SSH key into Steph’s GitHub account so that Jenkins can be authenticated to the private repository.</p>
+
+![JenkinsPipeline](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/JenkinsPipeline.png)
+
 <h4>NGINX</h4>
 <p>NGINX is a high performance web server that can be used as a reverse proxy and load balancer among other things. In our case, we have used NGINX as a web server and reverse proxy. This allows us to connect to the application on port 80 as this is the standard HTTP port, rather than the react port or the backend port. The use of a reverse proxy helps to direct the traffic within our private network as the users should not be able to directly access anywhere in that network other than that NGINX server.</p>
 <h2>10) Project Summary</h2>
