@@ -100,7 +100,9 @@ From the tables which were given, these were the tables we decided to add to the
 <p>This is because the ‘cell_tower’ table provides longitude and latitude locations rather than addresses so without the use of a map, the data isn’t all that relevant to the scenario we chose. If we were to expand to scenario 2 however, this data would then become more useful, and as it’s already loaded into the database, we would be able to use that data straight away. </p>
 <p>The ‘passport’ table wasn’t used in the end as the crucial information we wanted to include, we could get from elsewhere so there was no need to use that table to gain that information.</p>
 
+Due to the sensitive nature of the data which we were provided, we created a log for the data (as shown below). In this log we have commented on where the data has been transferred from, where it is transferred to(and why who), and then the reason the data has been moved. This was an online document which is able to be edited by all members of the team.
 ![MovementOfDataLog](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/Movement%20of%20data%20log.PNG)
+
 <h2>6) Backend</h2>
 <p>For the backend of this project, we made a Spring-Boot Maven app using Java as the coding language, and Eclipse as our IDE.</p>
 <p>Java as a language is a general purpose, class-based, object orientated programming language. Compared to other languages, such as C#, Java was designed to be simpler and easier to use. This means it’s also easier for us to write, compile, debug and learn than other languages. It’s also a highly compatible language and can work with most devices easier than some languages.</p>
