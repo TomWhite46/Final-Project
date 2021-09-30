@@ -44,4 +44,6 @@ public interface PersonService {
 
 	public List<Person> findPersonByReg(String reg);
 
+	public List<Person> findPersonByLocation(String time, double latitude, double longitude);
+
 }

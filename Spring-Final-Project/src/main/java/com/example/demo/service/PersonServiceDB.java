@@ -141,4 +141,13 @@ public class PersonServiceDB implements PersonService {
 		return person;
 	};
 
+	@Override
+	public List<Person> findPersonByLocation(String time, double latitude, double longitude) {
+		List<Person> person = this.repo.findPersonByLocation(time, latitude, longitude);
+		for (Person prs : person) {
+			prs.setPersonDOB(prs.getPersonDOB().substring(0, 10));
+		}
+		return person;
+	}
+
 }

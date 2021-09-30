@@ -11,3 +11,4 @@ CREATE TABLE person (
     dob VARCHAR(64),
     forenames VARCHAR(64)
     );
+    

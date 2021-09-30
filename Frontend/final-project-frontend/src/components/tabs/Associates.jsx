@@ -48,6 +48,7 @@ const Associates = ({searchId, url, setSearchId, setSearchResults}) => {
             subData.className = "hide";
             target.innerText = `Show ${str} \u25BC`
         }
+        document.querySelector("#currentPerson").scrollIntoView({behavior: "smooth"}); 
     }
 
     return (

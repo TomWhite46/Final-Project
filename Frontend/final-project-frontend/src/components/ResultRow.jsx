@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom';
+
 const ResultRow = ({id, forenames, surname, dob, setShowTabs, setSearchId}) => {
     
     const selectRow = ({target}) => {

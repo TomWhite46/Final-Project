@@ -153,4 +153,27 @@ public class PersonServiceDBUnitTest {
 		Mockito.verifyNoMoreInteractions(this.repo);
 	}
 
+	@Test
+	void testGetFriendsFromPersonId() {
+		List<Person> testPeople = List
+				.of(new Person((long) 1, "true", "Rob", "Fletcher", "2000, 05, 30", "Shrewsbury", "British", "Male"));
+
+		Long friendId = (long) 1;
+
+		Mockito.when(this.service.getFriendsFromPersonId(friendId)).thenReturn(testPeople);
+		assertThat(this.service.getFriendsFromPersonId(friendId)).isEqualTo(testPeople);
+
+	}
+
+	@Test
+	void testGetPartnersFromPersonId() {
+		List<Person> testPeople = List
+				.of(new Person((long) 1, "true", "Rob", "Fletcher", "2000, 05, 30", "Shrewsbury", "British", "Male"));
+
+		Long partnerId = (long) 1;
+
+		Mockito.when(this.service.getPartnersFromPersonId(partnerId)).thenReturn(testPeople);
+		assertThat(this.service.getPartnersFromPersonId(partnerId)).isEqualTo(testPeople);
+	}
+
 }

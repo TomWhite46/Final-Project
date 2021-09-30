@@ -33,10 +33,6 @@ public class AtmTransactionsService {
 		return this.mapper.map(atmtransaction, AtmTransactionsDTO.class);
 	}
 
-	private AtmTransaction mapFromDTO(AtmTransactionsDTO atmTransaction) {
-		return this.mapper.map(atmTransaction, AtmTransaction.class);
-	}
-
 	public List<AtmTransaction> getByAtmCardNumber(Long cardNumber) {
 		return this.repo.findByCardNumber(cardNumber);
 	}

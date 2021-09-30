@@ -10,6 +10,7 @@ const Telephone = ({searchId, url}) => {
         axios.get(`${url}/getPhoneByPersonId/${searchId}`) 
         .then(({data}) => {        
             setPhones(data);
+            document.querySelector("#currentPerson").scrollIntoView({behavior: "smooth"}); 
         })
         .catch (err => console.log(err));
     }, [searchId]);

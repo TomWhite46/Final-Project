@@ -5,6 +5,7 @@ const Nav = () => {
     const changeTab = (e) => {
         document.querySelectorAll("nav > a").forEach(e => e.className = "inactive");
         e.target.className = "active";
+        document.querySelector("#currentPerson").scrollIntoView({behavior: "smooth"}); 
     };
     
     return (
