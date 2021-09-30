@@ -113,6 +113,9 @@ Due to the sensitive nature of the data which we were provided, we created a log
 <p>For our testing database, we used a H2 database, as it doesn’t persist data. For the integration tests, we created a schema.sql to create and drop the tables between each test, and we created a data.sql file to insert specific data into the table so that we knew exactly what the database would contain at the beginning of each test.</p>
 <p>This wasn’t done for the unit tests as we created instances of objects to add to the tables in the temporary H2 database on each run of the test. This meant that the expected data would always be the same for each test. This was done using Mockito as we could then ‘mock’ some objects that would only be available for the duration of the test and could be created on each run of the test.</p>
 
+Example of the H2 database. We also used this database in the initial stage of building our backend application to ensure that we had set up the relationships between the database correctly using the annotations on Eclipse.
+![H2Database](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/example%20of%20h2%20database.png)
+
 <h2>8) Front End</h2>
 <h4>React</h4>
 <p>The use of react for building the frontend allows us to build a single-page application without the need to constantly re-render the page. React will allow you to swap in and out any components you have created depending on what you want to display. This also means the page is much faster to load as it only has to load what’s required each time rather than the whole page in one go.</p>
