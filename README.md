@@ -116,7 +116,7 @@ From the tables which were given, these were the tables we decided to add to the
 <h2>6) Backend</h2>
 <p>For the backend of this project, we made a Spring-Boot Maven app using Java as the coding language, and Eclipse as our IDE.</p>
 <p>Java as a language is a general purpose, class-based, object orientated programming language. Compared to other languages, such as C#, Java was designed to be simpler and easier to use. This means it’s also easier for us to write, compile, debug and learn than other languages. It’s also a highly compatible language and can work with most devices easier than some languages.</p>
-<p>By making this a Spring-Boot Maven project, it meant that a lot of the prerequisites and dependencies we would need as part of the project, we pre-installed and ready to use. With it being a Spring-Boot application too, it meant that the project doesn’t just run through all the code then shut down. It allows you to keep the application running on a live server on whatever port you decide depending on the application-properties files. The only things that can cause it to shutdown are either a manual termination of the app, or an error in the code.</p>
+<p>By making this a Spring-Boot Maven project, it meant that a lot of the prerequisites and dependencies we would need as part of the project, we pre-installed and ready to use. With it being a Spring-Boot application too, it meant that the project doesn’t just run through all the code then shut down. It allows you to keep the application running on a live server on whatever port you decide depending on the application-properties files. The only things that can cause it to shutdown are either a manual termination of the app, or an error in the code. By using Spring Boot were able to connect the database, the backend and the frontend effectively within one application, as we were able to connect to the databases, as well as create the HTTP requests for the frontend.</p>
 <p>Whilst using J-Unit for the tests however, it does then only run through the tests then shutdown but that is by design.</p>
 
 <h2>7) Backend Testing</h2>
@@ -126,6 +126,10 @@ From the tables which were given, these were the tables we decided to add to the
 
 Example of the H2 database. We also used this database in the initial stage of building our backend application to ensure that we had set up the relationships between the database correctly using the annotations on Eclipse.
 ![H2Database](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/example%20of%20h2%20database.png)
+
+Example of number of tests for the overall backend application (both Integration and Unit tests), and the coverage percentage for the application.
+![TotalNumberOfTests](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/TotalTest.PNG)
+![TotalTestCoverage](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/TotalTestCoverage.PNG)
 
 <h2>8) Front End</h2>
 <h4>React</h4>
