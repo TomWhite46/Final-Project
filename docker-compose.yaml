@@ -7,7 +7,7 @@ services:
       published: 80
       protocol: tcp
     deploy:
-      replicas: 1
+      replicas: 3
     volumes:
     - type: bind
       source: ./nginx.conf
@@ -21,7 +21,7 @@ services:
       published: 3000
       protocol: tcp
     deploy:
-      replicas: 1
+      replicas: 3
 
   backend:
     image: wkurtze/redshift-backendimage:latest
@@ -31,4 +31,4 @@ services:
       published: 8081
       protocol: tcp
     deploy:
-      replicas: 1
+      replicas: 3
