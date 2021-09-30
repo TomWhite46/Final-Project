@@ -31,7 +31,7 @@ public interface PersonRepo extends JpaRepository<Person, Long> {
 	List<Person> findPersonByPersonForenamesAndPersonSurnameAndPersonDOB(String personForenames, String personSurname,
 			String personDOB);
 
-	@Query(value = "SELECT * FROM person WHERE forenames Like :forenames% AND surname LIKE :surname% AND dob LIKE :dob% ORDER BY surname, forenames, dob", nativeQuery = true)
+	@Query(value = "SELECT * FROM person WHERE forenames Like :forenames% AND surname LIKE :surname% AND dob LIKE :dob% ORDER BY surname, forenames, dob LIMIT 500", nativeQuery = true)
 	List<Person> getPersonFromSearch(@Param("forenames") String forenames, @Param("surname") String surname,
 			@Param("dob") String dob);
 
@@ -49,5 +49,14 @@ public interface PersonRepo extends JpaRepository<Person, Long> {
 
 	@Query(value = "SELECT * FROM person WHERE person_id IN (SELECT person_id FROM person_vehicle WHERE vehicle_id IN (SELECT vehicle_id FROM vehicle WHERE vehicle_registration_number=:reg))", nativeQuery = true)
 	List<Person> findPersonByReg(@Param("reg") String reg);
+
+//	@Query(value = "SELECT * FROM person WHERE person_id IN (SELECT person_id from waypoint_record where \r\n"
+//			+ "(timestamp > ADDTIME(:time, '-00:15:00') AND timestamp < ADDTIME(:time, '0:15:00'))\r\n" + "AND\r\n"
+//			+ "(latitude > :latitude - 0.0072 AND latitude < :latitude + 0.0072)\r\n" + "AND\r\n"
+//			+ "(longitude > :longitude - 0.0116 AND longitude < :longitude + 0.0116)) ORDER BY surname, forenames, dob", nativeQuery = true)
+
+	@Query(value = "SELECT * FROM person WHERE person_id IN (SELECT person_id from waypoint_record where (timestamp > ADDTIME(:time, '-00:15:00') AND timestamp < ADDTIME(:time, '0:15:00')) AND (latitude > :latitude - 0.0072 AND latitude < :latitude + 0.0072) AND (longitude > :longitude - 0.0116 AND longitude < :longitude + 0.0116)) OR person_id IN (SELECT person_id FROM person_vehicle WHERE vehicle_id IN (SELECT vehicle_id FROM vehicle WHERE vehicle_registration_number IN (SELECT vehicle_registration_number from vehicle_camera where (timestamp > ADDTIME(:time, '-00:15:00') AND timestamp < ADDTIME(:time, '0:15:00')) AND (latitude > :latitude - 0.0072 AND latitude < :latitude + 0.0072) AND (longitude > :longitude - 0.0116 AND longitude < :longitude + 0.0116)))) ORDER BY surname, forenames, dob", nativeQuery = true)
+	List<Person> findPersonByLocation(@Param("time") String time, @Param("latitude") double latitude,
+			@Param("longitude") double longitude);
 
 }

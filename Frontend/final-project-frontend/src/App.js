@@ -54,7 +54,8 @@ function App() {
       <h4>Search by car registration number:</h4>
       <SearchFormReg setShowTable={setShowTable} setShowTabs={setShowTabs} setSearchResults={setSearchResults} searchResults={searchResults} url={url}/>
       <ResultsTable showTable={showTable} searchResults={searchResults} setShowTabs={setShowTabs} setSearchId={setSearchId}/>
-      <Tabs showTabs={showTabs} setSearchResults={setSearchResults} searchId={searchId} setSearchId={setSearchId} url={url}/>
+      <Tabs showTabs={showTabs} setShowTabs={setShowTabs} setSearchResults={setSearchResults} searchId={searchId} setSearchId={setSearchId} url={url}/>
+      <div className="whitespace"></div>
     </div>
   );
 }

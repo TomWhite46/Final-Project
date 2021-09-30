@@ -1,9 +1,8 @@
 import axios from "axios";
 
-const Waypoint = ({timestamp, latitude, longitude, setSearchResults, url, setShowTabs}) => {
+const VehicleCamera = ({timestamp, latitude, longitude, street, reg, setSearchResults, url, setShowTabs}) => {
 
     const address = `https://www.google.com/maps/place/${latitude},${longitude}/@${latitude},${longitude},12z`
-
     const navToPerson = ({target}) => {
         
         const time = target.parentElement.querySelector("td:nth-child(1)").innerText;
@@ -25,10 +24,12 @@ const Waypoint = ({timestamp, latitude, longitude, setSearchResults, url, setSho
                         <td>{timestamp}</td>
                         <td>{latitude}</td>
                         <td>{longitude}</td>
+                        <td>{street}</td>
+                        <td>{reg}</td>
                         <td><a href={address} target="_blank" rel="noreferrer">Map</a></td>
                         <td className="findLocPeople" onClick={(e)=>navToPerson(e)}>Find people in area</td>
                     </tr>
     )
 }
 
-export default Waypoint;
+export default VehicleCamera;

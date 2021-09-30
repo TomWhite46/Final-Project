@@ -13,6 +13,7 @@ body {
 #resultsTable {
   border: 1px solid black;
   border-radius: 7px;
+  margin-bottom: 40px;
 }
 
 table#resultsTable > thead > tr, .topHeads > thead > tr {
@@ -21,11 +22,22 @@ table#resultsTable > thead > tr, .topHeads > thead > tr {
   font-weight: bolder;
 }
 
-nav {
+table#resultsTable > thead > tr > th {
+  position: sticky;
+  top: 0;
+  background-color: grey;
+  border-bottom: 1px solid black;
+}
+
+.tabs {
   margin-top:40px;
+}
+
+nav {
   margin-bottom: 8px;
   white-space: nowrap;
   border-radius: 7px;
+  margin-top:10px;
 }
 
 nav > a {
@@ -170,7 +182,6 @@ h2 {
   width: 800px;
   border:1px solid black;
   margin: auto;
-
 }
 
 .hide {
@@ -239,3 +250,13 @@ h2 {
   background-color: grey;
   border-radius: 7px;
 } 
+
+.findLocPeople {
+  cursor: pointer;
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.whitespace {
+  height:100px;
+}

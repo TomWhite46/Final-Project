@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 
-const Biographical = ({searchId, url}) => {
 
-    const [person, setPerson] = useState([]);
-    
-    useEffect(() => {
-        axios.get(`${url}/getByID/${searchId}`) 
-        .then(({data}) => {        
-            setPerson(data);
-        })
-        .catch (err => console.log(err));
-    }, [searchId]);
+const Biographical = ({person, url}) => {
+
+
 
     const {personForenames, personSurname, personDOB, personPOB, personNationality, personSex} = person;
 

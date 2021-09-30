@@ -99,4 +99,12 @@ public class PersonController {
 		return new ResponseEntity<>(this.service.findPersonByReg(reg), HttpStatus.OK);
 	}
 
+	@GetMapping("findPersonByLocation/{time}/{latitudeStr}/{longitudeStr}")
+	public ResponseEntity<List<Person>> findPersonByLocation(@PathVariable String time,
+			@PathVariable String latitudeStr, @PathVariable String longitudeStr) {
+		double latitude = Double.parseDouble(latitudeStr);
+		double longitude = Double.parseDouble(longitudeStr);
+		return new ResponseEntity<>(this.service.findPersonByLocation(time, latitude, longitude), HttpStatus.OK);
+	}
+
 }
