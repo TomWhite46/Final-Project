@@ -128,6 +128,7 @@ Example of the H2 database. We also used this database in the initial stage of b
 ![H2Database](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/example%20of%20h2%20database.png)
 
 Example of number of tests for the overall backend application (both Integration and Unit tests), and the coverage percentage for the application.
+
 ![TotalNumberOfTests](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/TotalTest.PNG)
 ![TotalTestCoverage](https://github.com/TomWhite46/Final-Project/blob/dev/ReadMe%20pictures/TotalTestCoverage.PNG)
 
