@@ -1,5 +1,6 @@
 package com.example.demo.data;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -35,6 +36,10 @@ public class Person_Citizen {
 
 	public Person_Citizen() {
 
+	}
+
+	public Person_Citizen(List<Person> testPerson, List<Citizen> testCitizen) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getId() {

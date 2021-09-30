@@ -3,6 +3,7 @@ package com.example.demo.service;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -38,11 +39,19 @@ public class PassportServiceUnitTest {
 		Mockito.verifyNoMoreInteractions(this.repo);
 	}
 
-//	@Test
-//	void testGetByPassportNumber() {
-//		Long passportNumber = (long) 1;
-//		
-//		Passport testPassport = new Passport(passportNumber)
-//	}
+	@Test
+	void testGetByPassportNumber() {
+		Long passportNumber = (long) 1;
+
+		Passport testPassport = new Passport(passportNumber, "Norman", "Clive", "GBR", "1995-13-12", "Male", "Swindon",
+				"Britain", "2010-12-12", "2030-12-12");
+		Mockito.when(this.repo.findById(passportNumber)).thenReturn(Optional.of(testPassport));
+
+		assertThat(this.service.getbyPassportNumber(passportNumber)).isEqualTo(testPassport);
+
+		Mockito.verify(this.repo, Mockito.times(1)).findById(passportNumber);
+		Mockito.verifyNoMoreInteractions(this.repo);
+
+	}
 
 }
