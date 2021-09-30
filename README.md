@@ -120,9 +120,6 @@ Example of the H2 database. We also used this database in the initial stage of b
 <h4>React</h4>
 <p>The use of react for building the frontend allows us to build a single-page application without the need to constantly re-render the page. React will allow you to swap in and out any components you have created depending on what you want to display. This also means the page is much faster to load as it only has to load what’s required each time rather than the whole page in one go.</p>
 <p>It also means that it will only make requests to the database through the backend when it’s actually needed rather than all that data being rendered upon loading the page.</p>
-<h4>Bootstrap</h4>
-<p>Bootstrap allows you to style web pages in a simple but effective way. By assigning your page elements to classes, you can easily just import the styling choices you need from the bootstrap library.</p>
-<p>The use of bootstrap makes the web-page for the application look much more professional and clean than using standard CSS styling.</p>
 
 <h2>9) DevOps</h2>
 <p>The plan for deployment on the DevOps side was to use Docker swarm. This method of deployment is extremely scalable, allowing it to scale up or down dependent on load. We can create multiple replicas of our services across multiple EC2s which allows us to spread any traffic across these instances. This also means that if one goes down still maintain high availability with others taking on the load until you can spin up new instance, which prevents any sort of downtime. We created three EC2 instances to ensure that the application would be highly available, we had one manager EC2 and two worker EC2's which between them deployed 3 replicas for the backend, frontend and NGINX containers.</p>
