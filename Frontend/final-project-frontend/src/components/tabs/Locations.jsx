@@ -58,7 +58,7 @@ const Locations = ({setShowTabs, setSearchResults, searchId, url}) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {(vehicleCamera === "loading" ? <tr><td colspan="5">Loading data...</td></tr> : vehicleCamera.map(({id, timestamp, latitude, longitude, vehicleRegistrationNumber, streetName}) => <VehicleCamera key={id} timestamp={timestamp.substring(0,19).replace('T', ' ')} latitude={latitude} longitude={longitude} street={streetName} reg={vehicleRegistrationNumber} setSearchResults={setSearchResults} url={url} setShowTabs={setShowTabs}/>))}
+                        {(vehicleCamera === "loading" ? <tr><td colSpan="5">Loading data...</td></tr> : vehicleCamera.map(({id, timestamp, latitude, longitude, vehicleRegistrationNumber, streetName}) => <VehicleCamera key={timestamp + latitude} timestamp={timestamp.substring(0,19).replace('T', ' ')} latitude={latitude} longitude={longitude} street={streetName} reg={vehicleRegistrationNumber} setSearchResults={setSearchResults} url={url} setShowTabs={setShowTabs}/>))}
                     </tbody>
                 </table>
             </div>

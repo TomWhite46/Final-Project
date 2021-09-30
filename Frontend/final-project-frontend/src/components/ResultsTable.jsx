@@ -15,7 +15,7 @@ const ResultsTable = ({showTable, searchResults, setShowTabs, setSearchId}) => {
     } else {
         return (
             <>
-                <h4>Search results: {searchResults.length} matches</h4>
+                <h4 className="topMargin">Search results: {searchResults.length} matches</h4>
                 <div>Please select a person from the matches below:</div>
                 <div className="scroll">
                     <table id="resultsTable">

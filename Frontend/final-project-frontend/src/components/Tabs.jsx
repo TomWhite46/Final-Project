@@ -15,12 +15,14 @@ const Tabs = ({showTabs, setShowTabs, setSearchResults, searchId, setSearchId, u
     const [person, setPerson] = useState([]);
     
     useEffect(() => {
+        if (showTabs!==false) {
         axios.get(`${url}/getByID/${searchId}`) 
         .then(({data}) => {        
             setPerson(data);
             document.querySelector("#currentPerson").scrollIntoView({behavior: "smooth"}); 
         })
         .catch (err => console.log(err));
+        }
     }, [searchId]);
 
     if (showTabs === false) {
@@ -32,7 +34,7 @@ const Tabs = ({showTabs, setShowTabs, setSearchResults, searchId, setSearchId, u
                 <Router>
                     <Nav/>
                     <Switch>
-                        <Route exact path="/">
+                        <Route path="/biography">
                             <Biographical person = {person} url={url}/>
                         </Route>
                         <Route path="/addresses">

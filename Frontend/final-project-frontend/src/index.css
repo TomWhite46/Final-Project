@@ -10,6 +10,7 @@ body {
   max-width: 100vw;
 }
 
+
 #resultsTable {
   border: 1px solid black;
   border-radius: 7px;
@@ -31,6 +32,10 @@ table#resultsTable > thead > tr > th {
 
 .tabs {
   margin-top:40px;
+}
+
+.topMargin {
+  margin-top: 40px;
 }
 
 nav {

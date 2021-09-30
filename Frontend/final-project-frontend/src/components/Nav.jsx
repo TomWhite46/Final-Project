@@ -10,7 +10,7 @@ const Nav = () => {
     
     return (
         <nav>
-            <Link to="/" onClick={(e)=>changeTab(e)}>
+            <Link to="/biography" onClick={(e)=>changeTab(e)}>
             Biographical
             </Link>            
             <Link to="/addresses" onClick={(e)=>changeTab(e)}>

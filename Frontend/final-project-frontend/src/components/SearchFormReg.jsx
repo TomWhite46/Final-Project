@@ -32,7 +32,7 @@ const SearchFormReg = ({setShowTable, setShowTabs, setSearchResults, url}) => {
             <form className="searchForm" onSubmit={(e)=>submitForm(e)}>
                 <div className="row">
                     <div className="column1">
-                        <label for="reg">Registration Number: </label>
+                        <label htmlFor="reg">Registration Number: </label>
                     </div>
                     <div className="column2">
                         <input type="text" id="reg" name="reg" className="formInput"/>

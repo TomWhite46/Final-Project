@@ -59,7 +59,7 @@ const FinancialTransactions = ({searchId, url}) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {bankcards.map(({cardNumber, bankcardSortcode}) => <Bankcard cardNumber={cardNumber} sortCode={bankcardSortcode}/>)}
+                        {bankcards.map(({cardNumber, bankcardSortcode}) => <Bankcard key={cardNumber} cardNumber={cardNumber} sortCode={bankcardSortcode}/>)}
                     </tbody>
                 </table>
             </div>
@@ -75,7 +75,7 @@ const FinancialTransactions = ({searchId, url}) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {atmTransactions.map(({timestamp, type, amount, atmId}) => <AtmTransaction timestamp={timestamp} type={type} amount={amount} atmId={atmId}/>)}
+                        {atmTransactions.map(({timestamp, type, amount, atmId}) => <AtmTransaction key={timestamp+atmId} timestamp={timestamp} type={type} amount={amount} atmId={atmId}/>)}
                     </tbody>
                 </table>
             </div>
@@ -90,7 +90,7 @@ const FinancialTransactions = ({searchId, url}) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {eposTransactions.map(({eposTimestamp, eposAmount, payeeAccount}) => <EposTransaction timestamp={eposTimestamp} amount={eposAmount} payee={payeeAccount}/>)}
+                        {eposTransactions.map(({eposTimestamp, eposAmount, payeeAccount}) => <EposTransaction key={eposTimestamp+payeeAccount} timestamp={eposTimestamp} amount={eposAmount} payee={payeeAccount}/>)}
                     </tbody>
                 </table>
             </div>

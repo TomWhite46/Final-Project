@@ -1,34 +1,23 @@
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const SearchForm = ({setShowTable, setShowTabs, setSearchResults, url}) => {
+const SearchFormLoc = ({setShowTable, setShowTabs, setSearchResults, url}) => {
     
     const submitForm = (e) => {
         e.preventDefault();        
-        const forename = e.target.forename.value;
-        const surname = e.target.surname.value;
-        const dob = e.target.dob.value;
-
-        let request = "findPersonBy";
-        (forename === "" ? console.log("no forename") : request += "Forename");
-        (surname === "" ? console.log("no surname") : request += "Surname");
-        (dob === "" ? console.log("no dob") : request += "Dob");
-
-        if (request === "findPersonBy") {
-            alert("Please enter data in at least one field.");
-            return;
-        }
+        const time = e.target.time.value.replace('T', ' ') + ":00";
+        const latitude = e.target.latitude.value;
+        const longitude = e.target.longitude.value;
+        
+        console.log(time);
 
         setShowTabs(false);
         setSearchResults("loading")
         setShowTable(true);
-
-
         
-        axios.get(`${url}/${request}/${forename}/${surname}/${dob}`) 
+        axios.get(`${url}/findPersonByLocation/${time}/${latitude}/${longitude}`) 
             .then(({data}) => {        
                 setSearchResults(data);
-                
             })
             .catch (err => {
                 console.log(err);
@@ -41,28 +30,28 @@ const SearchForm = ({setShowTable, setShowTabs, setSearchResults, url}) => {
             <form className="searchForm" onSubmit={(e)=>submitForm(e)}>
                 <div className="row">
                     <div className="column1">
-                        <label htmlFor="forename">Forenames: </label>
+                        <label htmlFor="time">Time: </label>
                     </div>
                     <div className="column2">
-                        <input type="text" id="forename" name="forename" className="formInput"/>
+                        <input type="datetime-local" id="time" name="time" className="formInput"/>
                     </div>
                 </div>
                 <br/>
                 <div className="row">
                     <div className="column1">
-                        <label htmlFor="surname">Surname: </label>
+                        <label htmlFor="latitude">Latitude: </label>
                     </div>
                     <div className="column2">
-                        <input type="text" id="surname" name="surname" className="formInput"/>
+                        <input type="text" id="latitude" name="latitude" className="formInput"/>
                     </div>
                 </div>
                 <br/>
                 <div className="row">
                     <div className="column1">
-                        <label htmlFor="dob">Date of birth: </label>
+                        <label htmlFor="longitude">Longitude: </label>
                     </div>
                     <div className="column2">
-                        <input type="text" id="dob" name="dob" className="formInput"/>
+                        <input type="text" id="longitude" name="longitude" className="formInput"/>
                     </div>
                 </div>
                 <br/>
@@ -79,4 +68,4 @@ const SearchForm = ({setShowTable, setShowTabs, setSearchResults, url}) => {
 }
 
 
-export default SearchForm;
+export default SearchFormLoc;
