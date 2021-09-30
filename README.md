@@ -5,7 +5,7 @@
 <li>Project Management</li>
 <li>Version Control</li>
 <li>AWS Architecture</li>
-<li>Databases</li>
+<li>Data Set</li>
 <li>Backend</li>
 <li>Backend Testing</li>
 <li>Frontend</li>
@@ -135,11 +135,32 @@ Here is an example of our Jenkins Pipeline completing the build, push and deploy
 <h4>NGINX</h4>
 <p>NGINX is a high performance web server that can be used as a reverse proxy and load balancer among other things. In our case, we have used NGINX as a web server and reverse proxy. This allows us to connect to the application on port 80 as this is the standard HTTP port, rather than the react port or the backend port. The use of a reverse proxy helps to direct the traffic within our private network as the users should not be able to directly access anywhere in that network other than that NGINX server.</p>
 <h2>10) Project Summary</h2>
-<h4>What went well?</h4> 
+<h4>What went well?</h4>
+<ul>
+<li>Reaching MVP within the timeframe.</li>
+<li>Managed to get through most of the project without too many major issues.</li>
+<li>Worked well collaboratively in all areas of the project allowing us to split the work evenly.</li>
+<li>The use of Jira helped to keep on top of tasks and ensure that the requirements for the MVP was met.</li>
+</ul>
 <h4>What didn’t go so well?</h4>
+<li>We initially struggled with handling requests to the database but we managed to get around these issues and come to a solution.</li>
+<li>Data type issues within the data set caused us some problems as we had to reload the data into the RDS a couple of times.</li>
 <h4>What could we have done differently?</h4>
+<ul>
+<li>Create the larger RDS instance from the start to avoid having to recreate and reload a lot of that data in again. (The initial RDS we created was too small for the data we wanted to use)</li>
+</ul>
 <h4>What have we learned?</h4>
+<ul>
+<li>As this is our first real project with more than 2 people, we have learnt how to manage what each member of the team should be doing each day and splitting off into sub-teams to work on each element.</li>
+<li>This is also the first project where we were able to start completely from scratch as with previous projects we had a lot of previous practise projects that we could use to put elements together quite quickly. So it was a good but more challenging experience to be able to build this one from the ground up.</li>
+</ul>
 <h4>What would we do if we had more time?</h4>
--	NGINX could be used as a load balancer at a later date if we need it to.
+<ul>
+<li>NGINX could be used as a load balancer at a later date if we need it to.</li>
+<li>Expansion to include the other scenarios.</li>
+<li>Tabs at the top of the application to separate search types.</li>
+<li>Have Google maps overlay showing transaction locations. (Using the Google Maps API would also help with the expansion to include the other 2 scenarios)</li> 
+</ul>
+
 
 
