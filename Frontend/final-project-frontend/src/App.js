@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="App" data-theme={darkMode ? "dark" : "light"}>
-    <h2>Search Tool</h2>
+    <h2>Person Search Tool</h2>
     <button onClick={toggleDarkMode} className="dark-mode-btn">
       {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
