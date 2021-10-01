@@ -164,6 +164,7 @@ Here is an example of our Jenkins Pipeline completing the build, push and deploy
 <ul>
 <li>NGINX could be used as a load balancer at a later date if we need it to.</li>
 <li>Expansion to include the other scenarios.</li>
+<li>Utilise Bootstrap alongside React to help to style the web page</li>
 <li>Tabs at the top of the application to separate search types.</li>
 <li>Have Google maps overlay showing transaction locations. (Using the Google Maps API would also help with the expansion to include the other 2 scenarios)</li> 
 <li>Have Jenkins create artifacts from the CI pipeline of the test results when the Maven application is run</li>
